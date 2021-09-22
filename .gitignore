@@ -15,6 +15,7 @@ __pycache__/
 #
 workspace/
 
+.!*
 
 # _doc figures
 # _docs/all_figs

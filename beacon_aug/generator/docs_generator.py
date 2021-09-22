@@ -187,12 +187,12 @@ def generate_doc(op_name, source_js_folders=os.path.join(os.path.dirname(os.path
         elif lib_name == "torchvision":
             website = f"https://pytorch.org/vision/stable/_modules/torchvision/transforms/transforms.html#{function.__name__}"
         elif lib_name == "custom":
-            website = f"https://git.corp.adobe.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/{function.__name__}.py"
+            website = f"https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/{function.__name__}.py"
         elif lib_name == "gan_based":
-            website = f"https://git.corp.adobe.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/gan_based/{function.__name__}.py"
+            website = f"https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/gan_based/{function.__name__}.py"
 
         elif lib_name == "mmcv":
-            website = f"https://git.corp.adobe.com/adobe-research/beacon-aug/blob/master/beacon_aug/external/mmcv/mmseg/transforms.py"
+            website = f"https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/external/mmcv/mmseg/transforms.py"
         elif lib_name == "keras":
             website = f"https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/{function.__name__ }"
         else:
