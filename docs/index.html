@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Beacon-aug &mdash; Beacon-aug Opensource-09142021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> Beacon-aug
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Opensource-09142021
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">Operator APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Property APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble shooting</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Beacon-aug</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Beacon-aug</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<a class="reference internal image-reference" href="_images/logo.png"><img alt="_images/logo.png" class="align-center" src="_images/logo.png" style="height: 140px;" /></a>
+<div class="section" id="beacon-aug">
+<h1>Beacon-aug<a class="headerlink" href="#beacon-aug" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Repo: <a class="reference external" href="https://github.com/adobe-research/beacon-aug">https://github.com/adobe-research/beacon-aug</a></p></li>
+<li><p>A cross-library image augmentation module for deep learning training</p></li>
+</ul>
+</div>
+<div class="section" id="why-beacon-aug">
+<h1>Why Beacon_aug<a class="headerlink" href="#why-beacon-aug" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="_images/flowchart.png"><img alt="_images/flowchart.png" class="align-center" src="_images/flowchart.png" style="width: 350px;" /></a>
+<ul class="simple">
+<li><p>Incorporate the largest number of image augmentation operations(~ <strong>400</strong>) from 8 popular libraries</p></li>
+<li><p><a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_img.html#2.-Result-comparision-for-all-backend-libraries">Seamless cross library exchanging</a> over different libraries</p></li>
+<li><p>Adobe <a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/operator%20overview.html#customized-operators">Featured customized functions</a>  of both <strong>parametric</strong> and <strong>GAN based</strong> transformations designed by Adobe Researchers</p></li>
+<li><p>Run external <a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_GAN_base.html">AI function inferencing</a> as easy as general augmentation</p></li>
+<li><p><a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/operator%20overview.html#advanced-operators">Advanced transformation pipelines</a> for complex tasks (e.g. segmentation, detection, GAN training, network robustness)</p></li>
+<li><p>Support various input formats : <a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_img.html">np.array,PIL</a> , <a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_torch.html">Torch.tensor</a></p></li>
+<li><p>Extend the high-level  attributes from <cite>Albumentations</cite> to other libraries by dynamic loading</p></li>
+<li><p><a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/properties.html">Differentiable check, anti-aliasing</a> for operators</p></li>
+<li><p><a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_img.html#4.-Display-a-fast-screenshot-of-the-pipeline">Fast-visualization</a> of the augmentation pipeline</p></li>
+<li><p>Easy to add customized functions for <a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/contribute.html#propose-your-customize-functions">public contributors</a></p></li>
+</ul>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Library</p></th>
+<th class="head"><p>Beacon_Aug</p></th>
+<th class="head"><p><a class="reference external" href="https://imgaug.readthedocs.io/en/latest/">Imgaug</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/albumentations-team/albumentations">Albumentations</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/pytorch/vision/blob/master/torchvision/transforms/transforms.py">torchvision</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/keras-team/keras-preprocessing">Keras</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/facebookresearch/AugLy">Augly</a></p></th>
+<th class="head"><p><a class="reference external" href="https://mmcv.readthedocs.io/en/latest/get_started/introduction.html">mmcv</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/hendrycks/robustness/tree/305054464935cdf4c5f182f1387a1cc506854d49">ImageNet-C</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/kornia/kornia">kornia</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Image</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mask</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>Bounding Box</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>Keypoints</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>Paired Transformation</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameter Outputs</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>Differentiable</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>Customized Function</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>GAN-based Function</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://arxiv.org/pdf/1805.09501.pdf">AutoAugment</a></p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://arxiv.org/abs/1909.13719">RandAug</a></p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>Num of Transformations</p></td>
+<td><p>&gt;378</p></td>
+<td><p>107</p></td>
+<td><p>70</p></td>
+<td><p>37</p></td>
+<td><p>11</p></td>
+<td><p>31</p></td>
+<td></td>
+<td><p>19</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Cross Library  Supports</p></td>
+<td><div class="line-block">
+<div class="line">Imgaug,Torch,</div>
+<div class="line">Keras,Augly,</div>
+<div class="line">Imagenet-c,mmcv,</div>
+<div class="line">Albumentations</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">CV2, PIL,</div>
+<div class="line">Skimage</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">CV2, Imgaug</div>
+<div class="line">Torch</div>
+</div>
+</td>
+<td><p>PIL</p></td>
+<td><p>PIL</p></td>
+<td><p>PIL</p></td>
+<td><p>PIL</p></td>
+<td><p>PIL</p></td>
+<td><p>Torch</p></td>
+</tr>
+<tr class="row-odd"><td><p>Average Run Time</p></td>
+<td><p>Depend on libraries</p></td>
+<td><p>13.6 ms</p></td>
+<td><p>2.1 ms</p></td>
+<td><p>5.2 ms</p></td>
+<td><p>59.3 ms</p></td>
+<td><p>25.3 ms</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="contributors">
+<h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
+<p>Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm, Krishna kumar Singh,  Zhifei Zhang, Richard Zhang, Maksym Andriushchenko</p>
+</div>
+</div>
+<div class="section" id="manual">
+<h1>Manual<a class="headerlink" href="#manual" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#how-to-install">How to install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#how-to-develop">How to develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#how-to-use">How to use</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="operator%20overview.html#basic-operators">Basic Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator%20overview.html#advanced-operators">Advanced Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_img.html#1.-A-simple-augmentation-operator">1. A simple augmentation operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_img.html#2.-Result-comparision-for-all-backend-libraries">2. Result comparision for all backend libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_img.html#3.-Run-an-augmentation-pipeline">3. Run an augmentation pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_img.html#4.-Display-a-fast-screenshot-of-the-pipeline">4. Display a fast screenshot of the pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_img.html#5.-Same-augmentation-for-image,-bbox,-masks-at-the-same-time">5. Same augmentation for image, bbox, masks at the same time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_img.html#6.-Export-pipeline-paramters-to-jason-file">6. Export pipeline paramters to jason file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_img.html#7.-Example-of-AutoAugment">7. Example of AutoAugment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_img.html#8.-Example-of-RandAugment">8. Example of RandAugment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_img.html#9.-Example-of-Collections">9. Example of Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_img.html#10.-Overlay-Text">10. Overlay Text</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_torch.html#1.-Check-if-the-operator-is-differentiable">1. Check if the operator is differentiable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_torch.html#2.-Use-the-transformation-operator-as-a-layer">2. Use the transformation operator as a layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_torch.html#3.-Pytorch-Data-Loader-Example">3. Pytorch Data Loader Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_gan_based.html#1.-Install-the-external-package-and-pretrained-weights">1. Install the external package and pretrained weights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_gan_based.html#2.-Generate-an-inferencing-function">2. Generate an inferencing function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_gan_based.html#3.-Run-augmentation-in-beacon-aug">3. Run augmentation in <code class="docutils literal notranslate"><span class="pre">beacon-aug</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html#1.-Use-individual-imagenet_c-transformations">1. Use individual <code class="docutils literal notranslate"><span class="pre">imagenet_c</span></code> transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html#2.-Run-a-sequence-of-imagenet_c-transformations">2. Run a sequence of <code class="docutils literal notranslate"><span class="pre">imagenet_c</span></code> transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html#3.-Run-2-layers-of-“benign”-transformations">3. Run 2 layers of “benign” transformations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/aliasing-discussion.html#1.-Discussion-on-“resize”-operator">1. Discussion on “resize” operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/aliasing-discussion.html#2.-Discussion-on-“affine-transform”-operator">2. Discussion on “affine transform” operator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">Operator APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Property APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Properties and Performance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="performance.html#differentiable-summary">Differentiable Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html#runtime-summary">Runtime Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html#report-your-past-augmentation-practice">Report your past augmentation practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html#propose-your-customize-functions">Propose your customize functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html#contribute-to-the-repo">Contribute to the repo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble shooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="trouble%20shooting.html#a-affine-not-working">A.Affine not working</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trouble%20shooting.html#libmagic-installation-failed">libmagic installation failed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trouble%20shooting.html#magickwand-library-not-found">MagickWand  library not found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trouble%20shooting.html#problem-not-solved">Problem not solved</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<span class="target" id="module-beacon_aug"></span><div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="install.html" class="btn btn-neutral float-right" title="Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Adobe.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

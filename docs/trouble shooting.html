@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Trouble shooting &mdash; Beacon-aug Opensource-09142021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Contribute" href="contribute.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Beacon-aug
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Opensource-09142021
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">Operator APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Property APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Trouble shooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-affine-not-working">A.Affine not working</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#libmagic-installation-failed">libmagic installation failed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#magickwand-library-not-found">MagickWand  library not found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#problem-not-solved">Problem not solved</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Beacon-aug</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Trouble shooting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/trouble shooting.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="trouble-shooting">
+<h1>Trouble shooting<a class="headerlink" href="#trouble-shooting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-affine-not-working">
+<h2>A.Affine not working<a class="headerlink" href="#a-affine-not-working" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Problem: <code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">module</span> <span class="pre">'albumentations'</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'Affine'</span></code></p></li>
+<li><p>Solution:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip uninstall albumentations
+pip install -U git+https://github.com/albumentations-team/albumentations
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="libmagic-installation-failed">
+<h2>libmagic installation failed<a class="headerlink" href="#libmagic-installation-failed" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Problem:  <cite>ImportError: failed to find libmagic. Check your installation</cite></p></li>
+<li><p>Solution:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">python</span><span class="o">-</span><span class="n">magic</span>
+</pre></div>
+</div>
+<p>Or if you aren’t using conda:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">magic</span>
+</pre></div>
+</div>
+</li>
+<li><p>Check detail: <a class="reference external" href="https://github.com/facebookresearch/AugLy#installation">https://github.com/facebookresearch/AugLy#installation</a></p></li>
+</ul>
+</div>
+<div class="section" id="magickwand-library-not-found">
+<h2>MagickWand  library not found<a class="headerlink" href="#magickwand-library-not-found" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Problem: <code class="docutils literal notranslate"><span class="pre">ImportError:</span> <span class="pre">MagickWand</span> <span class="pre">shared</span> <span class="pre">library</span> <span class="pre">not</span> <span class="pre">found.</span> <span class="pre">You</span> <span class="pre">probably</span> <span class="pre">had</span> <span class="pre">not</span> <span class="pre">installed</span> <span class="pre">ImageMagick</span> <span class="pre">library.</span></code></p></li>
+<li><p>Solution: Install ImageMagick</p>
+<p>Linux:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install libmagickwand-dev
+</pre></div>
+</div>
+<p>Mac:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew reinstall freestyle
+brew reinstall imagemagick
+</pre></div>
+</div>
+</li>
+<li><p>Check detail: <a class="reference external" href="https://docs.wand-py.org/en/latest/guide/install.html#install-imagemagick-on-windows">https://docs.wand-py.org/en/latest/guide/install.html#install-imagemagick-on-windows</a></p></li>
+</ul>
+</div>
+<div class="section" id="problem-not-solved">
+<h2>Problem not solved<a class="headerlink" href="#problem-not-solved" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Problem: other problem still not solved</p></li>
+<li><p>try this  <cite>prune</cite> version of package that minumized the prerequisites: <a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/prune">https://github.com/adobe-research/beacon-aug/tree/prune</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="contribute.html" class="btn btn-neutral float-left" title="Contribute" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Adobe.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

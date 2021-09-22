@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>beacon_aug.properties &mdash; Beacon-aug Opensource-09142021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Beacon-aug
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Opensource-09142021
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API.html">Operator APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../properties.html">Property APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trouble%20shooting.html">Trouble shooting</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Beacon-aug</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>beacon_aug.properties</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for beacon_aug.properties</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright 2021 Adobe</span>
+<span class="c1"># All Rights Reserved.</span>
+
+<span class="c1"># NOTICE: Adobe permits you to use, modify, and distribute this file in</span>
+<span class="c1"># accordance with the terms of the Adobe license agreement accompanying</span>
+<span class="c1"># it.</span>
+
+
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">beacon_aug</span> <span class="k">as</span> <span class="nn">BA</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms.functional</span> <span class="k">as</span> <span class="nn">torch_f</span>
+
+<span class="n">kw_size_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="s2">&quot;crop_size&quot;</span><span class="p">,</span> <span class="s2">&quot;kernel_size&quot;</span><span class="p">]</span>
+<span class="n">kw_wh_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="s2">&quot;heigh&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="set_seed"><a class="viewcode-back" href="../../properties.html#beacon_aug.properties.set_seed">[docs]</a><span class="k">def</span> <span class="nf">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Set Random seed to control the replication of transformations</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="isOpDifferentiable"><a class="viewcode-back" href="../../properties.html#beacon_aug.properties.isOpDifferentiable">[docs]</a><span class="k">def</span> <span class="nf">isOpDifferentiable</span><span class="p">(</span><span class="n">op</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="n">size</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>  <span class="c1"># rgb image (8x8) batch size 2,</span>
+                       <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;cpu&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Check if `op` is differentiable. `source &lt;https://git.corp.adobe.com/gist/holdgeof/22a496b76758cd9bfb690c8e88ac1c92&gt;`_</span>
+
+<span class="sd">    Contributed by Yannick Hold-Geoffroy </span>
+
+<span class="sd">    e.g.</span>
+
+<span class="sd">    .. code-block::</span>
+
+<span class="sd">        import beacon_aug as BA</span>
+<span class="sd">        BA.properties.isOpDifferentiable(op=BA.RandomCrop(library=&quot;torch&quot;))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># set default</span>
+    <span class="k">if</span> <span class="n">op</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">op</span> <span class="o">=</span> <span class="n">BA</span><span class="o">.</span><span class="n">RandomCrop</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># make sure the size is smaller than the input image</span>
+        <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">kw_size_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kw</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">processor</span><span class="p">):</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">processor</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">kw_wh_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kw</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">processor</span><span class="p">):</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">processor</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="c1"># set &quot;as_layter = True&quot; to support tensor input in Beacon_aug</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">as_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="n">is_diff</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="ow">and</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">y</span> <span class="o">!=</span> <span class="mf">0.</span><span class="p">)</span> <span class="ow">and</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">))</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">is_diff</span></div>
+
+
+<div class="viewcode-block" id="isAntiAliasing"><a class="viewcode-back" href="../../properties.html#beacon_aug.properties.isAntiAliasing">[docs]</a><span class="k">def</span> <span class="nf">isAntiAliasing</span><span class="p">(</span><span class="n">BA_operator</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span> <span class="n">interpolation</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if `op` is anti aliasing. `source Paper &lt;https://github.com/GaParmar/clean-fid&gt;`_</span>
+<span class="sd">    Whether or not the operator is anti-alising  depends on the PSNR between original and rescaled images</span>
+
+<span class="sd">    Contributed by `Richard Zhang`, </span>
+
+<span class="sd">    e.g.</span>
+
+<span class="sd">    .. code-block::</span>
+
+<span class="sd">        import beacon_aug as BA</span>
+<span class="sd">        BA.properties.isAntiAliasing(BA.Resize, library= &quot;torchvision&quot;,interpolation = &quot;linear&quot; )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">psnr_uint8</span><span class="p">(</span><span class="n">img0</span><span class="p">,</span> <span class="n">img1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">img0</span><span class="o">/</span><span class="mf">255.</span> <span class="o">-</span> <span class="n">img1</span><span class="o">/</span><span class="mf">255.</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">is_anti_aliasing</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">img_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">255</span>
+    <span class="n">img_np</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img_np</span><span class="p">,</span> <span class="p">(</span><span class="mi">128</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="mi">128</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span> <span class="mi">50</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s2">&quot;resize&quot;</span> <span class="ow">in</span> <span class="n">BA_operator</span><span class="o">.</span><span class="vm">__name__</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="c1"># interpolation_all = [&quot;nearest&quot;, &quot;linear&quot;, &quot;area&quot;, &quot;cubic&quot;, &quot;Lanczos&quot;, &quot;hamming&quot;]</span>
+        <span class="n">interpolation_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;albumentations&quot;</span><span class="p">:</span>
+                              <span class="p">{</span><span class="s2">&quot;nearest&quot;</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_NEAREST</span><span class="p">,</span>
+                               <span class="s2">&quot;linear&quot;</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LINEAR</span><span class="p">,</span>
+                               <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_AREA</span><span class="p">,</span>
+                               <span class="s2">&quot;cubic&quot;</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_CUBIC</span><span class="p">,</span>
+                               <span class="s2">&quot;Lanczos&quot;</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LANCZOS4</span><span class="p">,</span>
+                               <span class="p">},</span>
+                              <span class="s2">&quot;imgaug&quot;</span><span class="p">:</span>
+                              <span class="p">{</span><span class="s2">&quot;nearest&quot;</span><span class="p">:</span> <span class="s2">&quot;nearest&quot;</span><span class="p">,</span>
+                               <span class="s2">&quot;linear&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+                               <span class="s2">&quot;cubic&quot;</span><span class="p">:</span> <span class="s2">&quot;cubic&quot;</span><span class="p">,</span>
+                               <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="s2">&quot;area&quot;</span>
+                               <span class="p">},</span>
+                              <span class="s2">&quot;torchvision&quot;</span><span class="p">:</span>
+                              <span class="p">{</span><span class="s2">&quot;nearest&quot;</span><span class="p">:</span> <span class="n">torch_f</span><span class="o">.</span><span class="n">InterpolationMode</span><span class="o">.</span><span class="n">NEAREST</span><span class="p">,</span>
+                               <span class="s2">&quot;linear&quot;</span><span class="p">:</span> <span class="n">torch_f</span><span class="o">.</span><span class="n">InterpolationMode</span><span class="o">.</span><span class="n">BILINEAR</span><span class="p">,</span>
+                               <span class="s2">&quot;box&quot;</span><span class="p">:</span> <span class="n">torch_f</span><span class="o">.</span><span class="n">InterpolationMode</span><span class="o">.</span><span class="n">BOX</span><span class="p">,</span>
+                               <span class="s2">&quot;cubic&quot;</span><span class="p">:</span> <span class="n">torch_f</span><span class="o">.</span><span class="n">InterpolationMode</span><span class="o">.</span><span class="n">BICUBIC</span><span class="p">,</span>
+                               <span class="s2">&quot;Lanczos&quot;</span><span class="p">:</span> <span class="n">torch_f</span><span class="o">.</span><span class="n">InterpolationMode</span><span class="o">.</span><span class="n">LANCZOS</span><span class="p">,</span>
+                               <span class="s2">&quot;hamming&quot;</span><span class="p">:</span> <span class="n">torch_f</span><span class="o">.</span><span class="n">InterpolationMode</span><span class="o">.</span><span class="n">HAMMING</span><span class="p">,</span>
+                               <span class="p">}}</span>
+        <span class="n">interp</span> <span class="o">=</span> <span class="n">interpolation_dict</span><span class="p">[</span><span class="n">library</span><span class="p">][</span><span class="n">interpolation</span><span class="p">]</span> <span class="k">if</span> <span class="n">library</span> <span class="ow">in</span> <span class="n">interpolation_dict</span> <span class="k">else</span> <span class="n">interpolation</span>
+        <span class="c1"># print(interp)</span>
+
+        <span class="n">op</span> <span class="o">=</span> <span class="n">BA</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="n">library</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">interp</span><span class="p">,</span>
+                       <span class="n">height</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">op_up</span> <span class="o">=</span> <span class="n">BA</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="n">library</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">interp</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
+
+        <span class="n">img_resized</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">img_np</span><span class="p">)[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>     <span class="c1"># downscale to 16x16</span>
+        <span class="n">img_up</span> <span class="o">=</span> <span class="n">op_up</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">img_resized</span><span class="p">)[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># upscale to 128*128</span>
+
+        <span class="n">psnr</span> <span class="o">=</span> <span class="n">psnr_uint8</span><span class="p">(</span><span class="n">img_np</span><span class="p">,</span> <span class="n">img_up</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">psnr</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">:</span>
+            <span class="n">is_anti_aliasing</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="n">is_anti_aliasing</span></div>
+
+
+<div class="viewcode-block" id="library_attributes"><a class="viewcode-back" href="../../properties.html#beacon_aug.properties.library_attributes">[docs]</a><span class="k">def</span> <span class="nf">library_attributes</span><span class="p">(</span><span class="n">BA_operator</span><span class="p">,</span>  <span class="n">image_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;    Visualize the augmentation result comparision to all available libraries</span>
+
+<span class="sd">    e.g.</span>
+
+<span class="sd">    .. code-block::</span>
+
+<span class="sd">        import beacon_aug as BA</span>
+<span class="sd">        attributes_result = library_attributes(BA.Add)</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">image_data</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">avail_libraries</span> <span class="o">=</span> <span class="n">BA_operator</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">avail_libraries</span>
+
+    <span class="n">attributes_result</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;runtime&quot;</span><span class="p">:</span> <span class="p">{},</span> <span class="s2">&quot;differentiable&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">library</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">avail_libraries</span><span class="p">):</span>
+        <span class="n">t_before</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">op</span> <span class="o">=</span> <span class="n">BA_operator</span><span class="p">(</span><span class="n">always_apply</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="n">library</span><span class="p">,</span>
+                         <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">image_auged</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image_data</span><span class="p">)[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span>
+        <span class="n">t_after</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">runtime</span> <span class="o">=</span> <span class="n">t_after</span> <span class="o">-</span> <span class="n">t_before</span>
+        <span class="n">attributes_result</span><span class="p">[</span><span class="s2">&quot;runtime&quot;</span><span class="p">][</span><span class="n">library</span><span class="p">]</span> <span class="o">=</span> <span class="n">runtime</span>
+        <span class="n">attributes_result</span><span class="p">[</span><span class="s2">&quot;differentiable&quot;</span><span class="p">][</span><span class="n">library</span><span class="p">]</span> <span class="o">=</span> <span class="n">isOpDifferentiable</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">attributes_result</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Adobe.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

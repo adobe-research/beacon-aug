@@ -1,0 +1,1057 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Operator Overview &mdash; Beacon-aug Opensource-09142021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial: Use on images" href="ipynbs/tutorial_img.html" />
+    <link rel="prev" title="Install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Beacon-aug
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Opensource-09142021
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Operator Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-operators">Basic Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#customized-operators">Customized Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standard-operators">Standard Operators:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-operators">Advanced Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">Operator APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Property APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble shooting</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Beacon-aug</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Operator Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/operator overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="operator-overview">
+<h1>Operator Overview<a class="headerlink" href="#operator-overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-operators">
+<h2>Basic Operators<a class="headerlink" href="#basic-operators" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="customized-operators">
+<h3>Customized Operators<a class="headerlink" href="#customized-operators" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>check this <a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom">instructions</a> to add customized functions</p></li>
+</ul>
+<ul class="simple">
+<li><p>Contributors:</p>
+<ul>
+<li><p>TextFlow: Zhifei Zhang &#64;zzhang</p></li>
+<li><p>HidePatch: Krishna kumar Singh &#64;krishsin</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BA</span><span class="o">.</span><span class="p">{</span><span class="n">CustomizedOperator</span><span class="p">}(</span><span class="n">library</span><span class="o">=</span><span class="s2">&quot;custom&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/KeepSizeCrop.py">KeepSizeCrop</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/TextFlow.py">TextFlow</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/HidePatch.py">HidePatch</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/JpegCompression.py">JpegCompression</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/OverlayText.py">OverlayText</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><a class="reference internal image-reference" href="_images/KeepSizeCrop-custom.jpeg"><img alt="_images/KeepSizeCrop-custom.jpeg" src="_images/KeepSizeCrop-custom.jpeg" style="width: 80px; height: 80px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/TextFlow-custom.jpeg"><img alt="_images/TextFlow-custom.jpeg" src="_images/TextFlow-custom.jpeg" style="width: 80px; height: 80px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/HidePatch-custom.jpeg"><img alt="_images/HidePatch-custom.jpeg" src="_images/HidePatch-custom.jpeg" style="width: 80px; height: 80px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/JpegCompression-custom.jpeg"><img alt="_images/JpegCompression-custom.jpeg" src="_images/JpegCompression-custom.jpeg" style="width: 80px; height: 80px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/OverlayText-custom.jpeg"><img alt="_images/OverlayText-custom.jpeg" src="_images/OverlayText-custom.jpeg" style="width: 80px; height: 80px;" /></a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="standard-operators">
+<h3>Standard Operators:<a class="headerlink" href="#standard-operators" title="Permalink to this headline">¶</a></h3>
+<p>Beacon_aug support all the operators in all standard libraries</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 15%" />
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Number of Transformations</p></th>
+<th class="head"><p>albumentations</p></th>
+<th class="head"><p>imgaug</p></th>
+<th class="head"><p>torchvision</p></th>
+<th class="head"><p>keras</p></th>
+<th class="head"><p>augly</p></th>
+<th class="head"><p>mmcv</p></th>
+<th class="head"><p>imagenetc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Support one library</p></td>
+<td><p>37</p></td>
+<td><p>37</p></td>
+<td><p>26</p></td>
+<td><p>5</p></td>
+<td><p>18</p></td>
+<td><p>6</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>Support multiple libraries</p></td>
+<td colspan="7"><p>235</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BA</span><span class="o">.</span><span class="p">{</span><span class="n">StandardOperator</span><span class="p">}(</span><span class="n">library</span><span class="o">=</span><span class="p">{</span><span class="n">library</span><span class="p">}})</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Check <a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/standard/library_remain.yaml">this list</a> for the operators supporting <strong>one</strong> library</p></li>
+<li><p>Check the chart blow for the operators supporting <strong>multiple</strong> libraries</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Library</p></th>
+<th class="head"><p>albumentations</p></th>
+<th class="head"><p>imgaug</p></th>
+<th class="head"><p>torchvision</p></th>
+<th class="head"><p>keras</p></th>
+<th class="head"><p>augly</p></th>
+<th class="head"><p>mmcv</p></th>
+<th class="head"><p>imagenet_c</p></th>
+<th class="head"><p>kornia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Affine">Affine</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Affine-albumentations.jpeg"><img alt="_images/Affine-albumentations.jpeg" class="align-center" src="_images/Affine-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Affine-imgaug.jpeg"><img alt="_images/Affine-imgaug.jpeg" class="align-center" src="_images/Affine-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Affine-torchvision.jpeg"><img alt="_images/Affine-torchvision.jpeg" class="align-center" src="_images/Affine-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Affine-keras.jpeg"><img alt="_images/Affine-keras.jpeg" class="align-center" src="_images/Affine-keras.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.PiecewiseAffine">PiecewiseAffine</a></p></td>
+<td><a class="reference internal image-reference" href="_images/PiecewiseAffine-albumentations.jpeg"><img alt="_images/PiecewiseAffine-albumentations.jpeg" class="align-center" src="_images/PiecewiseAffine-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/PiecewiseAffine-imgaug.jpeg"><img alt="_images/PiecewiseAffine-imgaug.jpeg" class="align-center" src="_images/PiecewiseAffine-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Cutout">Cutout</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Cutout-albumentations.jpeg"><img alt="_images/Cutout-albumentations.jpeg" class="align-center" src="_images/Cutout-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Cutout-imgaug.jpeg"><img alt="_images/Cutout-imgaug.jpeg" class="align-center" src="_images/Cutout-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Cutout-torchvision.jpeg"><img alt="_images/Cutout-torchvision.jpeg" class="align-center" src="_images/Cutout-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Crop">Crop</a></p></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Crop-imgaug.jpeg"><img alt="_images/Crop-imgaug.jpeg" class="align-center" src="_images/Crop-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Crop-augly.jpeg"><img alt="_images/Crop-augly.jpeg" class="align-center" src="_images/Crop-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.RandomCrop">RandomCrop</a></p></td>
+<td><a class="reference internal image-reference" href="_images/RandomCrop-albumentations.jpeg"><img alt="_images/RandomCrop-albumentations.jpeg" class="align-center" src="_images/RandomCrop-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/RandomCrop-imgaug.jpeg"><img alt="_images/RandomCrop-imgaug.jpeg" class="align-center" src="_images/RandomCrop-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/RandomCrop-torchvision.jpeg"><img alt="_images/RandomCrop-torchvision.jpeg" class="align-center" src="_images/RandomCrop-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/RandomCrop-mmcv.jpeg"><img alt="_images/RandomCrop-mmcv.jpeg" class="align-center" src="_images/RandomCrop-mmcv.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.CenterCrop">CenterCrop</a></p></td>
+<td><a class="reference internal image-reference" href="_images/CenterCrop-albumentations.jpeg"><img alt="_images/CenterCrop-albumentations.jpeg" class="align-center" src="_images/CenterCrop-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/CenterCrop-torchvision.jpeg"><img alt="_images/CenterCrop-torchvision.jpeg" class="align-center" src="_images/CenterCrop-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.RandomSizedCrop">RandomSizedCrop</a></p></td>
+<td><a class="reference internal image-reference" href="_images/RandomSizedCrop-albumentations.jpeg"><img alt="_images/RandomSizedCrop-albumentations.jpeg" class="align-center" src="_images/RandomSizedCrop-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/RandomSizedCrop-torchvision.jpeg"><img alt="_images/RandomSizedCrop-torchvision.jpeg" class="align-center" src="_images/RandomSizedCrop-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.RandomResizedCrop">RandomResizedCrop</a></p></td>
+<td><a class="reference internal image-reference" href="_images/RandomResizedCrop-albumentations.jpeg"><img alt="_images/RandomResizedCrop-albumentations.jpeg" class="align-center" src="_images/RandomResizedCrop-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/RandomResizedCrop-torchvision.jpeg"><img alt="_images/RandomResizedCrop-torchvision.jpeg" class="align-center" src="_images/RandomResizedCrop-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Resize">Resize</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Resize-albumentations.jpeg"><img alt="_images/Resize-albumentations.jpeg" class="align-center" src="_images/Resize-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Resize-imgaug.jpeg"><img alt="_images/Resize-imgaug.jpeg" class="align-center" src="_images/Resize-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Resize-torchvision.jpeg"><img alt="_images/Resize-torchvision.jpeg" class="align-center" src="_images/Resize-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Resize-augly.jpeg"><img alt="_images/Resize-augly.jpeg" class="align-center" src="_images/Resize-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Resize-mmcv.jpeg"><img alt="_images/Resize-mmcv.jpeg" class="align-center" src="_images/Resize-mmcv.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.CropAndPad">CropAndPad</a></p></td>
+<td><a class="reference internal image-reference" href="_images/CropAndPad-albumentations.jpeg"><img alt="_images/CropAndPad-albumentations.jpeg" class="align-center" src="_images/CropAndPad-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/CropAndPad-imgaug.jpeg"><img alt="_images/CropAndPad-imgaug.jpeg" class="align-center" src="_images/CropAndPad-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Rotate">Rotate</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Rotate-albumentations.jpeg"><img alt="_images/Rotate-albumentations.jpeg" class="align-center" src="_images/Rotate-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Rotate-imgaug.jpeg"><img alt="_images/Rotate-imgaug.jpeg" class="align-center" src="_images/Rotate-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Rotate-torchvision.jpeg"><img alt="_images/Rotate-torchvision.jpeg" class="align-center" src="_images/Rotate-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Rotate-keras.jpeg"><img alt="_images/Rotate-keras.jpeg" class="align-center" src="_images/Rotate-keras.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Rotate-augly.jpeg"><img alt="_images/Rotate-augly.jpeg" class="align-center" src="_images/Rotate-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Rotate-mmcv.jpeg"><img alt="_images/Rotate-mmcv.jpeg" class="align-center" src="_images/Rotate-mmcv.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Pad">Pad</a></p></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Pad-imgaug.jpeg"><img alt="_images/Pad-imgaug.jpeg" class="align-center" src="_images/Pad-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Pad-torchvision.jpeg"><img alt="_images/Pad-torchvision.jpeg" class="align-center" src="_images/Pad-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Pad-augly.jpeg"><img alt="_images/Pad-augly.jpeg" class="align-center" src="_images/Pad-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Pad-mmcv.jpeg"><img alt="_images/Pad-mmcv.jpeg" class="align-center" src="_images/Pad-mmcv.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Normalize">Normalize</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Normalize-albumentations.jpeg"><img alt="_images/Normalize-albumentations.jpeg" class="align-center" src="_images/Normalize-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Normalize-mmcv.jpeg"><img alt="_images/Normalize-mmcv.jpeg" class="align-center" src="_images/Normalize-mmcv.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.HorizontalFlip">HorizontalFlip</a></p></td>
+<td><a class="reference internal image-reference" href="_images/HorizontalFlip-albumentations.jpeg"><img alt="_images/HorizontalFlip-albumentations.jpeg" class="align-center" src="_images/HorizontalFlip-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/HorizontalFlip-imgaug.jpeg"><img alt="_images/HorizontalFlip-imgaug.jpeg" class="align-center" src="_images/HorizontalFlip-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/HorizontalFlip-torchvision.jpeg"><img alt="_images/HorizontalFlip-torchvision.jpeg" class="align-center" src="_images/HorizontalFlip-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/HorizontalFlip-keras.jpeg"><img alt="_images/HorizontalFlip-keras.jpeg" class="align-center" src="_images/HorizontalFlip-keras.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/HorizontalFlip-augly.jpeg"><img alt="_images/HorizontalFlip-augly.jpeg" class="align-center" src="_images/HorizontalFlip-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.VerticalFlip">VerticalFlip</a></p></td>
+<td><a class="reference internal image-reference" href="_images/VerticalFlip-albumentations.jpeg"><img alt="_images/VerticalFlip-albumentations.jpeg" class="align-center" src="_images/VerticalFlip-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/VerticalFlip-imgaug.jpeg"><img alt="_images/VerticalFlip-imgaug.jpeg" class="align-center" src="_images/VerticalFlip-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/VerticalFlip-torchvision.jpeg"><img alt="_images/VerticalFlip-torchvision.jpeg" class="align-center" src="_images/VerticalFlip-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/VerticalFlip-keras.jpeg"><img alt="_images/VerticalFlip-keras.jpeg" class="align-center" src="_images/VerticalFlip-keras.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/VerticalFlip-augly.jpeg"><img alt="_images/VerticalFlip-augly.jpeg" class="align-center" src="_images/VerticalFlip-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.ChannelShuffle">ChannelShuffle</a></p></td>
+<td><a class="reference internal image-reference" href="_images/ChannelShuffle-albumentations.jpeg"><img alt="_images/ChannelShuffle-albumentations.jpeg" class="align-center" src="_images/ChannelShuffle-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/ChannelShuffle-imgaug.jpeg"><img alt="_images/ChannelShuffle-imgaug.jpeg" class="align-center" src="_images/ChannelShuffle-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Lambda">Lambda</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Lambda-albumentations.jpeg"><img alt="_images/Lambda-albumentations.jpeg" class="align-center" src="_images/Lambda-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Lambda-imgaug.jpeg"><img alt="_images/Lambda-imgaug.jpeg" class="align-center" src="_images/Lambda-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Lambda-torchvision.jpeg"><img alt="_images/Lambda-torchvision.jpeg" class="align-center" src="_images/Lambda-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Lambda-augly.jpeg"><img alt="_images/Lambda-augly.jpeg" class="align-center" src="_images/Lambda-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Autocontrast">Autocontrast</a></p></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Autocontrast-imgaug.jpeg"><img alt="_images/Autocontrast-imgaug.jpeg" class="align-center" src="_images/Autocontrast-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Autocontrast-torchvision.jpeg"><img alt="_images/Autocontrast-torchvision.jpeg" class="align-center" src="_images/Autocontrast-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Blur">Blur</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Blur-albumentations.jpeg"><img alt="_images/Blur-albumentations.jpeg" class="align-center" src="_images/Blur-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Blur-imgaug.jpeg"><img alt="_images/Blur-imgaug.jpeg" class="align-center" src="_images/Blur-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Blur-augly.jpeg"><img alt="_images/Blur-augly.jpeg" class="align-center" src="_images/Blur-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.MedianBlur">MedianBlur</a></p></td>
+<td><a class="reference internal image-reference" href="_images/MedianBlur-albumentations.jpeg"><img alt="_images/MedianBlur-albumentations.jpeg" class="align-center" src="_images/MedianBlur-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/MedianBlur-imgaug.jpeg"><img alt="_images/MedianBlur-imgaug.jpeg" class="align-center" src="_images/MedianBlur-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Grayscale">Grayscale</a></p></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Grayscale-imgaug.jpeg"><img alt="_images/Grayscale-imgaug.jpeg" class="align-center" src="_images/Grayscale-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Grayscale-torchvision.jpeg"><img alt="_images/Grayscale-torchvision.jpeg" class="align-center" src="_images/Grayscale-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Grayscale-augly.jpeg"><img alt="_images/Grayscale-augly.jpeg" class="align-center" src="_images/Grayscale-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Scale">Scale</a></p></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Scale-torchvision.jpeg"><img alt="_images/Scale-torchvision.jpeg" class="align-center" src="_images/Scale-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Scale-augly.jpeg"><img alt="_images/Scale-augly.jpeg" class="align-center" src="_images/Scale-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.RandomGrayscale">RandomGrayscale</a></p></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/RandomGrayscale-torchvision.jpeg"><img alt="_images/RandomGrayscale-torchvision.jpeg" class="align-center" src="_images/RandomGrayscale-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Equalize">Equalize</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Equalize-albumentations.jpeg"><img alt="_images/Equalize-albumentations.jpeg" class="align-center" src="_images/Equalize-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Equalize-imgaug.jpeg"><img alt="_images/Equalize-imgaug.jpeg" class="align-center" src="_images/Equalize-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Equalize-torchvision.jpeg"><img alt="_images/Equalize-torchvision.jpeg" class="align-center" src="_images/Equalize-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Brightness">Brightness</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Brightness-albumentations.jpeg"><img alt="_images/Brightness-albumentations.jpeg" class="align-center" src="_images/Brightness-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Brightness-imgaug.jpeg"><img alt="_images/Brightness-imgaug.jpeg" class="align-center" src="_images/Brightness-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Brightness-torchvision.jpeg"><img alt="_images/Brightness-torchvision.jpeg" class="align-center" src="_images/Brightness-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Brightness-keras.jpeg"><img alt="_images/Brightness-keras.jpeg" class="align-center" src="_images/Brightness-keras.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Brightness-augly.jpeg"><img alt="_images/Brightness-augly.jpeg" class="align-center" src="_images/Brightness-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Brightness-imagenet_c.jpeg"><img alt="_images/Brightness-imagenet_c.jpeg" class="align-center" src="_images/Brightness-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Contrast">Contrast</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Contrast-albumentations.jpeg"><img alt="_images/Contrast-albumentations.jpeg" class="align-center" src="_images/Contrast-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Contrast-imgaug.jpeg"><img alt="_images/Contrast-imgaug.jpeg" class="align-center" src="_images/Contrast-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Contrast-torchvision.jpeg"><img alt="_images/Contrast-torchvision.jpeg" class="align-center" src="_images/Contrast-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Contrast-augly.jpeg"><img alt="_images/Contrast-augly.jpeg" class="align-center" src="_images/Contrast-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Contrast-imagenet_c.jpeg"><img alt="_images/Contrast-imagenet_c.jpeg" class="align-center" src="_images/Contrast-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Emboss">Emboss</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Emboss-albumentations.jpeg"><img alt="_images/Emboss-albumentations.jpeg" class="align-center" src="_images/Emboss-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Emboss-imgaug.jpeg"><img alt="_images/Emboss-imgaug.jpeg" class="align-center" src="_images/Emboss-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.CLAHE">CLAHE</a></p></td>
+<td><a class="reference internal image-reference" href="_images/CLAHE-albumentations.jpeg"><img alt="_images/CLAHE-albumentations.jpeg" class="align-center" src="_images/CLAHE-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/CLAHE-imgaug.jpeg"><img alt="_images/CLAHE-imgaug.jpeg" class="align-center" src="_images/CLAHE-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/CLAHE-mmcv.jpeg"><img alt="_images/CLAHE-mmcv.jpeg" class="align-center" src="_images/CLAHE-mmcv.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Invert">Invert</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Invert-albumentations.jpeg"><img alt="_images/Invert-albumentations.jpeg" class="align-center" src="_images/Invert-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Invert-imgaug.jpeg"><img alt="_images/Invert-imgaug.jpeg" class="align-center" src="_images/Invert-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Invert-torchvision.jpeg"><img alt="_images/Invert-torchvision.jpeg" class="align-center" src="_images/Invert-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Posterize">Posterize</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Posterize-albumentations.jpeg"><img alt="_images/Posterize-albumentations.jpeg" class="align-center" src="_images/Posterize-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Posterize-imgaug.jpeg"><img alt="_images/Posterize-imgaug.jpeg" class="align-center" src="_images/Posterize-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Posterize-torchvision.jpeg"><img alt="_images/Posterize-torchvision.jpeg" class="align-center" src="_images/Posterize-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Saturation">Saturation</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Saturation-albumentations.jpeg"><img alt="_images/Saturation-albumentations.jpeg" class="align-center" src="_images/Saturation-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Saturation-imgaug.jpeg"><img alt="_images/Saturation-imgaug.jpeg" class="align-center" src="_images/Saturation-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Saturation-torchvision.jpeg"><img alt="_images/Saturation-torchvision.jpeg" class="align-center" src="_images/Saturation-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Saturation-augly.jpeg"><img alt="_images/Saturation-augly.jpeg" class="align-center" src="_images/Saturation-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Saturation-imagenet_c.jpeg"><img alt="_images/Saturation-imagenet_c.jpeg" class="align-center" src="_images/Saturation-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Sharpen">Sharpen</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Sharpen-albumentations.jpeg"><img alt="_images/Sharpen-albumentations.jpeg" class="align-center" src="_images/Sharpen-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Sharpen-imgaug.jpeg"><img alt="_images/Sharpen-imgaug.jpeg" class="align-center" src="_images/Sharpen-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Sharpen-torchvision.jpeg"><img alt="_images/Sharpen-torchvision.jpeg" class="align-center" src="_images/Sharpen-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Sharpen-augly.jpeg"><img alt="_images/Sharpen-augly.jpeg" class="align-center" src="_images/Sharpen-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Solarize">Solarize</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Solarize-albumentations.jpeg"><img alt="_images/Solarize-albumentations.jpeg" class="align-center" src="_images/Solarize-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Solarize-imgaug.jpeg"><img alt="_images/Solarize-imgaug.jpeg" class="align-center" src="_images/Solarize-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Solarize-torchvision.jpeg"><img alt="_images/Solarize-torchvision.jpeg" class="align-center" src="_images/Solarize-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.PerspectiveTransform">PerspectiveTransform</a></p></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/PerspectiveTransform-imgaug.jpeg"><img alt="_images/PerspectiveTransform-imgaug.jpeg" class="align-center" src="_images/PerspectiveTransform-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/PerspectiveTransform-augly.jpeg"><img alt="_images/PerspectiveTransform-augly.jpeg" class="align-center" src="_images/PerspectiveTransform-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.CoarseDropout">CoarseDropout</a></p></td>
+<td><a class="reference internal image-reference" href="_images/CoarseDropout-albumentations.jpeg"><img alt="_images/CoarseDropout-albumentations.jpeg" class="align-center" src="_images/CoarseDropout-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/CoarseDropout-imgaug.jpeg"><img alt="_images/CoarseDropout-imgaug.jpeg" class="align-center" src="_images/CoarseDropout-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.OverlayText">OverlayText</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/OverlayText-augly.jpeg"><img alt="_images/OverlayText-augly.jpeg" class="align-center" src="_images/OverlayText-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.JpegCompression">JpegCompression</a></p></td>
+<td><a class="reference internal image-reference" href="_images/JpegCompression-albumentations.jpeg"><img alt="_images/JpegCompression-albumentations.jpeg" class="align-center" src="_images/JpegCompression-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/JpegCompression-imgaug.jpeg"><img alt="_images/JpegCompression-imgaug.jpeg" class="align-center" src="_images/JpegCompression-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/JpegCompression-imagenet_c.jpeg"><img alt="_images/JpegCompression-imagenet_c.jpeg" class="align-center" src="_images/JpegCompression-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.ColorJitter">ColorJitter</a></p></td>
+<td><a class="reference internal image-reference" href="_images/ColorJitter-albumentations.jpeg"><img alt="_images/ColorJitter-albumentations.jpeg" class="align-center" src="_images/ColorJitter-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/ColorJitter-torchvision.jpeg"><img alt="_images/ColorJitter-torchvision.jpeg" class="align-center" src="_images/ColorJitter-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/ColorJitter-augly.jpeg"><img alt="_images/ColorJitter-augly.jpeg" class="align-center" src="_images/ColorJitter-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Superpixels">Superpixels</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Superpixels-albumentations.jpeg"><img alt="_images/Superpixels-albumentations.jpeg" class="align-center" src="_images/Superpixels-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Superpixels-imgaug.jpeg"><img alt="_images/Superpixels-imgaug.jpeg" class="align-center" src="_images/Superpixels-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.GaussianNoise">GaussianNoise</a></p></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/GaussianNoise-imgaug.jpeg"><img alt="_images/GaussianNoise-imgaug.jpeg" class="align-center" src="_images/GaussianNoise-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/GaussianNoise-imagenet_c.jpeg"><img alt="_images/GaussianNoise-imagenet_c.jpeg" class="align-center" src="_images/GaussianNoise-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.ShotNoise">ShotNoise</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/ShotNoise-imagenet_c.jpeg"><img alt="_images/ShotNoise-imagenet_c.jpeg" class="align-center" src="_images/ShotNoise-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.ImpulseNoise">ImpulseNoise</a></p></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/ImpulseNoise-imgaug.jpeg"><img alt="_images/ImpulseNoise-imgaug.jpeg" class="align-center" src="_images/ImpulseNoise-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/ImpulseNoise-imagenet_c.jpeg"><img alt="_images/ImpulseNoise-imagenet_c.jpeg" class="align-center" src="_images/ImpulseNoise-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.GlassBlur">GlassBlur</a></p></td>
+<td><a class="reference internal image-reference" href="_images/GlassBlur-albumentations.jpeg"><img alt="_images/GlassBlur-albumentations.jpeg" class="align-center" src="_images/GlassBlur-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/GlassBlur-imagenet_c.jpeg"><img alt="_images/GlassBlur-imagenet_c.jpeg" class="align-center" src="_images/GlassBlur-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.MotionBlur">MotionBlur</a></p></td>
+<td><a class="reference internal image-reference" href="_images/MotionBlur-albumentations.jpeg"><img alt="_images/MotionBlur-albumentations.jpeg" class="align-center" src="_images/MotionBlur-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/MotionBlur-imgaug.jpeg"><img alt="_images/MotionBlur-imgaug.jpeg" class="align-center" src="_images/MotionBlur-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/MotionBlur-imagenet_c.jpeg"><img alt="_images/MotionBlur-imagenet_c.jpeg" class="align-center" src="_images/MotionBlur-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.GaussianBlur">GaussianBlur</a></p></td>
+<td><a class="reference internal image-reference" href="_images/GaussianBlur-albumentations.jpeg"><img alt="_images/GaussianBlur-albumentations.jpeg" class="align-center" src="_images/GaussianBlur-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/GaussianBlur-imgaug.jpeg"><img alt="_images/GaussianBlur-imgaug.jpeg" class="align-center" src="_images/GaussianBlur-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/GaussianBlur-torchvision.jpeg"><img alt="_images/GaussianBlur-torchvision.jpeg" class="align-center" src="_images/GaussianBlur-torchvision.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/GaussianBlur-imagenet_c.jpeg"><img alt="_images/GaussianBlur-imagenet_c.jpeg" class="align-center" src="_images/GaussianBlur-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Snow">Snow</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Snow-albumentations.jpeg"><img alt="_images/Snow-albumentations.jpeg" class="align-center" src="_images/Snow-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Snow-imagenet_c.jpeg"><img alt="_images/Snow-imagenet_c.jpeg" class="align-center" src="_images/Snow-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Fog">Fog</a></p></td>
+<td><a class="reference internal image-reference" href="_images/Fog-albumentations.jpeg"><img alt="_images/Fog-albumentations.jpeg" class="align-center" src="_images/Fog-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/Fog-imgaug.jpeg"><img alt="_images/Fog-imgaug.jpeg" class="align-center" src="_images/Fog-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Fog-imagenet_c.jpeg"><img alt="_images/Fog-imagenet_c.jpeg" class="align-center" src="_images/Fog-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="API.html#beacon_aug.operators.ElasticTransform">ElasticTransform</a></p></td>
+<td><a class="reference internal image-reference" href="_images/ElasticTransform-albumentations.jpeg"><img alt="_images/ElasticTransform-albumentations.jpeg" class="align-center" src="_images/ElasticTransform-albumentations.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td><a class="reference internal image-reference" href="_images/ElasticTransform-imgaug.jpeg"><img alt="_images/ElasticTransform-imgaug.jpeg" class="align-center" src="_images/ElasticTransform-imgaug.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/ElasticTransform-imagenet_c.jpeg"><img alt="_images/ElasticTransform-imagenet_c.jpeg" class="align-center" src="_images/ElasticTransform-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="API.html#beacon_aug.operators.Pixelization">Pixelization</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Pixelization-augly.jpeg"><img alt="_images/Pixelization-augly.jpeg" class="align-center" src="_images/Pixelization-augly.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+<td><a class="reference internal image-reference" href="_images/Pixelization-imagenet_c.jpeg"><img alt="_images/Pixelization-imagenet_c.jpeg" class="align-center" src="_images/Pixelization-imagenet_c.jpeg" style="width: 40px; height: 40px;" /></a>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="advanced-operators">
+<h2>Advanced Operators<a class="headerlink" href="#advanced-operators" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Check  <a class="reference external" href="../docs/ipynbs/tutorial_img.html#7.-Example-of-AutoAugment">here</a> for user instruction</p></li>
+</ul>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/autoaugment.py">AutoAugment</a></p></td>
+<td><img alt="_images/autoaugment.png" src="_images/autoaugment.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/randaugment.py">RandAugment</a></p></td>
+<td><img alt="_images/RandAugment.png" src="_images/RandAugment.png" />
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/collections.py">ColorJitter</a></p></td>
+<td><img alt="_images/collections-color.png" src="_images/collections-color.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/collections.py">GeometricJitter</a></p></td>
+<td><img alt="_images/collections-geometric.png" src="_images/collections-geometric.png" />
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/benign_transforms.py">Benign Transformations</a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ipynbs/tutorial_img.html" class="btn btn-neutral float-right" title="Tutorial: Use on images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Adobe.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

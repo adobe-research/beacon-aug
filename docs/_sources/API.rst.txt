@@ -1,0 +1,10 @@
+Operator APIs
+=============================
+
+The following documentations are  automatically extracted from the corresponding original backend libraries.
+
+.. automodule:: beacon_aug.operators
+    :members:
+    :undoc-members:
+    :show-inheritance:
+

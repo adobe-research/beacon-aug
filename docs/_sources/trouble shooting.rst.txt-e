@@ -1,0 +1,61 @@
+
+Trouble shooting
+=======
+
+A.Affine not working
+--------------------
+
+
+* Problem: ``AttributeError: module 'albumentations' has no attribute 'Affine'``
+* Solution:
+
+  .. code-block:: bash
+
+     pip uninstall albumentations
+     pip install -U git+https://github.com/albumentations-team/albumentations
+
+libmagic installation failed
+----------------------------
+
+
+* Problem:  `ImportError: failed to find libmagic. Check your installation`
+* Solution:
+
+  .. code-block:: python
+
+      conda install -c conda-forge python-magic
+     
+  Or if you aren’t using conda:
+
+  .. code-block:: python
+
+     sudo apt-get install python3-magic
+
+* Check detail: https://github.com/facebookresearch/AugLy#installation
+
+
+MagickWand  library not found
+----------------------------
+* Problem: ``ImportError: MagickWand shared library not found. You probably had not installed ImageMagick library.``
+* Solution: Install ImageMagick
+
+  Linux:
+
+  .. code-block:: bash
+
+     sudo apt-get install libmagickwand-dev
+
+  Mac:
+
+  .. code-block:: bash
+  
+     brew reinstall freestyle
+     brew reinstall imagemagick
+
+* Check detail: https://docs.wand-py.org/en/latest/guide/install.html#install-imagemagick-on-windows
+
+
+Problem not solved
+----------------------------
+* Problem: other problem still not solved
+* try this  `prune` version of package that minumized the prerequisites: https://git.corp.adobe.com/adobe-research/beacon-aug/tree/prune

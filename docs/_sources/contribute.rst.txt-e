@@ -1,0 +1,51 @@
+Contribute
+=======
+
+Report your past augmentation practice
+---------------------------
+
+Fill in this  `short survey <https://forms.office.com/pages/responsepage.aspx?id=Wht7-jR7h0OUrtLBeN7O4YAi1YW5UytAn2uCO4MRqSBUODhKUjdTUVFJM0tTN0NIOU5NSE01V1dUQS4u&fswReload=1&fswNavStart=1625240091445>`_ 
+
+
+Propose your customize functions
+---------------------------
+
+
+
+``beacon_aug`` will automatically mode your operator to augmentation operator
+
+
+* Name: Class name has to be the same with python file name
+
+  * if classname exist in json file in `standard <https://git.corp.adobe.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/standard>`_ :
+
+    * append a ``custom`` library function to the existing beacon_aug class
+
+  * else:
+
+    * create a beacon_aug class with the same name that only support the ``custom`` library
+
+See example in `KeepSizeCrop.py <https://git.corp.adobe.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/KeepSizeCrop.py>`_
+
+Test the operator function itself:    
+
+.. code-block:: python
+
+   from beacon_aug.generator.custom.KeepSizeCrop import KeepSizeCrop
+   op = KeepSizeCrop( scale=(0.08, 1.0))
+   img_transformed = op(img )
+
+Test the augmentation wrapper:   
+
+.. code-block:: python
+
+   import beacon_aug as BA
+   aug = BA.KeepSizeCrop(p=1, height=64,width=64, library="custom")
+   image_auged = aug(image=image)["image"]
+
+
+
+Contribute to the repo
+---------------------------
+Create your own branch ``git branch -d {Your_LDAP}/{branch_name}``
+

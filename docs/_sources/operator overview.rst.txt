@@ -1,0 +1,985 @@
+
+Operator Overview
+==============================
+
+Basic Operators
+---------------
+
+
+Customized Operators
+^^^^^^^^^^^^^^^^^^^^
+- check this `instructions <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom>`_ to add customized functions
+
+* Contributors:
+
+  * TextFlow: Zhifei Zhang @zzhang
+  * HidePatch: Krishna kumar Singh @krishsin
+
+
+
+.. code-block:: python
+
+   BA.{CustomizedOperator}(library="custom")
+
+.. list-table::
+   :header-rows: 1
+
+   * - `KeepSizeCrop <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/KeepSizeCrop.py>`_
+     - `TextFlow <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/TextFlow.py>`_
+     - `HidePatch <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/HidePatch.py>`_
+     - `JpegCompression <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/JpegCompression.py>`_
+     - `OverlayText <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/OverlayText.py>`_
+   * - .. image:: ../docs/_images/KeepSizeCrop-custom.jpeg
+          :width: 80
+          :height: 80
+     - .. image:: ../docs/_images/TextFlow-custom.jpeg
+          :width: 80
+          :height: 80
+     - .. image:: ../docs/_images/HidePatch-custom.jpeg
+          :width: 80
+          :height: 80
+     - .. image:: ../docs/_images/JpegCompression-custom.jpeg
+          :width: 80
+          :height: 80
+     - .. image:: ../docs/_images/OverlayText-custom.jpeg
+          :width: 80
+          :height: 80
+
+
+Standard Operators:
+^^^^^^^^^^^^^^^^^^^
+Beacon_aug support all the operators in all standard libraries
+
+
++----------------------------+----------------+----------+-------------+----------+----------+----------+----------+
+| Number of Transformations  | albumentations | imgaug   | torchvision | keras    | augly    | mmcv     | imagenetc| 
++============================+================+==========+=============+==========+==========+==========+==========+
+| Support one library        |     37         |    37    |      26     |     5    |    18    | 6        | 14       |
++----------------------------+----------------+----------+-------------+----------+----------+----------+----------+
+| Support multiple libraries |        235                                                                          |
++----------------------------+-------------------------------------------------------------------------------------+
+
+.. code-block:: python
+
+   BA.{StandardOperator}(library={library}})
+
+
+* Check `this list <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/standard/library_remain.yaml>`_ for the operators supporting **one** library
+* Check the chart blow for the operators supporting **multiple** libraries
+
+.. |vspace| raw:: latex
+
+   \vspace{10mm}
+
+.. |br| raw:: html
+
+   <br />
+
+.. tabularcolumns:: |1|p{100cm}|\p{100cm}|\p{100cm}|\p{100cm}|\p{100cm}|\p{100cm}|\p{100cm}|\p{100cm}|
+
+.. list-table::
+   :header-rows: 1
+
+   * - Library
+     - albumentations        
+     - imgaug
+     - torchvision
+     - keras        
+     - augly        
+     - mmcv
+     - imagenet_c
+     - kornia
+   * - `Affine <API.html#beacon_aug.operators.Affine>`_
+     - .. image:: ../docs/_images/Affine-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Affine-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Affine-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Affine-keras.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+   * - `PiecewiseAffine <API.html#beacon_aug.operators.PiecewiseAffine>`_
+     - .. image:: ../docs/_images/PiecewiseAffine-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/PiecewiseAffine-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+     -
+   * - `Cutout <API.html#beacon_aug.operators.Cutout>`_
+     - .. image:: ../docs/_images/Cutout-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Cutout-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Cutout-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+   * - `Crop <API.html#beacon_aug.operators.Crop>`_
+     -
+     - .. image:: ../docs/_images/Crop-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     - .. image:: ../docs/_images/Crop-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `RandomCrop <API.html#beacon_aug.operators.RandomCrop>`_
+     - .. image:: ../docs/_images/RandomCrop-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/RandomCrop-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/RandomCrop-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     - .. image:: ../docs/_images/RandomCrop-mmcv.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+   * - `CenterCrop <API.html#beacon_aug.operators.CenterCrop>`_
+     - .. image:: ../docs/_images/CenterCrop-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/CenterCrop-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+   * - `RandomSizedCrop <API.html#beacon_aug.operators.RandomSizedCrop>`_
+     - .. image:: ../docs/_images/RandomSizedCrop-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/RandomSizedCrop-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+   * - `RandomResizedCrop <API.html#beacon_aug.operators.RandomResizedCrop>`_
+     - .. image:: ../docs/_images/RandomResizedCrop-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/RandomResizedCrop-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+   * - `Resize <API.html#beacon_aug.operators.Resize>`_
+     - .. image:: ../docs/_images/Resize-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Resize-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Resize-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Resize-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Resize-mmcv.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+   * - `CropAndPad <API.html#beacon_aug.operators.CropAndPad>`_
+     - .. image:: ../docs/_images/CropAndPad-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/CropAndPad-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+     -
+   * - `Rotate <API.html#beacon_aug.operators.Rotate>`_
+     - .. image:: ../docs/_images/Rotate-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Rotate-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Rotate-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Rotate-keras.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Rotate-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Rotate-mmcv.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+   * - `Pad <API.html#beacon_aug.operators.Pad>`_
+     -
+     - .. image:: ../docs/_images/Pad-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Pad-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Pad-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Pad-mmcv.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+   * - `Normalize <API.html#beacon_aug.operators.Normalize>`_
+     - .. image:: ../docs/_images/Normalize-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/Normalize-mmcv.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+   * - `HorizontalFlip <API.html#beacon_aug.operators.HorizontalFlip>`_
+     - .. image:: ../docs/_images/HorizontalFlip-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/HorizontalFlip-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/HorizontalFlip-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/HorizontalFlip-keras.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/HorizontalFlip-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `VerticalFlip <API.html#beacon_aug.operators.VerticalFlip>`_
+     - .. image:: ../docs/_images/VerticalFlip-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/VerticalFlip-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/VerticalFlip-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/VerticalFlip-keras.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/VerticalFlip-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `ChannelShuffle <API.html#beacon_aug.operators.ChannelShuffle>`_
+     - .. image:: ../docs/_images/ChannelShuffle-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/ChannelShuffle-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+     -
+   * - `Lambda <API.html#beacon_aug.operators.Lambda>`_
+     - .. image:: ../docs/_images/Lambda-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Lambda-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Lambda-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Lambda-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `Autocontrast <API.html#beacon_aug.operators.Autocontrast>`_
+     -
+     - .. image:: ../docs/_images/Autocontrast-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Autocontrast-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+   * - `Blur <API.html#beacon_aug.operators.Blur>`_
+     - .. image:: ../docs/_images/Blur-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Blur-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     - .. image:: ../docs/_images/Blur-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `MedianBlur <API.html#beacon_aug.operators.MedianBlur>`_
+     - .. image:: ../docs/_images/MedianBlur-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/MedianBlur-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+     -
+   * - `Grayscale <API.html#beacon_aug.operators.Grayscale>`_
+     -
+     - .. image:: ../docs/_images/Grayscale-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Grayscale-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Grayscale-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `Scale <API.html#beacon_aug.operators.Scale>`_
+     -
+     -
+     - .. image:: ../docs/_images/Scale-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Scale-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `RandomGrayscale <API.html#beacon_aug.operators.RandomGrayscale>`_
+     -
+     -
+     - .. image:: ../docs/_images/RandomGrayscale-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+   * - `Equalize <API.html#beacon_aug.operators.Equalize>`_
+     - .. image:: ../docs/_images/Equalize-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Equalize-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Equalize-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+   * - `Brightness <API.html#beacon_aug.operators.Brightness>`_
+     - .. image:: ../docs/_images/Brightness-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Brightness-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Brightness-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Brightness-keras.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Brightness-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Brightness-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `Contrast <API.html#beacon_aug.operators.Contrast>`_
+     - .. image:: ../docs/_images/Contrast-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Contrast-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Contrast-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Contrast-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Contrast-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `Emboss <API.html#beacon_aug.operators.Emboss>`_
+     - .. image:: ../docs/_images/Emboss-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Emboss-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+     -
+   * - `CLAHE <API.html#beacon_aug.operators.CLAHE>`_
+     - .. image:: ../docs/_images/CLAHE-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/CLAHE-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     - .. image:: ../docs/_images/CLAHE-mmcv.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+   * - `Invert <API.html#beacon_aug.operators.Invert>`_
+     - .. image:: ../docs/_images/Invert-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Invert-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Invert-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+   * - `Posterize <API.html#beacon_aug.operators.Posterize>`_
+     - .. image:: ../docs/_images/Posterize-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Posterize-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Posterize-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+   * - `Saturation <API.html#beacon_aug.operators.Saturation>`_
+     - .. image:: ../docs/_images/Saturation-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Saturation-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Saturation-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Saturation-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Saturation-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `Sharpen <API.html#beacon_aug.operators.Sharpen>`_
+     - .. image:: ../docs/_images/Sharpen-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Sharpen-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Sharpen-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Sharpen-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `Solarize <API.html#beacon_aug.operators.Solarize>`_
+     - .. image:: ../docs/_images/Solarize-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Solarize-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Solarize-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+   * - `PerspectiveTransform <API.html#beacon_aug.operators.PerspectiveTransform>`_
+     -
+     - .. image:: ../docs/_images/PerspectiveTransform-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     - .. image:: ../docs/_images/PerspectiveTransform-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `CoarseDropout <API.html#beacon_aug.operators.CoarseDropout>`_
+     - .. image:: ../docs/_images/CoarseDropout-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/CoarseDropout-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+     -
+   * - `OverlayText <API.html#beacon_aug.operators.OverlayText>`_
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/OverlayText-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `JpegCompression <API.html#beacon_aug.operators.JpegCompression>`_
+     - .. image:: ../docs/_images/JpegCompression-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/JpegCompression-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/JpegCompression-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `ColorJitter <API.html#beacon_aug.operators.ColorJitter>`_
+     - .. image:: ../docs/_images/ColorJitter-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/ColorJitter-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/ColorJitter-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+   * - `Superpixels <API.html#beacon_aug.operators.Superpixels>`_
+     - .. image:: ../docs/_images/Superpixels-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Superpixels-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+     -
+   * - `GaussianNoise <API.html#beacon_aug.operators.GaussianNoise>`_
+     -
+     - .. image:: ../docs/_images/GaussianNoise-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/GaussianNoise-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `ShotNoise <API.html#beacon_aug.operators.ShotNoise>`_
+     -
+     -
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/ShotNoise-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `ImpulseNoise <API.html#beacon_aug.operators.ImpulseNoise>`_
+     -
+     - .. image:: ../docs/_images/ImpulseNoise-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/ImpulseNoise-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `GlassBlur <API.html#beacon_aug.operators.GlassBlur>`_
+     - .. image:: ../docs/_images/GlassBlur-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/GlassBlur-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `MotionBlur <API.html#beacon_aug.operators.MotionBlur>`_
+     - .. image:: ../docs/_images/MotionBlur-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/MotionBlur-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/MotionBlur-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `GaussianBlur <API.html#beacon_aug.operators.GaussianBlur>`_
+     - .. image:: ../docs/_images/GaussianBlur-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/GaussianBlur-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/GaussianBlur-torchvision.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     - .. image:: ../docs/_images/GaussianBlur-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `Snow <API.html#beacon_aug.operators.Snow>`_
+     - .. image:: ../docs/_images/Snow-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/Snow-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `Fog <API.html#beacon_aug.operators.Fog>`_
+     - .. image:: ../docs/_images/Fog-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/Fog-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/Fog-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `ElasticTransform <API.html#beacon_aug.operators.ElasticTransform>`_
+     - .. image:: ../docs/_images/ElasticTransform-albumentations.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     - .. image:: ../docs/_images/ElasticTransform-imgaug.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/ElasticTransform-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+   * - `Pixelization <API.html#beacon_aug.operators.Pixelization>`_
+     -
+     -
+     -
+     -
+     - .. image:: ../docs/_images/Pixelization-augly.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+     - .. image:: ../docs/_images/Pixelization-imagenet_c.jpeg
+          :width: 40
+          :height: 40
+          :align: center
+     -
+
+
+Advanced Operators
+------------------
+* Check  `here <../docs/ipynbs/tutorial_img.html#7.-Example-of-AutoAugment>`_ for user instruction
+
+.. list-table::
+   :header-rows: 1
+   :widths: 10,50
+
+   * - 
+     - 
+   * - `AutoAugment <https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/autoaugment.py>`_
+     - .. image:: ../docs/_images/autoaugment.png 
+   * - `RandAugment <https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/randaugment.py>`_
+     - .. image:: ../docs/_images/RandAugment.png 
+   * - `ColorJitter <https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/collections.py>`_
+     - .. image:: ../docs/_images/collections-color.png 
+   * - `GeometricJitter <https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/collections.py>`_
+     - .. image:: ../docs/_images/collections-geometric.png 
+   * - `Benign Transformations <https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/benign_transforms.py>`_
+     -  
+
+

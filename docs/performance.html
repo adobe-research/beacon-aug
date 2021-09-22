@@ -1,0 +1,1472 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Properties and Performance &mdash; Beacon-aug Opensource-09142021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contribute" href="contribute.html" />
+    <link rel="prev" title="Property APIs" href="properties.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Beacon-aug
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Opensource-09142021
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">Operator APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Property APIs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Properties and Performance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#differentiable-summary">Differentiable Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#runtime-summary">Runtime Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble shooting</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Beacon-aug</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Properties and Performance</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/performance.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="properties-and-performance">
+<h1>Properties and Performance<a class="headerlink" href="#properties-and-performance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="differentiable-summary">
+<h2>Differentiable Summary<a class="headerlink" href="#differentiable-summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Check  <a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_torch.html">tutorial_tensor.ipynb</a> for how to use differentiable operators</p></li>
+<li><p>This table is generated by <a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/benchmark/benchmark.py">benchmark.py</a></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Library</p></th>
+<th class="head"><p>albumentations</p></th>
+<th class="head"><p>imgaug</p></th>
+<th class="head"><p>torchvision</p></th>
+<th class="head"><p>keras</p></th>
+<th class="head"><p>augly</p></th>
+<th class="head"><p>mmcv</p></th>
+<th class="head"><p>imagenet_c</p></th>
+<th class="head"><p>kornia</p></th>
+<th class="head"><p>custom</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Affine</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Autocontrast</p></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Blur</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Brightness</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CLAHE</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CenterCrop</p></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ChannelShuffle</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CoarseDropout</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ColorJitter</p></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contrast</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Crop</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CropAndPad</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Cutout</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ElasticTransform</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Emboss</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Equalize</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Fog</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>GaussianBlur</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>GaussianNoise</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>GlassBlur</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Grayscale</p></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HidePatch</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>HorizontalFlip</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ImpulseNoise</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Invert</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>JpegCompression</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>KeepSizeCrop</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lambda</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MedianBlur</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MotionBlur</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Normalize</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>OverlayText</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>Pad</p></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PerspectiveTransform</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PiecewiseAffine</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Pixelization</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Posterize</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RandomCrop</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RandomGrayscale</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RandomResizedCrop</p></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RandomSizedCrop</p></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Resize</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Rotate</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Saturation</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Scale</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Sharpen</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ShotNoise</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Snow</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Solarize</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Superpixels</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TextFlow</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>VerticalFlip</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="runtime-summary">
+<h2>Runtime Summary<a class="headerlink" href="#runtime-summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>This table is generated by <a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/blob/main/benchmark/benchmark.py">benchmark.py</a></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Library</p></th>
+<th class="head"><p>albumentations</p></th>
+<th class="head"><p>imgaug</p></th>
+<th class="head"><p>torchvision</p></th>
+<th class="head"><p>keras</p></th>
+<th class="head"><p>augly</p></th>
+<th class="head"><p>mmcv</p></th>
+<th class="head"><p>imagenet_c</p></th>
+<th class="head"><p>kornia</p></th>
+<th class="head"><p>custom</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Affine</p></td>
+<td><p>0.186</p></td>
+<td><p>0.181</p></td>
+<td><p>0.223</p></td>
+<td><p>0.187</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Autocontrast</p></td>
+<td></td>
+<td><p>0.192</p></td>
+<td><p>0.174</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Blur</p></td>
+<td><p>0.301</p></td>
+<td><p>0.184</p></td>
+<td></td>
+<td></td>
+<td><p>0.192</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Brightness</p></td>
+<td><p>0.182</p></td>
+<td><p>0.289</p></td>
+<td><p>0.189</p></td>
+<td><p>0.189</p></td>
+<td><p>0.197</p></td>
+<td></td>
+<td><p>0.202</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CLAHE</p></td>
+<td><p>0.191</p></td>
+<td><p>0.186</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.180</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CenterCrop</p></td>
+<td><p>0.190</p></td>
+<td></td>
+<td><p>0.188</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ChannelShuffle</p></td>
+<td><p>0.178</p></td>
+<td><p>0.184</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CoarseDropout</p></td>
+<td><p>0.172</p></td>
+<td><p>0.181</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ColorJitter</p></td>
+<td><p>0.185</p></td>
+<td></td>
+<td><p>0.187</p></td>
+<td></td>
+<td><p>0.173</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contrast</p></td>
+<td><p>0.195</p></td>
+<td><p>0.188</p></td>
+<td><p>0.194</p></td>
+<td></td>
+<td><p>0.333</p></td>
+<td></td>
+<td><p>0.182</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Crop</p></td>
+<td></td>
+<td><p>0.173</p></td>
+<td></td>
+<td></td>
+<td><p>0.233</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CropAndPad</p></td>
+<td><p>0.187</p></td>
+<td><p>0.187</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Cutout</p></td>
+<td><p>0.167</p></td>
+<td><p>0.171</p></td>
+<td><p>0.172</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ElasticTransform</p></td>
+<td><p>0.188</p></td>
+<td><p>0.185</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.226</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Emboss</p></td>
+<td><p>0.191</p></td>
+<td><p>0.190</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Equalize</p></td>
+<td><p>0.192</p></td>
+<td><p>0.347</p></td>
+<td><p>0.214</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Fog</p></td>
+<td><p>0.187</p></td>
+<td><p>0.203</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.184</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>GaussianBlur</p></td>
+<td><p>0.162</p></td>
+<td><p>0.391</p></td>
+<td><p>0.197</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.184</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>GaussianNoise</p></td>
+<td></td>
+<td><p>0.371</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.175</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>GlassBlur</p></td>
+<td><p>0.180</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.617</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Grayscale</p></td>
+<td></td>
+<td><p>0.185</p></td>
+<td><p>0.311</p></td>
+<td></td>
+<td><p>0.172</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HidePatch</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.173</p></td>
+</tr>
+<tr class="row-even"><td><p>HorizontalFlip</p></td>
+<td><p>0.168</p></td>
+<td><p>0.172</p></td>
+<td><p>0.182</p></td>
+<td><p>0.172</p></td>
+<td><p>0.191</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ImpulseNoise</p></td>
+<td></td>
+<td><p>0.171</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.168</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Invert</p></td>
+<td><p>0.179</p></td>
+<td><p>0.181</p></td>
+<td><p>0.343</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>JpegCompression</p></td>
+<td><p>0.166</p></td>
+<td><p>0.174</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.175</p></td>
+<td></td>
+<td><p>0.196</p></td>
+</tr>
+<tr class="row-even"><td><p>KeepSizeCrop</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.171</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lambda</p></td>
+<td><p>0.174</p></td>
+<td><p>0.179</p></td>
+<td><p>0.178</p></td>
+<td></td>
+<td><p>0.177</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MedianBlur</p></td>
+<td><p>0.177</p></td>
+<td><p>0.184</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MotionBlur</p></td>
+<td><p>0.180</p></td>
+<td><p>0.189</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.263</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Normalize</p></td>
+<td><p>0.273</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.184</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>OverlayText</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.191</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.185</p></td>
+</tr>
+<tr class="row-even"><td><p>Pad</p></td>
+<td></td>
+<td><p>0.178</p></td>
+<td><p>0.179</p></td>
+<td></td>
+<td><p>0.183</p></td>
+<td><p>0.183</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PerspectiveTransform</p></td>
+<td></td>
+<td><p>0.171</p></td>
+<td></td>
+<td></td>
+<td><p>0.180</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PiecewiseAffine</p></td>
+<td><p>0.200</p></td>
+<td><p>0.190</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Pixelization</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.411</p></td>
+<td></td>
+<td><p>0.173</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Posterize</p></td>
+<td></td>
+<td><p>0.180</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RandomCrop</p></td>
+<td><p>0.184</p></td>
+<td><p>0.178</p></td>
+<td><p>0.181</p></td>
+<td></td>
+<td></td>
+<td><p>0.176</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RandomGrayscale</p></td>
+<td></td>
+<td></td>
+<td><p>0.180</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RandomResizedCrop</p></td>
+<td><p>0.182</p></td>
+<td></td>
+<td><p>0.180</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RandomSizedCrop</p></td>
+<td><p>0.178</p></td>
+<td></td>
+<td><p>0.258</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Resize</p></td>
+<td><p>0.254</p></td>
+<td><p>0.185</p></td>
+<td><p>0.199</p></td>
+<td></td>
+<td><p>0.198</p></td>
+<td><p>0.200</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Rotate</p></td>
+<td><p>0.194</p></td>
+<td><p>0.170</p></td>
+<td><p>0.172</p></td>
+<td><p>0.175</p></td>
+<td><p>0.257</p></td>
+<td><p>0.181</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Saturation</p></td>
+<td><p>0.179</p></td>
+<td><p>0.178</p></td>
+<td><p>0.179</p></td>
+<td></td>
+<td><p>0.181</p></td>
+<td></td>
+<td><p>0.187</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Scale</p></td>
+<td></td>
+<td></td>
+<td><p>0.187</p></td>
+<td></td>
+<td><p>0.186</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Sharpen</p></td>
+<td><p>0.347</p></td>
+<td><p>0.172</p></td>
+<td><p>0.179</p></td>
+<td></td>
+<td><p>0.180</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ShotNoise</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.174</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Snow</p></td>
+<td><p>0.174</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.202</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Solarize</p></td>
+<td><p>0.174</p></td>
+<td><p>0.176</p></td>
+<td><p>0.177</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Superpixels</p></td>
+<td><p>0.211</p></td>
+<td><p>0.210</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TextFlow</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0.224</p></td>
+</tr>
+<tr class="row-odd"><td><p>VerticalFlip</p></td>
+<td><p>0.188</p></td>
+<td><p>0.176</p></td>
+<td><p>0.184</p></td>
+<td><p>0.172</p></td>
+<td><p>0.182</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="contribute.html" class="btn btn-neutral float-right" title="Contribute" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="properties.html" class="btn btn-neutral float-left" title="Property APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Adobe.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

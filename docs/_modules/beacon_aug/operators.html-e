@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>beacon_aug.operators &mdash; Beacon-aug Opensource-09142021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Beacon-aug
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Opensource-09142021
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API.html">Operator APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../properties.html">Property APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trouble%20shooting.html">Trouble shooting</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Beacon-aug</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>beacon_aug.operators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for beacon_aug.operators</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright 2021 Adobe</span>
+<span class="c1"># All Rights Reserved.</span>
+
+<span class="c1"># NOTICE: Adobe permits you to use, modify, and distribute this file in</span>
+<span class="c1"># accordance with the terms of the Adobe license agreement accompanying</span>
+<span class="c1"># it.</span>
+
+<span class="kn">from</span> <span class="nn">beacon_aug.generator.operator_generator</span> <span class="kn">import</span> <span class="n">Operator_generator</span>
+<span class="kn">import</span> <span class="nn">beacon_aug.generator.custom</span> <span class="k">as</span> <span class="nn">custom</span>
+<span class="kn">import</span> <span class="nn">beacon_aug.generator.gan_based</span> <span class="k">as</span> <span class="nn">gan_based</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">beacon_aug.generator.docs_generator</span> <span class="kn">import</span> <span class="n">generate_doc</span>
+
+<span class="n">for_website</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<div class="viewcode-block" id="class_definition"><a class="viewcode-back" href="../../API.html#beacon_aug.operators.class_definition">[docs]</a><span class="k">def</span> <span class="nf">class_definition</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>  <span class="n">library</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Operator_generator</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="n">library</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<span class="sd">&quot;&quot;&quot; Standard operator wrapper</span>
+<span class="sd"># dynamic class definition for all customize operators,</span>
+<span class="sd"># s.t. the operators can be called as BA.{standard_operator }(library = &quot;iaa&quot;)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="doc_definition"><a class="viewcode-back" href="../../API.html#beacon_aug.operators.doc_definition">[docs]</a><span class="k">def</span> <span class="nf">doc_definition</span><span class="p">(</span><span class="n">op_name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">generate_doc</span><span class="p">(</span><span class="n">op_name</span><span class="p">)</span></div>
+
+
+<span class="n">js_fnames</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span>
+                                   <span class="s2">&quot;./generator/standard/*.yaml&quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">js_f</span> <span class="ow">in</span> <span class="n">js_fnames</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">js_f</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+        <span class="n">standard_all</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;.json&quot;</span> <span class="ow">in</span> <span class="n">js_f</span> <span class="k">else</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">standard_all</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">op_name</span> <span class="ow">in</span> <span class="n">standard_all</span><span class="p">:</span>
+                <span class="nb">locals</span><span class="p">()[</span><span class="nb">str</span><span class="p">(</span><span class="n">op_name</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">op_name</span><span class="p">),</span>
+                                              <span class="p">(</span><span class="nb">object</span><span class="p">,),</span>
+                                              <span class="p">{</span><span class="s2">&quot;__new__&quot;</span><span class="p">:</span> <span class="n">class_definition</span><span class="p">,</span>
+                                               <span class="s2">&quot;__doc__&quot;</span><span class="p">:</span> <span class="n">doc_definition</span>
+                                               <span class="p">})</span>
+                <span class="k">if</span> <span class="n">for_website</span><span class="p">:</span>
+                    <span class="nb">locals</span><span class="p">()[</span><span class="nb">str</span><span class="p">(</span><span class="n">op_name</span><span class="p">)]</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">doc_definition</span><span class="p">(</span><span class="n">op_name</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot; Customize operator wrapper</span>
+<span class="sd"># dynamic class definition for all customize operators,</span>
+<span class="sd"># s.t. the operators can be called as BA.{customize_operator}(library = &quot;custom&quot;)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">for</span> <span class="n">op_name</span> <span class="ow">in</span> <span class="n">custom</span><span class="o">.</span><span class="n">__all__</span> <span class="o">+</span> <span class="n">gan_based</span><span class="o">.</span><span class="n">__all__</span><span class="p">:</span>
+    <span class="c1"># only add the operator names not appeared in standard</span>
+    <span class="k">if</span> <span class="n">op_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+        <span class="nb">locals</span><span class="p">()[</span><span class="nb">str</span><span class="p">(</span><span class="n">op_name</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">op_name</span><span class="p">),</span>
+                                      <span class="p">(</span><span class="nb">object</span><span class="p">,),</span>
+                                      <span class="p">{</span><span class="s2">&quot;__new__&quot;</span><span class="p">:</span> <span class="n">class_definition</span><span class="p">,</span>
+                                       <span class="s2">&quot;__doc__&quot;</span><span class="p">:</span> <span class="n">doc_definition</span>
+                                       <span class="p">})</span>
+        <span class="k">if</span> <span class="n">for_website</span><span class="p">:</span>
+            <span class="nb">locals</span><span class="p">()[</span><span class="nb">str</span><span class="p">(</span><span class="n">op_name</span><span class="p">)]</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">doc_definition</span><span class="p">(</span><span class="n">op_name</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Adobe.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

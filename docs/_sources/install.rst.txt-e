@@ -1,0 +1,50 @@
+Install
+=======
+
+
+
+
+How to install
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   pip install https://git.corp.adobe.com/adobe-research/beacon-aug
+
+
+How to develop
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+.. code-block:: bash
+
+   conda create -y -n aug python=3.7
+   conda activate aug
+
+   git clone git@git.corp.adobe.com:adobe-research/beacon-aug.git
+   cd beacon-aug
+   python setup.py develop   
+
+``import beacon_aug`` will now directly link to the package in the cloned directory, easing development.
+
+
+How to use
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+   import beacon_aug as BA
+   aug = BA.HorizontalFlip(p=1,  library="albumentations")
+   image_auged = aug(image=image)["image"]
+
+
+Check   `tutorials <https://git.corp.adobe.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_img.html>`_ for more examples:
+
+.. image:: ../docs/_images/compare_vis.png
+   :width: 300
+   :align: center
+
+.. image:: ../docs/_images/Brightnessaug_library-screenshot.png
+   :width: 700
+   :align: center

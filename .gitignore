@@ -3,7 +3,7 @@
 #gh-pages
 _sphinx
 doc_writers
-docs
+# docs
 benchmark/properties.yaml
 
 # https://github.com/github/gitignore/blob/master/Python.gitignore

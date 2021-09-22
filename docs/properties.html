@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Property APIs &mdash; Beacon-aug Opensource-09142021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Properties and Performance" href="performance.html" />
+    <link rel="prev" title="Operator APIs" href="API.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Beacon-aug
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Opensource-09142021
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">Operator APIs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Property APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble shooting</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Beacon-aug</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Property APIs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/properties.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-beacon_aug.properties">
+<span id="property-apis"></span><h1>Property APIs<a class="headerlink" href="#module-beacon_aug.properties" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="beacon_aug.properties.isAntiAliasing">
+<span class="sig-prename descclassname"><span class="pre">beacon_aug.properties.</span></span><span class="sig-name descname"><span class="pre">isAntiAliasing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BA_operator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">library</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolation</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/beacon_aug/properties.html#isAntiAliasing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#beacon_aug.properties.isAntiAliasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if <cite>op</cite> is anti aliasing. <a class="reference external" href="https://github.com/GaParmar/clean-fid">source Paper</a>
+Whether or not the operator is anti-alising  depends on the PSNR between original and rescaled images</p>
+<p>Contributed by <cite>Richard Zhang</cite>,</p>
+<p>e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">beacon_aug</span> <span class="k">as</span> <span class="nn">BA</span>
+<span class="n">BA</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">isAntiAliasing</span><span class="p">(</span><span class="n">BA</span><span class="o">.</span><span class="n">Resize</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span> <span class="s2">&quot;torchvision&quot;</span><span class="p">,</span><span class="n">interpolation</span> <span class="o">=</span> <span class="s2">&quot;linear&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="beacon_aug.properties.isOpDifferentiable">
+<span class="sig-prename descclassname"><span class="pre">beacon_aug.properties.</span></span><span class="sig-name descname"><span class="pre">isOpDifferentiable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">(2,</span> <span class="pre">3,</span> <span class="pre">8,</span> <span class="pre">8)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'cpu'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/beacon_aug/properties.html#isOpDifferentiable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#beacon_aug.properties.isOpDifferentiable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if <cite>op</cite> is differentiable. <a class="reference external" href="https://github.com/gist/holdgeof/22a496b76758cd9bfb690c8e88ac1c92">source</a></p>
+<p>Contributed by Yannick Hold-Geoffroy</p>
+<p>e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">beacon_aug</span> <span class="k">as</span> <span class="nn">BA</span>
+<span class="n">BA</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">isOpDifferentiable</span><span class="p">(</span><span class="n">op</span><span class="o">=</span><span class="n">BA</span><span class="o">.</span><span class="n">RandomCrop</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s2">&quot;torch&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="beacon_aug.properties.library_attributes">
+<span class="sig-prename descclassname"><span class="pre">beacon_aug.properties.</span></span><span class="sig-name descname"><span class="pre">library_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BA_operator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/beacon_aug/properties.html#library_attributes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#beacon_aug.properties.library_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visualize the augmentation result comparision to all available libraries</p>
+<p>e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">beacon_aug</span> <span class="k">as</span> <span class="nn">BA</span>
+<span class="n">attributes_result</span> <span class="o">=</span> <span class="n">library_attributes</span><span class="p">(</span><span class="n">BA</span><span class="o">.</span><span class="n">Add</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="beacon_aug.properties.set_seed">
+<span class="sig-prename descclassname"><span class="pre">beacon_aug.properties.</span></span><span class="sig-name descname"><span class="pre">set_seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/beacon_aug/properties.html#set_seed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#beacon_aug.properties.set_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set Random seed to control the replication of transformations</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="performance.html" class="btn btn-neutral float-right" title="Properties and Performance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="API.html" class="btn btn-neutral float-left" title="Operator APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Adobe.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

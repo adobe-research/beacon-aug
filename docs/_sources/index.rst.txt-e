@@ -1,0 +1,228 @@
+
+.. image:: images/logo.png
+   :align: center
+   :height: 140px
+
+Beacon-aug
+==========
+* Repo: `https://git.corp.adobe.com/adobe-research/beacon-aug <https://git.corp.adobe.com/adobe-research/beacon-aug>`_
+* A cross-library image augmentation module for deep learning training  
+
+
+Why Beacon_aug
+==============
+
+.. image:: ../docs/_images/flowchart.png
+   :width: 350
+   :align: center
+
+
+- Incorporate the largest number of image augmentation operations(~ **400**) from 8 popular libraries
+- `Seamless cross library exchanging <https://git.corp.adobe.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_img.html#2.-Result-comparision-for-all-backend-libraries>`_ over different libraries
+- Adobe `Featured customized functions <https://git.corp.adobe.com/pages/adobe-research/beacon-aug/operator%20overview.html#customized-operators>`_  of both **parametric** and **GAN based** transformations designed by Adobe Researchers
+- Run external `AI function inferencing <https://git.corp.adobe.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_GAN_base.html>`_ as easy as general augmentation  
+- `Advanced transformation pipelines <https://git.corp.adobe.com/pages/adobe-research/beacon-aug/operator%20overview.html#advanced-operators>`_ for complex tasks (e.g. segmentation, detection, GAN training, network robustness)
+- Support various input formats : `np.array,PIL <https://git.corp.adobe.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_img.html>`_ , `Torch.tensor <https://git.corp.adobe.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_torch.html>`_ 
+- Extend the high-level  attributes from `Albumentations` to other libraries by dynamic loading
+- `Differentiable check, anti-aliasing  <https://git.corp.adobe.com/pages/adobe-research/beacon-aug/properties.html>`_ for operators
+- `Fast-visualization <https://git.corp.adobe.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_img.html#4.-Display-a-fast-screenshot-of-the-pipeline>`_ of the augmentation pipeline
+- Easy to add customized functions for `public contributors <https://git.corp.adobe.com/pages/adobe-research/beacon-aug/contribute.html#propose-your-customize-functions>`_
+
+.. list-table:: 
+   :widths: 25 25 25 25 25 25 25  25 25 25 
+   :header-rows: 1
+   :class: tight-table   
+
+   * - Library
+     - Beacon_Aug
+     - `Imgaug <https://imgaug.readthedocs.io/en/latest/>`_
+     - `Albumentations <https://github.com/albumentations-team/albumentations>`_
+     - `torchvision <https://github.com/pytorch/vision/blob/master/torchvision/transforms/transforms.py>`_
+     - `Keras <https://github.com/keras-team/keras-preprocessing>`_
+     - `Augly <https://github.com/facebookresearch/AugLy>`_ 
+     - `mmcv <https://mmcv.readthedocs.io/en/latest/get_started/introduction.html>`_
+     - `ImageNet-C <https://github.com/hendrycks/robustness/tree/305054464935cdf4c5f182f1387a1cc506854d49>`_ 
+     - `kornia <https://github.com/kornia/kornia>`_ 
+   * - Image
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+   * - Mask
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - ✓
+     - x
+     - ✓
+   * - Bounding Box
+     - ✓
+     - ✓
+     - ✓
+     - x
+     - x
+     - x
+     - ✓
+     - x
+     - x
+   * - Keypoints
+     - ✓
+     - ✓
+     - ✓
+     - x
+     - x
+     - x
+     - ✓
+     - x
+     - x
+   * - Paired Transformation
+     - ✓
+     - ✓
+     - ✓
+     - x
+     - x
+     - x
+     - ✓
+     - x
+     - x
+   * - Parameter Outputs
+     - ✓
+     - x
+     - ✓
+     - x
+     - x
+     - x
+     - ✓
+     - x
+     - x
+   * - Differentiable
+     - ✓
+     - x
+     - x
+     - ✓
+     - x
+     - x
+     - x
+     - x
+     - ✓
+   * - Customized Function
+     - ✓
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+   * - GAN-based Function
+     - ✓
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+   * - `AutoAugment <https://arxiv.org/pdf/1805.09501.pdf>`_
+     - ✓
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+   * - `RandAug <https://arxiv.org/abs/1909.13719>`_
+     - ✓
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+     - x
+   * - Num of Transformations
+     - >378
+     - 107
+     - 70
+     - 37
+     - 11
+     - 31
+     - 
+     - 19
+     - 
+   * - Cross Library  Supports
+     - | Imgaug,Torch, 
+       | Keras,Augly, 
+       | Imagenet-c,mmcv,
+       | Albumentations
+     - | CV2, PIL,
+       | Skimage
+     - | CV2, Imgaug
+       | Torch
+     - PIL
+     - PIL
+     - PIL
+     - PIL
+     - PIL
+     - Torch
+   * - Average Run Time
+     - Depend on libraries
+     - 13.6 ms
+     - 2.1 ms
+     - 5.2 ms
+     - 59.3 ms
+     - 25.3 ms
+     - 
+     - 
+     - 
+
+
+
+Contributors
+~~~~~~~~~~~~~
+
+Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm, Krishna kumar Singh,  Zhifei Zhang, Richard Zhang, Maksym Andriushchenko
+
+
+Manual
+======
+
+.. toctree::
+   :maxdepth: 2
+
+   install
+   operator overview
+   ipynbs/tutorial_img.ipynb
+   ipynbs/tutorial_torch.ipynb
+   ipynbs/BA2mmcv.ipynb
+   ipynbs/tutorial_gan_based.ipynb
+   ipynbs/tutorial_imagenet_c.ipynb
+   ipynbs/aliasing-discussion.ipynb
+   API
+   properties
+   performance
+   contribute
+   trouble shooting
+
+.. py:module:: beacon_aug
+
+.. toctree::
+   :maxdepth: 2
+
+
+
+
+
