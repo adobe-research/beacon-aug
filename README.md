@@ -111,3 +111,15 @@ Trouble Shooting
 
 -   Check [here](https://adobe-research.github.io/beacon-aug/trouble%20shooting.html) 
 -   If you have troubles not solved, try the `prune` version by simply reinstall `beacon-aug`  replacing  `requirements.txt` with `requirements_prune.txt` in a new virtual environment
+
+
+
+Citation
+=======
+@misc{imgaug,
+  author = {Xiaoyang Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm, Krishna kumar Singh, Zhifei Zhang, Richard Zhang, Maksym Andriushchenko, and others},
+  title = {Beacon-aug: A cross-library image augmentation toolbox.},
+  howpublished = {\url{https://github.com/adobe-research/beacon-aug}},
+  year = {2021},
+  note = {Online; accessed Sep-22-2021}
+}
