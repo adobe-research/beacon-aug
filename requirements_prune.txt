@@ -1,0 +1,28 @@
+# basics
+ipykernel
+numpy
+cython
+numpy
+matplotlib
+pandas
+json5
+PyYAML
+
+# backend library:
+albumentations
+imgaug==0.4.0
+Keras-Preprocessing==1.1.2
+torchvision==0.10
+# ## Augly
+# Pillow>=8.2.0
+# python-magic
+# augly
+# ## Mmmcv
+# mmcv
+# Pandoc
+##imagenet-c
+opencv-python~=3.4
+# wand
+# imagenet-c 
+# # customize
+# freetype-py
