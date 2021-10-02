@@ -17,7 +17,7 @@ Why Beacon_aug
    :align: center
 
 
-- Incorporate the largest number of image augmentation operations(~ **400**) from 8 popular libraries
+- Incorporate the largest number of image augmentation operations(> **300**) from 8 popular libraries
 - `Seamless cross library exchanging <https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_img.html#2.-Result-comparision-for-all-backend-libraries>`_ over different libraries
 - Adobe `Featured customized functions <https://github.com/pages/adobe-research/beacon-aug/operator%20overview.html#customized-operators>`_  of both **parametric** and **GAN based** transformations designed by Adobe Researchers
 - Run external `AI function inferencing <https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_GAN_base.html>`_ as easy as general augmentation  
@@ -116,7 +116,7 @@ Why Beacon_aug
    * - Customized Function
      - ✓
      - x
-     - x
+     - ✓
      - x
      - x
      - x
@@ -194,8 +194,8 @@ Why Beacon_aug
 Contributors
 ~~~~~~~~~~~~~
 
-Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm, Krishna kumar Singh,  Zhifei Zhang, Richard Zhang, Maksym Andriushchenko
-
+- Main module building:    Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm
+- Customized functions and advanced properties contributing:   Richard Zhang, Maksym Andriushchenko, Krishna Kumar Singh, Zhifei Zhang
 
 Manual
 ======
@@ -204,18 +204,20 @@ Manual
    :maxdepth: 2
 
    install
-   operator overview
    ipynbs/tutorial_img.ipynb
    ipynbs/tutorial_torch.ipynb
    ipynbs/BA2mmcv.ipynb
    ipynbs/tutorial_gan_based.ipynb
    ipynbs/tutorial_imagenet_c.ipynb
+   ipynbs/tutorial_random_control.ipynb
    ipynbs/aliasing-discussion.ipynb
-   API
+   operator overview
    properties
    performance
    contribute
    trouble shooting
+   citation
+   API
 
 .. py:module:: beacon_aug
 

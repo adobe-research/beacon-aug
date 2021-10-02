@@ -94,18 +94,20 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_random_control.html">Tutorial: Random Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
-<li class="toctree-l1"><a class="reference internal" href="API.html">Operator APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="properties.html">Property APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble Shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
 </ul>
 
             
@@ -209,7 +211,7 @@
 <h1>Why Beacon_aug<a class="headerlink" href="#why-beacon-aug" title="Permalink to this headline">¶</a></h1>
 <a class="reference internal image-reference" href="_images/flowchart.png"><img alt="_images/flowchart.png" class="align-center" src="_images/flowchart.png" style="width: 350px;" /></a>
 <ul class="simple">
-<li><p>Incorporate the largest number of image augmentation operations(~ <strong>400</strong>) from 8 popular libraries</p></li>
+<li><p>Incorporate the largest number of image augmentation operations(&gt; <strong>300</strong>) from 8 popular libraries</p></li>
 <li><p><a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_img.html#2.-Result-comparision-for-all-backend-libraries">Seamless cross library exchanging</a> over different libraries</p></li>
 <li><p>Adobe <a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/operator%20overview.html#customized-operators">Featured customized functions</a>  of both <strong>parametric</strong> and <strong>GAN based</strong> transformations designed by Adobe Researchers</p></li>
 <li><p>Run external <a class="reference external" href="https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_GAN_base.html">AI function inferencing</a> as easy as general augmentation</p></li>
@@ -327,7 +329,7 @@
 <tr class="row-odd"><td><p>Customized Function</p></td>
 <td><p>✓</p></td>
 <td><p>x</p></td>
-<td><p>x</p></td>
+<td><p>✓</p></td>
 <td><p>x</p></td>
 <td><p>x</p></td>
 <td><p>x</p></td>
@@ -419,7 +421,10 @@
 </table>
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
-<p>Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm, Krishna kumar Singh,  Zhifei Zhang, Richard Zhang, Maksym Andriushchenko</p>
+<ul class="simple">
+<li><p>Main module building:    Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm</p></li>
+<li><p>Customized functions and advanced properties contributing:   Richard Zhang, Maksym Andriushchenko, Krishna Kumar Singh, Zhifei Zhang</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="manual">
@@ -430,11 +435,6 @@
 <li class="toctree-l2"><a class="reference internal" href="install.html#how-to-install">How to install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#how-to-develop">How to develop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#how-to-use">How to use</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="operator%20overview.html#basic-operators">Basic Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operator%20overview.html#advanced-operators">Advanced Operators</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a><ul>
@@ -469,15 +469,28 @@
 <li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html#3.-Run-2-layers-of-“benign”-transformations">3. Run 2 layers of “benign” transformations</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_random_control.html">Tutorial: Random Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_random_control.html#1.-No-random-control">1. No random control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_random_control.html#2.-With-hard-random-control:">2. With hard random control:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipynbs/tutorial_random_control.html#3.-With-soft-random-control:">3. With soft random control:</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ipynbs/aliasing-discussion.html#1.-Discussion-on-“resize”-operator">1. Discussion on “resize” operator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ipynbs/aliasing-discussion.html#2.-Discussion-on-“affine-transform”-operator">2. Discussion on “affine transform” operator</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="API.html">Operator APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="properties.html">Property APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">Properties and Performance</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="performance.html#differentiable-summary">Differentiable Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="operator%20overview.html#basic-operators">Basic Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator%20overview.html#advanced-operators">Advanced Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="properties.html#module-beacon_aug.properties">Property APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html#differentiable-summary">Differentiable Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="performance.html#runtime-summary">Runtime Summary</a></li>
 </ul>
 </li>
@@ -487,11 +500,20 @@
 <li class="toctree-l2"><a class="reference internal" href="contribute.html#contribute-to-the-repo">Contribute to the repo</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble shooting</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble Shooting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="trouble%20shooting.html#a-affine-not-working">A.Affine not working</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trouble%20shooting.html#libmagic-installation-failed">libmagic installation failed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trouble%20shooting.html#magickwand-library-not-found">MagickWand  library not found</a></li>
-<li class="toctree-l2"><a class="reference internal" href="trouble%20shooting.html#problem-not-solved">Problem not solved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trouble%20shooting.html#problem-not-solved-prune">Problem not solved: prune</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="citation.html#beacon-aug">beacon-aug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="citation.html#related-citations">Related Citations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="API.html#module-beacon_aug.operators">Operator APIs</a></li>
 </ul>
 </li>
 </ul>

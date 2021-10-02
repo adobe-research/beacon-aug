@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Trouble shooting &mdash; Beacon-aug Opensource-09142021 documentation</title>
+  <title>Trouble Shooting &mdash; Beacon-aug Opensource-09142021 documentation</title>
   
 
   
@@ -43,6 +43,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Citation" href="citation.html" />
     <link rel="prev" title="Contribute" href="contribute.html" /> 
 </head>
 
@@ -94,24 +95,26 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_random_control.html">Tutorial: Random Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
-<li class="toctree-l1"><a class="reference internal" href="API.html">Operator APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="properties.html">Property APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Trouble shooting</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Trouble Shooting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#a-affine-not-working">A.Affine not working</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#libmagic-installation-failed">libmagic installation failed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#magickwand-library-not-found">MagickWand  library not found</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#problem-not-solved">Problem not solved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#problem-not-solved-prune">Problem not solved: prune</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
 </ul>
 
             
@@ -160,7 +163,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Trouble shooting</li>
+      <li>Trouble Shooting</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -204,7 +207,7 @@
 }
 </style>
 <div class="section" id="trouble-shooting">
-<h1>Trouble shooting<a class="headerlink" href="#trouble-shooting" title="Permalink to this headline">¶</a></h1>
+<h1>Trouble Shooting<a class="headerlink" href="#trouble-shooting" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="a-affine-not-working">
 <h2>A.Affine not working<a class="headerlink" href="#a-affine-not-working" title="Permalink to this headline">¶</a></h2>
 <ul>
@@ -251,11 +254,13 @@ brew reinstall imagemagick
 <li><p>Check detail: <a class="reference external" href="https://docs.wand-py.org/en/latest/guide/install.html#install-imagemagick-on-windows">https://docs.wand-py.org/en/latest/guide/install.html#install-imagemagick-on-windows</a></p></li>
 </ul>
 </div>
-<div class="section" id="problem-not-solved">
-<h2>Problem not solved<a class="headerlink" href="#problem-not-solved" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="problem-not-solved-prune">
+<h2>Problem not solved: prune<a class="headerlink" href="#problem-not-solved-prune" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Problem: other problem still not solved</p></li>
-<li><p>try this  <cite>prune</cite> version of package that minumized the prerequisites: <a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/prune">https://github.com/adobe-research/beacon-aug/tree/prune</a></p></li>
+<li><p>try the prune version by simply reinstall beacon-aug replacing <cite>requirements.txt</cite> with <cite>requirements_prune.txt</cite> in a new virtual environment</p></li>
+<li><p>The backend library will not be available unless the dependency is installed, so you can simply remove the library dependency that your don’t need</p></li>
+<li><p>Check detail: <a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/generator/__init__.py">https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/generator/__init__.py</a></p></li>
 </ul>
 </div>
 </div>
@@ -266,6 +271,7 @@ brew reinstall imagemagick
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="citation.html" class="btn btn-neutral float-right" title="Citation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="contribute.html" class="btn btn-neutral float-left" title="Contribute" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

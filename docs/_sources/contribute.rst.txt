@@ -17,7 +17,7 @@ Propose your customize functions
 
 * Name: Class name has to be the same with python file name
 
-  * if classname exist in json file in `standard <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/standard>`_ :
+  * if classname exist in json file in `standard <https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/standard>`_ :
 
     * append a ``custom`` library function to the existing beacon_aug class
 
@@ -25,7 +25,7 @@ Propose your customize functions
 
     * create a beacon_aug class with the same name that only support the ``custom`` library
 
-See example in `KeepSizeCrop.py <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/KeepSizeCrop.py>`_
+See example in `KeepSizeCrop.py <https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/KeepSizeCrop.py>`_
 
 Test the operator function itself:    
 

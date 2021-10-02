@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorial: Use on images" href="ipynbs/tutorial_img.html" />
-    <link rel="prev" title="Install" href="install.html" /> 
+    <link rel="next" title="Properties" href="properties.html" />
+    <link rel="prev" title="Discussion: Anti-aliasing Effect" href="ipynbs/aliasing-discussion.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,6 +95,13 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_random_control.html">Tutorial: Random Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Operator Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#basic-operators">Basic Operators</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#customized-operators">Customized Operators</a></li>
@@ -104,17 +111,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#advanced-operators">Advanced Operators</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
-<li class="toctree-l1"><a class="reference internal" href="API.html">Operator APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="properties.html">Property APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble Shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
 </ul>
 
             
@@ -213,7 +215,7 @@
 <div class="section" id="customized-operators">
 <h3>Customized Operators<a class="headerlink" href="#customized-operators" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>check this <a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom">instructions</a> to add customized functions</p></li>
+<li><p>check this <a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom">instructions</a> to add customized functions</p></li>
 </ul>
 <ul class="simple">
 <li><p>Contributors:</p>
@@ -235,11 +237,11 @@
 <col style="width: 20%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/KeepSizeCrop.py">KeepSizeCrop</a></p></th>
-<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/TextFlow.py">TextFlow</a></p></th>
-<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/HidePatch.py">HidePatch</a></p></th>
-<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/JpegCompression.py">JpegCompression</a></p></th>
-<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/OverlayText.py">OverlayText</a></p></th>
+<tr class="row-odd"><th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/KeepSizeCrop.py">KeepSizeCrop</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/TextFlow.py">TextFlow</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/HidePatch.py">HidePatch</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/JpegCompression.py">JpegCompression</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/OverlayText.py">OverlayText</a></p></th>
 </tr>
 </thead>
 <tbody>
@@ -260,48 +262,11 @@
 <div class="section" id="standard-operators">
 <h3>Standard Operators:<a class="headerlink" href="#standard-operators" title="Permalink to this headline">¶</a></h3>
 <p>Beacon_aug support all the operators in all standard libraries</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 15%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Number of Transformations</p></th>
-<th class="head"><p>albumentations</p></th>
-<th class="head"><p>imgaug</p></th>
-<th class="head"><p>torchvision</p></th>
-<th class="head"><p>keras</p></th>
-<th class="head"><p>augly</p></th>
-<th class="head"><p>mmcv</p></th>
-<th class="head"><p>imagenetc</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Support one library</p></td>
-<td><p>37</p></td>
-<td><p>37</p></td>
-<td><p>26</p></td>
-<td><p>5</p></td>
-<td><p>18</p></td>
-<td><p>6</p></td>
-<td><p>14</p></td>
-</tr>
-<tr class="row-odd"><td><p>Support multiple libraries</p></td>
-<td colspan="7"><p>235</p></td>
-</tr>
-</tbody>
-</table>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BA</span><span class="o">.</span><span class="p">{</span><span class="n">StandardOperator</span><span class="p">}(</span><span class="n">library</span><span class="o">=</span><span class="p">{</span><span class="n">library</span><span class="p">}})</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Check <a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/standard/library_remain.yaml">this list</a> for the operators supporting <strong>one</strong> library</p></li>
+<li><p>Check <a class="reference external" href="https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/standard/library_remain.yaml">this list</a> for the operators supporting <strong>one</strong> library</p></li>
 <li><p>Check the chart blow for the operators supporting <strong>multiple</strong> libraries</p></li>
 </ul>
 <table class="docutils align-default">
@@ -969,7 +934,7 @@
 <div class="section" id="advanced-operators">
 <h2>Advanced Operators<a class="headerlink" href="#advanced-operators" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Check  <a class="reference external" href="../docs/ipynbs/tutorial_img.html#7.-Example-of-AutoAugment">here</a> for user instruction</p></li>
+<li><p>Check  <a class="reference external" href="ipynbs/tutorial_img.html#7.-Example-of-AutoAugment">here</a> for user instruction</p></li>
 </ul>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -982,23 +947,23 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/autoaugment.py">AutoAugment</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/advanced/autoaugment.py">AutoAugment</a></p></td>
 <td><img alt="_images/autoaugment.png" src="_images/autoaugment.png" />
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/randaugment.py">RandAugment</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/advanced/randaugment.py">RandAugment</a></p></td>
 <td><img alt="_images/RandAugment.png" src="_images/RandAugment.png" />
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/collections.py">ColorJitter</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/advanced/collections.py">ColorJitter</a></p></td>
 <td><img alt="_images/collections-color.png" src="_images/collections-color.png" />
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/collections.py">GeometricJitter</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/advanced/collections.py">GeometricJitter</a></p></td>
 <td><img alt="_images/collections-geometric.png" src="_images/collections-geometric.png" />
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/benign_transforms.py">Benign Transformations</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/advanced/benign_transforms.py">Benign Transformations</a></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -1012,8 +977,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="ipynbs/tutorial_img.html" class="btn btn-neutral float-right" title="Tutorial: Use on images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="properties.html" class="btn btn-neutral float-right" title="Properties" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ipynbs/aliasing-discussion.html" class="btn btn-neutral float-left" title="Discussion: Anti-aliasing Effect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

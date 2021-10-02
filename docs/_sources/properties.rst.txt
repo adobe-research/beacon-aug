@@ -1,7 +1,553 @@
-Property APIs
+Properties
 =============================
+
+
+Property APIs
+----------------------------------
+
 
 .. automodule:: beacon_aug.properties
     :members:
     :undoc-members:
     :show-inheritance:
+
+
+
+Differentiable Summary
+--------------------------------
+
+* Check  `tutorial_tensor.ipynb <https://github.com/pages/adobe-research/beacon-aug/ipynbs/tutorial_torch.html>`_ for how to use differentiable operators
+
+.. list-table::
+   :header-rows: 1
+
+   * - Library
+     - albumentations
+     - imgaug
+     - torchvision
+     - keras
+     - augly
+     - mmcv
+     - imagenet_c
+     - kornia
+     - custom
+   * - Affine
+     - x
+     - x
+     - ✓
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - Autocontrast
+     - 
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - Blur
+     - x
+     - x
+     - 
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+   * - Brightness
+     - x
+     - x
+     - ✓
+     - x
+     - x
+     - 
+     - x
+     - 
+     - 
+   * - CLAHE
+     - x
+     - x
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+     - 
+   * - CenterCrop
+     - x
+     - 
+     - ✓
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - ChannelShuffle
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - CoarseDropout
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - ColorJitter
+     - x
+     - 
+     - ✓
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+   * - Contrast
+     - x
+     - x
+     - ✓
+     - 
+     - x
+     - 
+     - x
+     - 
+     - 
+   * - Crop
+     - 
+     - x
+     - 
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+   * - CropAndPad
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - Cutout
+     - x
+     - x
+     - ✓
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - ElasticTransform
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+   * - Emboss
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - Equalize
+     - x
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - Fog
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+   * - GaussianBlur
+     - x
+     - x
+     - ✓
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+   * - GaussianNoise
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+   * - GlassBlur
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+   * - Grayscale
+     - 
+     - x
+     - ✓
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+   * - HidePatch
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - x
+   * - HorizontalFlip
+     - x
+     - x
+     - ✓
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+   * - ImpulseNoise
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+   * - Invert
+     - x
+     - x
+     - ✓
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - JpegCompression
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - x
+   * - KeepSizeCrop
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - x
+   * - Lambda
+     - x
+     - x
+     - x
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+   * - MedianBlur
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - MotionBlur
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+   * - Normalize
+     - x
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+     - 
+   * - OverlayText
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+     - 
+     - x
+   * - Pad
+     - 
+     - x
+     - ✓
+     - 
+     - x
+     - x
+     - 
+     - 
+     - 
+   * - PerspectiveTransform
+     - 
+     - x
+     - 
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+   * - PiecewiseAffine
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - Pixelization
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - x
+     - 
+     - 
+   * - Posterize
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - RandomCrop
+     - x
+     - x
+     - ✓
+     - 
+     - 
+     - x
+     - 
+     - 
+     - 
+   * - RandomGrayscale
+     - 
+     - 
+     - ✓
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - RandomResizedCrop
+     - x
+     - 
+     - ✓
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - RandomSizedCrop
+     - x
+     - 
+     - ✓
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - Resize
+     - x
+     - x
+     - ✓
+     - 
+     - x
+     - x
+     - 
+     - 
+     - 
+   * - Rotate
+     - x
+     - x
+     - ✓
+     - x
+     - x
+     - x
+     - 
+     - 
+     - 
+   * - Saturation
+     - x
+     - x
+     - ✓
+     - 
+     - x
+     - 
+     - x
+     - 
+     - 
+   * - Scale
+     - 
+     - 
+     - ✓
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+   * - Sharpen
+     - x
+     - x
+     - ✓
+     - 
+     - x
+     - 
+     - 
+     - 
+     - 
+   * - ShotNoise
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+   * - Snow
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - x
+     - 
+     - 
+   * - Solarize
+     - x
+     - x
+     - ✓
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - Superpixels
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+   * - TextFlow
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - 
+     - x
+   * - VerticalFlip
+     - x
+     - x
+     - ✓
+     - x
+     - x
+     - 
+     - 
+     - 
+     - 

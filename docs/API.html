@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Operator APIs &mdash; Beacon-aug Opensource-09142021 documentation</title>
+  <title>API &mdash; Beacon-aug Opensource-09142021 documentation</title>
   
 
   
@@ -43,8 +43,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Property APIs" href="properties.html" />
-    <link rel="prev" title="Discussion: Anti-aliasing Effect" href="ipynbs/aliasing-discussion.html" /> 
+    <link rel="prev" title="Citation" href="citation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,18 +94,23 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_random_control.html">Tutorial: Random Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Operator APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="properties.html">Property APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble Shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-beacon_aug.operators">Operator APIs</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -155,7 +159,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Operator APIs</li>
+      <li>API</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -198,10 +202,12 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="operator-apis">
-<h1>Operator APIs<a class="headerlink" href="#operator-apis" title="Permalink to this headline">¶</a></h1>
-<p>The following documentations are  automatically extracted from the corresponding original backend libraries.</p>
-<span class="target" id="module-beacon_aug.operators"></span><dl class="py class">
+<div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<p>The following documentations are automatically extracted from the corresponding original backend libraries.</p>
+<div class="section" id="module-beacon_aug.operators">
+<span id="operator-apis"></span><h2>Operator APIs<a class="headerlink" href="#module-beacon_aug.operators" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
 <dt class="sig sig-object py" id="beacon_aug.operators.Add">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">beacon_aug.operators.</span></span><span class="sig-name descname"><span class="pre">Add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">library</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#beacon_aug.operators.Add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -3548,7 +3554,7 @@ image is visible, at <code class="docutils literal notranslate"><span class="pre
 <dt class="sig sig-object py" id="beacon_aug.operators.ElasticTransform">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">beacon_aug.operators.</span></span><span class="sig-name descname"><span class="pre">ElasticTransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">library</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#beacon_aug.operators.ElasticTransform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Elastic deformation of images as described in <a class="reference internal" href="operators.html#simard2003" id="id85"><span>[Simard2003]</span></a> (with modifications).
+<p>Elastic deformation of images as described in <a class="reference internal" href="#simard2003" id="id85"><span>[Simard2003]</span></a> (with modifications).
 Based on <a class="reference external" href="https://gist.github.com/erniejunior/601cdf56d2b424757de5">https://gist.github.com/erniejunior/601cdf56d2b424757de5</a></p>
 <dl class="citation">
 <dt class="label" id="simard2003"><span class="brackets"><a class="fn-backref" href="#id85">Simard2003</a></span></dt>
@@ -10456,6 +10462,7 @@ to polar representation.</p>
 <dd></dd></dl>
 
 </div>
+</div>
 
 
            </div>
@@ -10463,8 +10470,7 @@ to polar representation.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="properties.html" class="btn btn-neutral float-right" title="Property APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="ipynbs/aliasing-discussion.html" class="btn btn-neutral float-left" title="Discussion: Anti-aliasing Effect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="citation.html" class="btn btn-neutral float-left" title="Citation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

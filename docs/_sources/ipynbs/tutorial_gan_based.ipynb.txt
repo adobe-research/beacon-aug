@@ -17,7 +17,7 @@
     "```\n",
     "\n",
     "## 2. Generate an inferencing function \n",
-    "Check the example in [beacon_aug/generator/gan_based/Stylemix.py](https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/gan_based/Stylemix.py)\n",
+    "Check the example in [beacon_aug/generator/gan_based/Stylemix.py](https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/gan_based/Stylemix.py)\n",
     "\n",
     "## 3. Run augmentation in `beacon-aug`\n",
     "\n"

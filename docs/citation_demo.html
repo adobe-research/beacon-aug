@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Citation &mdash; Beacon-aug Opensource-09142021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Beacon-aug
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Opensource-09142021
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_img.html">Tutorial: Use on images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_torch.html">Tutorial: Use on tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/tutorial_random_control.html">Tutorial: Random Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipynbs/aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trouble%20shooting.html">Trouble Shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Beacon-aug</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Citation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/citation_demo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="citation">
+<h1>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="beacon-aug">
+<h2>beacon-aug<a class="headerlink" href="#beacon-aug" title="Permalink to this headline">¶</a></h2>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>bibtex</p>
+<dl class="simple">
+<dt>&#64;misc{beacon-aug2021,</dt><dd><p>author = {Xiaoyang Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm, Krishna kumar Singh, Zhifei Zhang, Richard Zhang, Maksym Andriushchenko, and others},
+title = {Beacon-aug: A cross-library image augmentation toolbox.},
+howpublished = {url{<a class="reference external" href="https://github.com/adobe-research/beacon-aug">https://github.com/adobe-research/beacon-aug</a>}},
+year = {2021},
+note = {Online; accessed Sep-22-2021}</p>
+</dd>
+</dl>
+<p>}</p>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+</div>
+<div class="section" id="related-citations">
+<h2>Related Citations<a class="headerlink" href="#related-citations" title="Permalink to this headline">¶</a></h2>
+<p><cite>Beacon_aug</cite> was heavily inspired by the following great projects, welcome to cite their work as well:</p>
+<ul class="simple">
+<li><p>Albumentations</p></li>
+</ul>
+<p><a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a>bibtex
+&#64;Article{info11020125,</p>
+<blockquote>
+<div><p>AUTHOR = {Buslaev, Alexander and Iglovikov, Vladimir I. and Khvedchenya, Eugene and Parinov, Alex and Druzhinin, Mikhail and Kalinin, Alexandr A.},
+TITLE = {Albumentations: Fast and Flexible Image Augmentations},
+JOURNAL = {Information},
+VOLUME = {11},
+YEAR = {2020},
+NUMBER = {2},
+ARTICLE-NUMBER = {125},
+URL = {<a class="reference external" href="https://www.mdpi.com/2078-2489/11/2/125">https://www.mdpi.com/2078-2489/11/2/125</a>},
+ISSN = {2078-2489},
+DOI = {10.3390/info11020125}</p>
+</div></blockquote>
+<div class="section" id="id13">
+<h3>}<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>imgaug</p></li>
+</ul>
+<p><a href="#id14"><span class="problematic" id="id15">``</span></a><a href="#id16"><span class="problematic" id="id17">`</span></a>bibtex
+&#64;misc{imgaug,</p>
+<blockquote>
+<div><dl class="simple">
+<dt>author = {Jung, Alexander B.</dt><dd><p>and Wada, Kentaro
+and Crall, Jon
+and Tanaka, Satoshi
+and Graving, Jake
+and Reinders, Christoph
+and Yadav, Sarthak
+and Banerjee, Joy
+and Vecsei, Gábor
+and Kraft, Adam
+and Rui, Zheng
+and Borovec, Jirka
+and Vallentin, Christian
+and Zhydenko, Semen
+and Pfeiffer, Kilian
+and Cook, Ben
+and Fernández, Ismael
+and De Rainville, François-Michel
+and Weng, Chi-Hung
+and Ayala-Acevedo, Abner
+and Meudec, Raphael
+and Laporte, Matias
+and others},</p>
+</dd>
+</dl>
+<p>title = {{imgaug}},
+howpublished = {url{<a class="reference external" href="https://github.com/aleju/imgaug">https://github.com/aleju/imgaug</a>}},
+year = {2020},
+note = {Online; accessed 01-Feb-2020}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id18">
+<h3>}<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Torchvision</p></li>
+</ul>
+<p><a href="#id19"><span class="problematic" id="id20">``</span></a><a href="#id21"><span class="problematic" id="id22">`</span></a>bibtex
+&#64;techreport{collobert2002torch,</p>
+<blockquote>
+<div><p>title={Torch: a modular machine learning software library},
+author={Collobert, Ronan and Bengio, Samy and Mari{'e}thoz, Johnny},
+year={2002},
+institution={Idiap}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id23">
+<h3>}<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<p><a href="#id24"><span class="problematic" id="id25">``</span></a><a href="#id26"><span class="problematic" id="id27">`</span></a>bibtex
+&#64;inproceedings{marcel2010torchvision,</p>
+<blockquote>
+<div><p>title={Torchvision the machine-vision package of torch},
+author={Marcel, S{'e}bastien and Rodriguez, Yann},
+booktitle={Proceedings of the 18th ACM international conference on Multimedia},
+pages={1485–1488},
+year={2010}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id28">
+<h3>}<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Keras</p></li>
+</ul>
+<p><a href="#id29"><span class="problematic" id="id30">``</span></a><a href="#id31"><span class="problematic" id="id32">`</span></a>bibtex
+&#64;book{chollet2017deep,</p>
+<blockquote>
+<div><p>title={Deep learning with Python},
+author={Chollet, Francois},
+year={2017},
+publisher={Simon and Schuster}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id33">
+<h3>}<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Augly</p></li>
+</ul>
+<p><a href="#id34"><span class="problematic" id="id35">``</span></a><a href="#id36"><span class="problematic" id="id37">`</span></a>bibtex
+&#64;misc{bitton2021augly,</p>
+<blockquote>
+<div><p>author       = {Joanna Bitton and Zoe Papakipos},
+title        = {AugLy: A data augmentations library for audio, image, text, and video.},
+year         = {2021},
+howpublished = {url{<a class="reference external" href="https://github.com/facebookresearch/AugLy">https://github.com/facebookresearch/AugLy</a>}},
+doi          = {10.5281/zenodo.5014032}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id38">
+<h3>}<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>mmcv</p></li>
+</ul>
+<p><a href="#id39"><span class="problematic" id="id40">``</span></a><a href="#id41"><span class="problematic" id="id42">`</span></a>bibtex
+&#64;misc{mmcv,</p>
+<blockquote>
+<div><p>title={{MMCV: OpenMMLab} Computer Vision Foundation},
+author={MMCV Contributors},
+howpublished = {url{<a class="reference external" href="https://github.com/open-mmlab/mmcv">https://github.com/open-mmlab/mmcv</a>}},
+year={2018}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id43">
+<h3>}<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Imagenet-c</p></li>
+</ul>
+<p><a href="#id44"><span class="problematic" id="id45">``</span></a><a href="#id46"><span class="problematic" id="id47">`</span></a>bibtex
+&#64;article{hendrycks2019robustness,</p>
+<blockquote>
+<div><p>title={Benchmarking Neural Network Robustness to Common Corruptions and Perturbations},
+author={Dan Hendrycks and Thomas Dietterich},
+journal={Proceedings of the International Conference on Learning Representations},
+year={2019}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id48">
+<h3>}<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Kornia</p></li>
+</ul>
+<p><a href="#id49"><span class="problematic" id="id50">``</span></a><a href="#id51"><span class="problematic" id="id52">`</span></a>bibtex
+&#64;inproceedings{eriba2019kornia,</p>
+<blockquote>
+<div><p>author    = {E. Riba, D. Mishkin, D. Ponsa, E. Rublee and G. Bradski},
+title     = {Kornia: an Open Source Differentiable Computer Vision Library for PyTorch},
+booktitle = {Winter Conference on Applications of Computer Vision},
+year      = {2020},
+url       = {<a class="reference external" href="https://arxiv.org/pdf/1910.02190.pdf">https://arxiv.org/pdf/1910.02190.pdf</a>}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id53">
+<h3>}<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>GAN-Ensembling</p></li>
+</ul>
+<p><a href="#id54"><span class="problematic" id="id55">``</span></a><a href="#id56"><span class="problematic" id="id57">`</span></a>bibtex
+&#64;inproceedings{chai2021ensembling,</p>
+<blockquote>
+<div><p>title={Ensembling with Deep Generative Views.},
+author={Chai, Lucy and Zhu, Jun-Yan and Shechtman, Eli and Isola, Phillip and Zhang, Richard},
+booktitle={CVPR},
+year={2021}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id58">
+<h3>}<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>On Buggy Resizing Libraries and Surprising Subtleties in FID Calculation</p></li>
+</ul>
+<p><a href="#id59"><span class="problematic" id="id60">``</span></a><a href="#id61"><span class="problematic" id="id62">`</span></a>bibtex
+&#64;article{parmar2021cleanfid,</p>
+<blockquote>
+<div><p>title={On Buggy Resizing Libraries and Surprising Subtleties in FID Calculation},
+author={Parmar, Gaurav and Zhang, Richard and Zhu, Jun-Yan},
+journal={arXiv preprint arXiv:2104.11222},
+year={2021}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id63">
+<h3>}<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Adobe.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

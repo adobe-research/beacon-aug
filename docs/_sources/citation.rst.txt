@@ -1,0 +1,33 @@
+
+Citation
+=======
+
+beacon-aug
+--------------
+
+.. code-block:: 
+
+  @misc{beacon-aug2021,
+    author = {Li, Xiaoyang Rebecca 
+              and Hold-Geoffroy, Yannick
+              and Oxholm Geoffrey
+              and Singh, Krishna Kumar 
+              and Zhang, Zhifei Zhang
+              and Zhang, Richard
+              and Andriushchenko, Maksym
+              and others},
+    title = {Beacon-aug: A cross-library image augmentation toolbox.},
+    howpublished = {\url{https://github.com/adobe-research/beacon-aug}},
+    year = {2021},
+    note = {Online; accessed Sep-22-2021}
+  }
+
+
+
+Related Citations
+--------------
+`Beacon_aug` was heavily inspired by the following great projects, welcome to cite their work as well:
+
+.. bibliography::
+  :list: bullet
+  :all:

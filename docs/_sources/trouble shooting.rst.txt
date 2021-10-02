@@ -1,5 +1,5 @@
 
-Trouble shooting
+Trouble Shooting
 =======
 
 A.Affine not working
@@ -55,7 +55,9 @@ MagickWand  library not found
 * Check detail: https://docs.wand-py.org/en/latest/guide/install.html#install-imagemagick-on-windows
 
 
-Problem not solved
+Problem not solved: prune
 ----------------------------
 * Problem: other problem still not solved
-* try this  `prune` version of package that minumized the prerequisites: https://github.com/adobe-research/beacon-aug/tree/prune
+* try the prune version by simply reinstall beacon-aug replacing `requirements.txt` with `requirements_prune.txt` in a new virtual environment
+* The backend library will not be available unless the dependency is installed, so you can simply remove the library dependency that your don't need
+* Check detail: https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/generator/__init__.py

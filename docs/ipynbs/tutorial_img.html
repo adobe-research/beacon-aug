@@ -46,7 +46,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tutorial: Use on tensors" href="tutorial_torch.html" />
-    <link rel="prev" title="Operator Overview" href="../operator%20overview.html" /> 
+    <link rel="prev" title="Install" href="../install.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,7 +97,6 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../operator%20overview.html">Operator Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial: Use on images</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#1.-A-simple-augmentation-operator">1. A simple augmentation operator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#2.-Result-comparision-for-all-backend-libraries">2. Result comparision for all backend libraries</a></li>
@@ -115,12 +114,15 @@
 <li class="toctree-l1"><a class="reference internal" href="BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_random_control.html">Tutorial: Random Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../API.html">Operator APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../trouble%20shooting.html">Trouble shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trouble%20shooting.html">Trouble Shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API.html">API</a></li>
 </ul>
 
             
@@ -562,7 +564,6 @@ Parameter dictionary:
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 
-<span class="c1"># Optional: if need to control the random seed</span>
 
 <span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">astronaut</span><span class="p">()</span>
 <span class="n">aug_pipeline</span> <span class="o">=</span> <span class="n">BA</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
@@ -570,8 +571,9 @@ Parameter dictionary:
     <span class="n">BA</span><span class="o">.</span><span class="n">Brightness</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span> <span class="p">),</span>     <span class="c1">#image only</span>
     <span class="n">BA</span><span class="o">.</span><span class="n">VerticalFlip</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="p">])</span>
-<span class="n">BA</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 
+<span class="c1"># Optional: if need to control the random seed to fix the results</span>
+<span class="n">BA</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">augmented_image</span> <span class="o">=</span> <span class="n">aug_pipeline</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span>
 
 <span class="c1"># Display a result</span>
@@ -640,7 +642,7 @@ ipykernel_launcher:16: UserWarning: Matplotlib is currently using module://ipyke
 </div>
 <div class="section" id="5.-Same-augmentation-for-image,-bbox,-masks-at-the-same-time">
 <h2>5. Same augmentation for image, bbox, masks at the same time<a class="headerlink" href="#5.-Same-augmentation-for-image,-bbox,-masks-at-the-same-time" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://github.com/albumentations-team/albumentations/blob/b527fa95cdf0dadf6de8e2594803e884a838de03/albumentations/core/transforms_interface.py#L208">Function</a></p>
+<p>Check the <a class="reference external" href="https://github.com/albumentations-team/albumentations/blob/b527fa95cdf0dadf6de8e2594803e884a838de03/albumentations/core/transforms_interface.py#L208">function definition</a> for detail</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://albumentations.ai/docs/getting_started/bounding_boxes_augmentation/">bbox format</a>: <code class="docutils literal notranslate"><span class="pre">pascal_voc</span></code>, <code class="docutils literal notranslate"><span class="pre">albumentations</span></code>, <code class="docutils literal notranslate"><span class="pre">coco</span></code>, and <code class="docutils literal notranslate"><span class="pre">yolo</span></code>.</p></li>
 <li><p><a class="reference external" href="https://albumentations.ai/docs/getting_started/keypoints_augmentation/">keypoint format</a></p></li>
@@ -710,58 +712,59 @@ ipykernel_launcher:16: UserWarning: Matplotlib is currently using module://ipyke
 <div class="section" id="6.-Export-pipeline-paramters-to-jason-file">
 <h2>6. Export pipeline paramters to jason file<a class="headerlink" href="#6.-Export-pipeline-paramters-to-jason-file" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">beacon_aug</span> <span class="k">as</span> <span class="nn">BA</span>
 
 <span class="c1"># Load an example image (uint8, 128x128x3).</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">astronaut</span><span class="p">()</span>
 
 <span class="n">transform</span> <span class="o">=</span> <span class="n">BA</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
-    <span class="n">BA</span><span class="o">.</span><span class="n">RandomCrop</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span>
-    <span class="n">BA</span><span class="o">.</span><span class="n">OneOf</span><span class="p">([</span>  <span class="n">A</span><span class="o">.</span><span class="n">RGBShift</span><span class="p">(),</span>
-            <span class="n">A</span><span class="o">.</span><span class="n">HueSaturationValue</span><span class="p">()</span>  <span class="p">])])</span>
+    <span class="n">BA</span><span class="o">.</span><span class="n">RandomCrop</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>  <span class="n">library</span><span class="o">=</span> <span class="s2">&quot;A&quot;</span><span class="p">),</span>
+    <span class="n">BA</span><span class="o">.</span><span class="n">OneOf</span><span class="p">([</span>  <span class="n">BA</span><span class="o">.</span><span class="n">RGBShift</span><span class="p">(</span><span class="n">library</span><span class="o">=</span> <span class="s2">&quot;A&quot;</span><span class="p">),</span>
+            <span class="n">BA</span><span class="o">.</span><span class="n">HueSaturationValue</span><span class="p">(</span><span class="n">library</span><span class="o">=</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>  <span class="p">])])</span>
 <span class="c1"># Save .Json</span>
 <span class="n">BA</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">transform</span><span class="p">,</span> <span class="s1">&#39;transform.json&#39;</span><span class="p">)</span>
 <span class="c1"># Load .Json</span>
-<span class="n">loaded_transform</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;transform.json&#39;</span><span class="p">)</span>
+<span class="n">loaded_transform</span> <span class="o">=</span> <span class="n">BA</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;transform.json&#39;</span><span class="p">)</span>
 <span class="c1"># Change transformation</span>
-<span class="n">transform_dict</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">loaded_transform</span><span class="p">)</span>
+<span class="n">transform_dict</span> <span class="o">=</span> <span class="n">BA</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">loaded_transform</span><span class="p">)</span>
 <span class="n">transform_dict</span><span class="p">[</span><span class="s2">&quot;transform&quot;</span><span class="p">][</span><span class="s2">&quot;transforms&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;height&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">76</span>
 <span class="n">transform_dict</span><span class="p">[</span><span class="s2">&quot;transform&quot;</span><span class="p">][</span><span class="s2">&quot;transforms&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">76</span>
-<span class="n">loaded_transform_revised</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">transform_dict</span><span class="p">)</span>
+<span class="n">loaded_transform_revised</span> <span class="o">=</span><span class="n">BA</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">transform_dict</span><span class="p">)</span>
 <span class="c1"># print parameters</span>
 <span class="n">BA</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span> <span class="n">transform</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#39;__version__&#39;: &#39;0.5.2&#39;,
+{&#39;__version__&#39;: &#39;1.0.3&#39;,
  &#39;transform&#39;: {&#39;__class_fullname__&#39;: &#39;Compose&#39;,
   &#39;p&#39;: 1.0,
-  &#39;transforms&#39;: [{&#39;__class_fullname__&#39;: &#39;RandomCrop&#39;,
+  &#39;transforms&#39;: [{&#39;__class_fullname__&#39;: &#39;A_RandomCrop&#39;,
     &#39;always_apply&#39;: False,
     &#39;p&#39;: 1.0,
-    &#39;height&#39;: 256,
-    &#39;width&#39;: 256},
+    &#39;height&#39;: 64,
+    &#39;width&#39;: 64},
    {&#39;__class_fullname__&#39;: &#39;OneOf&#39;,
     &#39;p&#39;: 0.5,
-    &#39;transforms&#39;: [{&#39;__class_fullname__&#39;: &#39;RGBShift&#39;,
+    &#39;transforms&#39;: [{&#39;__class_fullname__&#39;: &#39;A_RGBShift&#39;,
       &#39;always_apply&#39;: False,
       &#39;p&#39;: 0.5,
       &#39;r_shift_limit&#39;: (-20, 20),
       &#39;g_shift_limit&#39;: (-20, 20),
       &#39;b_shift_limit&#39;: (-20, 20)},
-     {&#39;__class_fullname__&#39;: &#39;HueSaturationValue&#39;,
+     {&#39;__class_fullname__&#39;: &#39;A_HueSaturationValue&#39;,
       &#39;always_apply&#39;: False,
       &#39;p&#39;: 0.5,
       &#39;hue_shift_limit&#39;: (-20, 20),
@@ -1032,7 +1035,7 @@ transform id= 1 Equalize 1.0 None
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="tutorial_torch.html" class="btn btn-neutral float-right" title="Tutorial: Use on tensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../operator%20overview.html" class="btn btn-neutral float-left" title="Operator Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

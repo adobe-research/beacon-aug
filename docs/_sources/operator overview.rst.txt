@@ -8,7 +8,7 @@ Basic Operators
 
 Customized Operators
 ^^^^^^^^^^^^^^^^^^^^
-- check this `instructions <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom>`_ to add customized functions
+- check this `instructions <https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom>`_ to add customized functions
 
 * Contributors:
 
@@ -24,11 +24,11 @@ Customized Operators
 .. list-table::
    :header-rows: 1
 
-   * - `KeepSizeCrop <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/KeepSizeCrop.py>`_
-     - `TextFlow <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/TextFlow.py>`_
-     - `HidePatch <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/HidePatch.py>`_
-     - `JpegCompression <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/JpegCompression.py>`_
-     - `OverlayText <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/custom/OverlayText.py>`_
+   * - `KeepSizeCrop <https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/KeepSizeCrop.py>`_
+     - `TextFlow <https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/TextFlow.py>`_
+     - `HidePatch <https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/HidePatch.py>`_
+     - `JpegCompression <https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/JpegCompression.py>`_
+     - `OverlayText <https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/custom/OverlayText.py>`_
    * - .. image:: ../docs/_images/KeepSizeCrop-custom.jpeg
           :width: 80
           :height: 80
@@ -54,9 +54,9 @@ Beacon_aug support all the operators in all standard libraries
 +----------------------------+----------------+----------+-------------+----------+----------+----------+----------+
 | Number of Transformations  | albumentations | imgaug   | torchvision | keras    | augly    | mmcv     | imagenetc| 
 +============================+================+==========+=============+==========+==========+==========+==========+
-| Support one library        |     37         |    37    |      26     |     5    |    18    | 6        | 14       |
+| Support one library        |     37         |    151   |      17     |     5    |    15    | 6        | 14       |
 +----------------------------+----------------+----------+-------------+----------+----------+----------+----------+
-| Support multiple libraries |        235                                                                          |
+| Support multiple libraries |        52                                                                          |
 +----------------------------+-------------------------------------------------------------------------------------+
 
 .. code-block:: python
@@ -64,7 +64,7 @@ Beacon_aug support all the operators in all standard libraries
    BA.{StandardOperator}(library={library}})
 
 
-* Check `this list <https://github.com/adobe-research/beacon-aug/tree/master/beacon_aug/generator/standard/library_remain.yaml>`_ for the operators supporting **one** library
+* Check `this list <https://github.com/adobe-research/beacon-aug/tree/main/beacon_aug/generator/standard/library_remain.yaml>`_ for the operators supporting **one** library
 * Check the chart blow for the operators supporting **multiple** libraries
 
 .. |vspace| raw:: latex
@@ -963,7 +963,7 @@ Beacon_aug support all the operators in all standard libraries
 
 Advanced Operators
 ------------------
-* Check  `here <../docs/ipynbs/tutorial_img.html#7.-Example-of-AutoAugment>`_ for user instruction
+* Check  `here <ipynbs/tutorial_img.html#7.-Example-of-AutoAugment>`_ for user instruction
 
 .. list-table::
    :header-rows: 1
@@ -971,15 +971,15 @@ Advanced Operators
 
    * - 
      - 
-   * - `AutoAugment <https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/autoaugment.py>`_
+   * - `AutoAugment <https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/advanced/autoaugment.py>`_
      - .. image:: ../docs/_images/autoaugment.png 
-   * - `RandAugment <https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/randaugment.py>`_
+   * - `RandAugment <https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/advanced/randaugment.py>`_
      - .. image:: ../docs/_images/RandAugment.png 
-   * - `ColorJitter <https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/collections.py>`_
+   * - `ColorJitter <https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/advanced/collections.py>`_
      - .. image:: ../docs/_images/collections-color.png 
-   * - `GeometricJitter <https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/collections.py>`_
+   * - `GeometricJitter <https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/advanced/collections.py>`_
      - .. image:: ../docs/_images/collections-geometric.png 
-   * - `Benign Transformations <https://github.com/adobe-research/beacon-aug/blob/master/beacon_aug/advanced/benign_transforms.py>`_
+   * - `Benign Transformations <https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/advanced/benign_transforms.py>`_
      -  
 
 

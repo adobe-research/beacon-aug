@@ -1,0 +1,179 @@
+
+Citation
+=======
+
+beacon-aug
+--------------
+
+```bibtex
+
+@misc{beacon-aug2021,
+  author = {Xiaoyang Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm, Krishna kumar Singh, Zhifei Zhang, Richard Zhang, Maksym Andriushchenko, and others},
+  title = {Beacon-aug: A cross-library image augmentation toolbox.},
+  howpublished = {\url{https://github.com/adobe-research/beacon-aug}},
+  year = {2021},
+  note = {Online; accessed Sep-22-2021}
+}
+
+```
+
+Related Citations
+--------------
+`Beacon_aug` was heavily inspired by the following great projects, welcome to cite their work as well:
+
+- Albumentations
+
+```bibtex
+@Article{info11020125,
+    AUTHOR = {Buslaev, Alexander and Iglovikov, Vladimir I. and Khvedchenya, Eugene and Parinov, Alex and Druzhinin, Mikhail and Kalinin, Alexandr A.},
+    TITLE = {Albumentations: Fast and Flexible Image Augmentations},
+    JOURNAL = {Information},
+    VOLUME = {11},
+    YEAR = {2020},
+    NUMBER = {2},
+    ARTICLE-NUMBER = {125},
+    URL = {https://www.mdpi.com/2078-2489/11/2/125},
+    ISSN = {2078-2489},
+    DOI = {10.3390/info11020125}
+}
+```
+
+- imgaug
+
+```bibtex
+@misc{imgaug,
+  author = {Jung, Alexander B.
+            and Wada, Kentaro
+            and Crall, Jon
+            and Tanaka, Satoshi
+            and Graving, Jake
+            and Reinders, Christoph
+            and Yadav, Sarthak
+            and Banerjee, Joy
+            and Vecsei, Gábor
+            and Kraft, Adam
+            and Rui, Zheng
+            and Borovec, Jirka
+            and Vallentin, Christian
+            and Zhydenko, Semen
+            and Pfeiffer, Kilian
+            and Cook, Ben
+            and Fernández, Ismael
+            and De Rainville, François-Michel
+            and Weng, Chi-Hung
+            and Ayala-Acevedo, Abner
+            and Meudec, Raphael
+            and Laporte, Matias
+            and others},
+  title = {{imgaug}},
+  howpublished = {\url{https://github.com/aleju/imgaug}},
+  year = {2020},
+  note = {Online; accessed 01-Feb-2020}
+}
+```
+
+- Torchvision
+
+```bibtex
+@techreport{collobert2002torch,
+  title={Torch: a modular machine learning software library},
+  author={Collobert, Ronan and Bengio, Samy and Mari{\'e}thoz, Johnny},
+  year={2002},
+  institution={Idiap}
+}
+```
+
+```bibtex
+@inproceedings{marcel2010torchvision,
+  title={Torchvision the machine-vision package of torch},
+  author={Marcel, S{\'e}bastien and Rodriguez, Yann},
+  booktitle={Proceedings of the 18th ACM international conference on Multimedia},
+  pages={1485--1488},
+  year={2010}
+}
+```
+
+
+- Keras
+
+```bibtex
+@book{chollet2017deep,
+  title={Deep learning with Python},
+  author={Chollet, Francois},
+  year={2017},
+  publisher={Simon and Schuster}
+}
+```
+
+- Augly
+
+```bibtex
+@misc{bitton2021augly,
+  author       = {Joanna Bitton and Zoe Papakipos},
+  title        = {AugLy: A data augmentations library for audio, image, text, and video.},
+  year         = {2021},
+  howpublished = {\url{https://github.com/facebookresearch/AugLy}},
+  doi          = {10.5281/zenodo.5014032}
+}
+```
+
+
+- mmcv
+
+```bibtex
+@misc{mmcv,
+    title={{MMCV: OpenMMLab} Computer Vision Foundation},
+    author={MMCV Contributors},
+    howpublished = {\url{https://github.com/open-mmlab/mmcv}},
+    year={2018}
+}
+```
+
+
+- Imagenet-c
+
+```bibtex
+@article{hendrycks2019robustness,
+  title={Benchmarking Neural Network Robustness to Common Corruptions and Perturbations},
+  author={Dan Hendrycks and Thomas Dietterich},
+  journal={Proceedings of the International Conference on Learning Representations},
+  year={2019}
+}
+```
+
+
+- Kornia
+
+```bibtex
+@inproceedings{eriba2019kornia,
+  author    = {E. Riba, D. Mishkin, D. Ponsa, E. Rublee and G. Bradski},
+  title     = {Kornia: an Open Source Differentiable Computer Vision Library for PyTorch},
+  booktitle = {Winter Conference on Applications of Computer Vision},
+  year      = {2020},
+  url       = {https://arxiv.org/pdf/1910.02190.pdf}
+}
+```
+
+
+- GAN-Ensembling
+
+```bibtex
+@inproceedings{chai2021ensembling,
+	title={Ensembling with Deep Generative Views.},
+	author={Chai, Lucy and Zhu, Jun-Yan and Shechtman, Eli and Isola, Phillip and Zhang, Richard},
+	booktitle={CVPR},
+	year={2021}
+}
+```
+
+
+- On Buggy Resizing Libraries and Surprising Subtleties in FID Calculation
+
+```bibtex
+@article{parmar2021cleanfid,
+  title={On Buggy Resizing Libraries and Surprising Subtleties in FID Calculation},
+  author={Parmar, Gaurav and Zhang, Richard and Zhu, Jun-Yan},
+  journal={arXiv preprint arXiv:2104.11222},
+  year={2021}
+}
+```

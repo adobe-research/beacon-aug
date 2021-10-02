@@ -97,7 +97,6 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../operator%20overview.html">Operator Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_img.html">Tutorial: Use on images</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial: Use on tensors</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#1.-Check-if-the-operator-is-differentiable">1. Check if the operator is differentiable</a></li>
@@ -108,12 +107,15 @@
 <li class="toctree-l1"><a class="reference internal" href="BA2mmcv.html">Tutorial: Beacon_aug to MMCV</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_gan_based.html">Tutorial: GAN-based customized function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_imagenet_c.html">Tutorial: Imagenet-c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_random_control.html">Tutorial: Random Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aliasing-discussion.html">Discussion: Anti-aliasing Effect</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../API.html">Operator APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html">Properties and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operator%20overview.html">Operator Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../trouble%20shooting.html">Trouble shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trouble%20shooting.html">Trouble Shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API.html">API</a></li>
 </ul>
 
             
@@ -538,7 +540,8 @@ torch.Size([2, 3, 8, 8]) torch.Size([2, 3, 4, 4])
     <span class="n">BA</span><span class="o">.</span><span class="n">RandomGrayscale</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="s2">&quot;torch&quot;</span><span class="p">),</span>
     <span class="n">BA</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s2">&quot;torch&quot;</span><span class="p">),</span>
 <span class="p">]))</span>
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s2">&quot;/home/code-base/scratch_space/behance/behance_data_000m_010m/0001&quot;</span><span class="p">,</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span><span class="n">root</span><span class="o">=</span> <span class="s2">&quot;Your Data-Set-Folder&quot;</span><span class="p">,</span>
                                      <span class="n">transform</span><span class="o">=</span><span class="n">train_transform</span><span class="p">)</span>
 
 </pre></div>
