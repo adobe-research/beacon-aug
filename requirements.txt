@@ -22,7 +22,8 @@ augly
 mmcv
 Pandoc
 ##imagenet-c
-opencv-python~=3.4
+opencv-python
+#opencv-python~=3.4  # might be uncompatable with other package
 wand
 imagenet-c 
 # customize
