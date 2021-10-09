@@ -39,14 +39,13 @@ if __name__ == "__main__":
                      description='Cross-library augmentation module for deep learning training',
                      author='Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm, etc',
                      author_email='xiaoli@adobe.com',
-                     url='https://git.corp.adobe.com/xiaoli/augmenter',
+                     url='https://github.com/adobe-research/beacon-aug',
                      packages=setuptools.find_packages(exclude=["workspace"]),
                      package_dir={'beacon_aug': 'beacon_aug'},
-                     install_requires=required,
-                     include_package_data=True,
-                     package_data={"beacon_aug.generator.standard":["*.yaml"],
-                                    "beacon_aug.external.imagenet_c.frost":['*'],
-                        }
+                    #  package_data={"beacon_aug.generator.standard":["*.yaml"],
+                    #                 "beacon_aug.external.imagenet_c.frost":['*']}        
+                    include_package_data=True,
+
                      )
     # for augly dependency
     subprocess.run(["conda", "install", "-c", "conda-forge", "python-magic"])

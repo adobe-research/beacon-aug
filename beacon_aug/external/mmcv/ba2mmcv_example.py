@@ -27,7 +27,7 @@ import beacon_aug as BA
 
 
 @PIPELINES.register_module()
-class:
+class Albu:
     """Albumentation augmentation.
     Adds custom transformations from Albumentations library.
     Please, visit `https://albumentations.readthedocs.io`
