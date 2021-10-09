@@ -47,6 +47,7 @@ if __name__ == "__main__":
                      )
     # for augly dependency
     subprocess.run(["conda", "install", "-c", "conda-forge", "python-magic"])
+    subprocess.run(["conda", "install", "-c", "conda-forge/label/cf202003", "imagemagick"])
 
     print('''\n\n  Package "beacon_aug"  has successfully installed! You can try e.g.
 =======================

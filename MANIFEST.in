@@ -1,1 +1,4 @@
+recursive-include beacon_aug/generator/standard *.yaml
 recursive-include beacon_aug/external/imagenet_c/frost *
+include data/example.png
+

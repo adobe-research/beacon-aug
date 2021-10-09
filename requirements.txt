@@ -13,7 +13,7 @@ albumentations
 imgaug==0.4.0
 Keras-Preprocessing==1.1.2
 kornia
-torchvision
+torchvision>=0.10
 ## Augly
 Pillow>=8.2.0
 python-magic
