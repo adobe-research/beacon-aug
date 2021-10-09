@@ -43,6 +43,7 @@ if __name__ == "__main__":
                      packages=setuptools.find_packages(exclude=["workspace"]),
                      package_dir={'beacon_aug': 'beacon_aug'},
                      install_requires=required,
+                     include_package_data=True,
                      )
     # for augly dependency
     subprocess.run(["conda", "install", "-c", "conda-forge", "python-magic"])
