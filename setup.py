@@ -19,6 +19,13 @@ if use for edit
 import argparse
 import setuptools
 import subprocess
+import os,io,re
+
+def get_version():
+    current_dir = os.path.abspath(os.path.dirname(__file__))
+    version_file = os.path.join(current_dir, "beacon_aug", "__init__.py")
+    with io.open(version_file, encoding="utf-8") as f:
+        return re.search(r'^__version__ = [\'"]([^\'"]*)[\'"]', f.read(), re.M).group(1)
 
 
 if __name__ == "__main__":
@@ -28,12 +35,12 @@ if __name__ == "__main__":
         required = f.read().splitlines()
 
     setuptools.setup(name='Beacon_aug',
-                     version='1.0',
+                     version=get_version(),
                      description='Cross-library augmentation module for deep learning training',
                      author='Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm, etc',
                      author_email='xiaoli@adobe.com',
                      url='https://git.corp.adobe.com/xiaoli/augmenter',
-                     packages=['beacon_aug'],
+                     packages=setuptools.find_packages(exclude=["workspace"]),
                      package_dir={'beacon_aug': 'beacon_aug'},
                      install_requires=required,
                      )
