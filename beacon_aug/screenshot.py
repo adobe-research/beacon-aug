@@ -22,8 +22,6 @@ from skimage.color import label2rgb
 import beacon_aug as BA
 
 ''' flatten the pipeline tree'''
-
-
 def extract_single_operation(augPipeline):
     def flatten(dict, flatten_ls=[]):
         '''use DFS to unfold the operations'''
@@ -121,10 +119,13 @@ def screenshot_library(BA_operator, image_data, save_fig_path=None, individual_f
         t_before = time.time()
         op = BA_operator(always_apply=False, p=1, library=library, **kwargs)
         image_auged = op(image=image_data)["image"]
-        image_auged_vis = image_auged
 
         t_after = time.time()
+
         runtime = t_after - t_before
+
+        image_auged_vis = image_auged
+
         attributes_result["runtime"][library] = runtime
 
         attributes_result["differentiable"][library] = BA.properties.isOpDifferentiable(op)

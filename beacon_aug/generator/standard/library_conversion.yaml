@@ -22,14 +22,16 @@ Affine:
       - interpolation
       - x
   keras:
-    default_lib_paras:
-      fill_mode: reflect
-      order: 4
     function: keras.apply_affine_transform
     paras_alb2lib:
       theta:
       - rotate
       - '-random_uniform(x) '
+    default_lib_paras:
+      fill_mode: reflect
+      order: 4
+
+
   torchvision:
     default_lib_paras:
       degrees: 0
@@ -120,6 +122,9 @@ RandomSizedCrop:
   default_para:
     height: 64
     width: 64
+    min_max_height:
+      - 64
+      - 64
   torchvision:
     function: torch.RandomSizedCrop
     paras_alb2lib:
@@ -135,6 +140,12 @@ RandomResizedCrop:
   transform: DualBATransform
   albumentations:
     function: A.RandomResizedCrop
+  default_para:
+    height: 64
+    width: 64
+    min_max_height:
+      - 64
+      - 64
   torchvision:
     function: torch.RandomResizedCrop
     paras_alb2lib:
@@ -181,8 +192,11 @@ CropAndPad:
   transform: DualBATransform
   albumentations:
     function: A.CropAndPad
+  default_para:
+    percent: 0.1
   imgaug:
     function: iaa.CropAndPad
+
 
 Rotate:
   transform: DualBATransform
@@ -244,6 +258,7 @@ Rotate:
       - x
     default_lib_paras:
       prob: 1
+      
 Pad:
   transform: DualBATransform
   imgaug:

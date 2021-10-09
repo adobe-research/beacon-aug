@@ -20,11 +20,11 @@ python-magic
 augly
 ## Mmmcv
 mmcv
+opencv-python
+
 Pandoc
 ##imagenet-c
-opencv-python
-#opencv-python~=3.4  # might be uncompatable with other package
 wand
 imagenet-c 
-# customize
+## customize
 freetype-py

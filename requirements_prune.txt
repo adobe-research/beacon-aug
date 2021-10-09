@@ -21,7 +21,8 @@ torchvision==0.10
 # mmcv
 # Pandoc
 ##imagenet-c
-opencv-python~=3.4
+#opencv-python~=3.4   # might be incompatible with other packages requires 4.2
+opencv-python
 # wand
 # imagenet-c 
 # # customize

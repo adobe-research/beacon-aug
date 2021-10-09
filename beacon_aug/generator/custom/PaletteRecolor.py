@@ -92,7 +92,7 @@ class PaletteRecolor:
 
         # 3. tansfer image according to the shifted color
         image_lab_m = image_transfer(lab, palette, palette_m,
-                                     sample_level=10, luminance_flag="false")
+                                     sample_level=10, luminance_flag="true")
         image_rgb_m = lab2rgb(image_lab_m)
 
         return np.asarray(image_rgb_m)

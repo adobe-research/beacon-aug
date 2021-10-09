@@ -5,15 +5,16 @@
 # accordance with the terms of the Adobe license agreement accompanying
 # it.
 
-from beacon_aug.generator.operator_generator import Operator_generator
-import beacon_aug.generator.custom as custom
-import beacon_aug.generator.gan_based as gan_based
+from .generator.operator_generator import Operator_generator
+from .generator import custom
+from .generator import gan_based
+from .generator.docs_generator import generate_doc
+
 
 import json
 import yaml
 import glob
 import os
-from beacon_aug.generator.docs_generator import generate_doc
 
 for_website = False
 

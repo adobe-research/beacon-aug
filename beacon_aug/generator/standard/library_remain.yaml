@@ -69,10 +69,10 @@ RandomCropNearBBox:
   transform: DualBATransform
   albumentations:
     function: A.RandomCropNearBBox
-RandomSizedBBoxSafeCrop:
-  transform: DualBATransform
-  albumentations:
-    function: A.RandomSizedBBoxSafeCrop
+# RandomSizedBBoxSafeCrop:
+#   transform: DualBATransform
+#   albumentations:
+#     function: A.RandomSizedBBoxSafeCrop
 
 Transpose:
   transform: DualBATransform
@@ -226,22 +226,26 @@ AllChannelsHistogramEqualization:
   transform: DualBATransform
   imgaug:
     function: iaa.AllChannelsHistogramEqualization
-AssertLambda:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.AssertLambda
-AssertShape:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.AssertShape
-Augmenter:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.Augmenter
-AveragePooling:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.AveragePooling
+# AssertLambda:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.AssertLambda
+# AssertShape:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.AssertShape
+# Augmenter:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.Augmenter
+
+
+# AveragePooling:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.AveragePooling
+  # TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+
 BilateralBlur:
   transform: DualBATransform
   imgaug:
@@ -250,14 +254,23 @@ BlendAlpha:
   transform: DualBATransform
   imgaug:
     function: iaa.BlendAlpha
-BlendAlphaBoundingBoxes:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.BlendAlphaBoundingBoxes
+
+
+# BlendAlphaBoundingBoxes:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.BlendAlphaBoundingBoxes
+#     default_lib_paras:
+#       labels: None
+#       background: iaa.Multiply(0.0)
+
 BlendAlphaCheckerboard:
   transform: DualBATransform
   imgaug:
     function: iaa.BlendAlphaCheckerboard
+    default_lib_paras:
+      nb_rows: 2
+      nb_cols: 4
 BlendAlphaElementwise:
   transform: DualBATransform
   imgaug:
@@ -270,18 +283,24 @@ BlendAlphaHorizontalLinearGradient:
   transform: DualBATransform
   imgaug:
     function: iaa.BlendAlphaHorizontalLinearGradient
-BlendAlphaMask:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.BlendAlphaMask
+# BlendAlphaMask:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.BlendAlphaMask
+#     default_lib_paras:
+#       mask_generator: iaa.InvertMaskGen(0.5, iaa.VerticalLinearGradientMaskGen()),
 BlendAlphaRegularGrid:
   transform: DualBATransform
   imgaug:
     function: iaa.BlendAlphaRegularGrid
-BlendAlphaSegMapClassIds:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.BlendAlphaSegMapClassIds
+    default_lib_paras:
+      nb_rows: 2
+      nb_cols: 4
+
+# BlendAlphaSegMapClassIds:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.BlendAlphaSegMapClassIds
 BlendAlphaSimplexNoise:
   transform: DualBATransform
   imgaug:
@@ -294,10 +313,10 @@ BlendAlphaVerticalLinearGradient:
   transform: DualBATransform
   imgaug:
     function: iaa.BlendAlphaVerticalLinearGradient
-BoundingBoxesMaskGen:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.BoundingBoxesMaskGen
+# BoundingBoxesMaskGen:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.BoundingBoxesMaskGen
 
 Canny:
   transform: DualBATransform
@@ -311,6 +330,9 @@ CenterCropToAspectRatio:
   transform: DualBATransform
   imgaug:
     function: iaa.CenterCropToAspectRatio
+    default_lib_paras:
+      aspect_ratio: 2
+
 CenterCropToFixedSize:
   transform: DualBATransform
   imgaug:
@@ -319,10 +341,19 @@ CenterCropToMultiplesOf:
   transform: DualBATransform
   imgaug:
     function: iaa.CenterCropToMultiplesOf
+    default_lib_paras:
+      width_multiple: 10
+      height_multiple: 10
+
+
 CenterCropToPowersOf:
   transform: DualBATransform
   imgaug:
     function: iaa.CenterCropToPowersOf
+    default_lib_paras:
+      height_base: 3
+      width_base: 2
+
 CenterCropToSquare:
   transform: DualBATransform
   imgaug:
@@ -331,6 +362,9 @@ CenterPadToAspectRatio:
   transform: DualBATransform
   imgaug:
     function: iaa.CenterPadToAspectRatio
+    default_lib_paras:
+      aspect_ratio: 2
+    
 CenterPadToFixedSize:
   transform: DualBATransform
   imgaug:
@@ -339,10 +373,18 @@ CenterPadToMultiplesOf:
   transform: DualBATransform
   imgaug:
     function: iaa.CenterPadToMultiplesOf
+    default_lib_paras:
+      width_multiple: 10
+      height_multiple: 10
+    
 CenterPadToPowersOf:
   transform: DualBATransform
   imgaug:
     function: iaa.CenterPadToPowersOf
+    default_lib_paras:
+      height_base: 3
+      width_base: 2
+
 CenterPadToSquare:
   transform: DualBATransform
   imgaug:
@@ -356,19 +398,40 @@ ChangeColorspace:
   transform: DualBATransform
   imgaug:
     function: iaa.ChangeColorspace
+    default_lib_paras:
+      to_colorspace: BGR
 
-CheckerboardMaskGen:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.CheckerboardMaskGen
+
+# CheckerboardMaskGen:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.CheckerboardMaskGen
+#     default_lib_paras:
+#       nb_rows: 2
+#       nb_cols: 4
+
 ClipCBAsToImagePlanes:
   transform: DualBATransform
   imgaug:
     function: iaa.ClipCBAsToImagePlanes
+
 CloudLayer:
   transform: DualBATransform
   imgaug:
     function: iaa.CloudLayer
+    default_lib_paras:
+      intensity_mean: 200
+      intensity_freq_exponent: -2
+      intensity_coarse_scale: 5
+      alpha_min: 0
+      alpha_multiplier: 0.5
+      alpha_size_px_max: 5
+      alpha_freq_exponent: -3
+      sparsity: 0.9                                
+      density_multiplier: 1.0
+
+
+
 Clouds:
   transform: DualBATransform
   imgaug:
@@ -396,14 +459,26 @@ CropToAspectRatio:
   transform: DualBATransform
   imgaug:
     function: iaa.CropToAspectRatio
+    default_lib_paras:
+      aspect_ratio: 2
+
 CropToMultiplesOf:
   transform: DualBATransform
   imgaug:
     function: iaa.CropToMultiplesOf
+    default_lib_paras:
+      width_multiple: 10
+      height_multiple: 10
+
+
 CropToPowersOf:
   transform: DualBATransform
   imgaug:
     function: iaa.CropToPowersOf
+    default_lib_paras:
+      height_base: 3
+      width_base: 2
+
 CropToSquare:
   transform: DualBATransform
   imgaug:
@@ -420,10 +495,11 @@ Dropout2d:
   transform: DualBATransform
   imgaug:
     function: iaa.Dropout2d
-DropoutPointsSampler:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.DropoutPointsSampler
+# DropoutPointsSampler:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.DropoutPointsSampler
+
 EdgeDetect:
   transform: DualBATransform
   imgaug:
@@ -445,31 +521,31 @@ HistogramEqualization:
   transform: DualBATransform
   imgaug:
     function: iaa.HistogramEqualization
-HorizontalLinearGradientMaskGen:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.HorizontalLinearGradientMaskGen
-IBatchwiseMaskGenerator:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.IBatchwiseMaskGenerator
-IBinaryImageColorizer:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.IBinaryImageColorizer
-IPointsSampler:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.IPointsSampler
-Identity:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.Identity
+# HorizontalLinearGradientMaskGen:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.HorizontalLinearGradientMaskGen
+# IBatchwiseMaskGenerator:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.IBatchwiseMaskGenerator
+# IBinaryImageColorizer:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.IBinaryImageColorizer
+# IPointsSampler:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.IPointsSampler
+# Identity:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.Identity
 
-InvertMaskGen:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.InvertMaskGen
+# InvertMaskGen:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.InvertMaskGen
 Jigsaw:
   transform: DualBATransform
   imgaug:
@@ -491,24 +567,24 @@ LogContrast:
   transform: DualBATransform
   imgaug:
     function: iaa.LogContrast
-MaxPooling:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.MaxPooling
+### Poolings unable to output image 
+# MaxPooling:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.MaxPooling  
+# MedianPooling:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.MedianPooling
+# MinPooling:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.MinPooling
 MeanShiftBlur:
   transform: DualBATransform
   imgaug:
     function: iaa.MeanShiftBlur
-
-MedianPooling:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.MedianPooling
-MinPooling:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.MinPooling
-
+    
 Multiply:
   transform: DualBATransform
   imgaug:
@@ -529,19 +605,23 @@ MultiplyHueAndSaturation:
   transform: DualBATransform
   imgaug:
     function: iaa.MultiplyHueAndSaturation
+## serial no need
 # Noop:
 #   transform: DualBATransform
 #   imgaug:
 #     function: iaa.Noop
-OneOf:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.OneOf
+# OneOf:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.OneOf
 
 PadToAspectRatio:
   transform: DualBATransform
   imgaug:
     function: iaa.PadToAspectRatio
+    default_lib_paras:
+      aspect_ratio: 2
+
 PadToFixedSize:
   transform: DualBATransform
   imgaug:
@@ -550,10 +630,18 @@ PadToMultiplesOf:
   transform: DualBATransform
   imgaug:
     function: iaa.PadToMultiplesOf
+    default_lib_paras:
+      width_multiple: 10
+      height_multiple: 10
+
 PadToPowersOf:
   transform: DualBATransform
   imgaug:
     function: iaa.PadToPowersOf
+    default_lib_paras:
+      width_base: 10
+      height_base: 10
+
 PadToSquare:
   transform: DualBATransform
   imgaug:
@@ -563,7 +651,6 @@ Pepper:
   imgaug:
     function: iaa.Pepper
 
-
 Rain:
   transform: DualBATransform
   imgaug:
@@ -572,30 +659,59 @@ RainLayer:
   transform: DualBATransform
   imgaug:
     function: iaa.RainLayer
-RandAugment:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.RandAugment
-RandomColorsBinaryImageColorizer:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.RandomColorsBinaryImageColorizer
-RegularGridMaskGen:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.RegularGridMaskGen
-RegularGridPointsSampler:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.RegularGridPointsSampler
+    default_lib_paras:
+      density: 
+        - 0.01 
+        - 0.075
+      drop_size: 0.5
+      drop_size_uniformity: 0.5
+      density_uniformity: 0.5
+      angle:
+        - -30
+        - 30
+      speed: 1
+      blur_sigma_fraction: 0.0001
+
+### check beacon_aug randaug
+# RandAugment:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.RandAugment
+
+# RandomColorsBinaryImageColorizer:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.RandomColorsBinaryImageColorizer
+# RegularGridMaskGen:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.RegularGridMaskGen
+#     default_lib_paras:
+#       nb_rows: 2
+#       nb_cols: 4
+
+# RegularGridPointsSampler:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.RegularGridPointsSampler
+#     default_lib_paras:
+#       n_rows: 2
+#       n_cols: 4
+
 RegularGridVoronoi:
   transform: DualBATransform
   imgaug:
     function: iaa.RegularGridVoronoi
-RelativeRegularGridPointsSampler:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.RelativeRegularGridPointsSampler
+# RelativeRegularGridPointsSampler:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.RelativeRegularGridPointsSampler
+#     default_lib_paras:
+#       n_rows_frac: 
+#         - 0.01
+#         - 0.1
+#       n_cols_frac: 0.2
+
 RelativeRegularGridVoronoi:
   transform: DualBATransform
   imgaug:
@@ -604,6 +720,10 @@ RemoveCBAsByOutOfImageFraction:
   transform: DualBATransform
   imgaug:
     function: iaa.RemoveCBAsByOutOfImageFraction
+    default_lib_paras:
+      fraction: 0.5
+
+
 RemoveSaturation:
   transform: DualBATransform
   imgaug:
@@ -612,6 +732,13 @@ ReplaceElementwise:
   transform: DualBATransform
   imgaug:
     function: iaa.ReplaceElementwise
+    default_lib_paras:
+      mask: 0.05
+      replacement: 
+        - 0
+        - 255
+
+
 Rot90:
   transform: DualBATransform
   imgaug:
@@ -624,10 +751,10 @@ SaltAndPepper:
   transform: DualBATransform
   imgaug:
     function: iaa.SaltAndPepper
-SaveDebugImageEveryNBatches:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.SaveDebugImageEveryNBatches
+# SaveDebugImageEveryNBatches:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.SaveDebugImageEveryNBatches
 ScaleX:
   transform: DualBATransform
   imgaug:
@@ -636,14 +763,14 @@ ScaleY:
   transform: DualBATransform
   imgaug:
     function: iaa.ScaleY
-SegMapClassIdsMaskGen:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.SegMapClassIdsMaskGen
-Sequential:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.Sequential
+# SegMapClassIdsMaskGen:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.SegMapClassIdsMaskGen
+# Sequential:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.Sequential
 ShearX:
   transform: DualBATransform
   imgaug:
@@ -664,26 +791,40 @@ SnowflakesLayer:
   transform: DualBATransform
   imgaug:
     function: iaa.SnowflakesLayer
-SomeColorsMaskGen:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.SomeColorsMaskGen
-SomeOf:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.SomeOf
-Sometimes:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.Sometimes
-StochasticParameterMaskGen:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.StochasticParameterMaskGen
-SubsamplingPointsSampler:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.SubsamplingPointsSampler
+    default_lib_paras:
+      density: 
+        - 0.01 
+        - 0.075
+      flake_size: 0.5
+      flake_size_uniformity: 0.5
+      density_uniformity: 0.5
+      angle:
+        - -30
+        - 30
+      speed: 1
+      blur_sigma_fraction: 0.0001
+
+
+# SomeColorsMaskGen:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.SomeColorsMaskGen
+# SomeOf:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.SomeOf
+# Sometimes:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.Sometimes
+# StochasticParameterMaskGen:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.StochasticParameterMaskGen
+# SubsamplingPointsSampler:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.SubsamplingPointsSampler
 
 TotalDropout:
   transform: DualBATransform
@@ -705,18 +846,18 @@ UniformColorQuantizationToNBits:
   transform: DualBATransform
   imgaug:
     function: iaa.UniformColorQuantizationToNBits
-UniformPointsSampler:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.UniformPointsSampler
+# UniformPointsSampler:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.UniformPointsSampler
 UniformVoronoi:
   transform: DualBATransform
   imgaug:
     function: iaa.UniformVoronoi
-VerticalLinearGradientMaskGen:
-  transform: DualBATransform
-  imgaug:
-    function: iaa.VerticalLinearGradientMaskGen
+# VerticalLinearGradientMaskGen:
+#   transform: DualBATransform
+#   imgaug:
+#     function: iaa.VerticalLinearGradientMaskGen
 Voronoi:
   transform: DualBATransform
   imgaug:
@@ -733,6 +874,9 @@ WithColorspace:
   transform: DualBATransform
   imgaug:
     function: iaa.WithColorspace
+    default_lib_paras:
+      to_colorspace: BGR
+
 WithHueAndSaturation:
   transform: DualBATransform
   imgaug:
@@ -812,102 +956,113 @@ Posterize:
 #   transform: DualBATransform
 #   imgaug:
 #     function: iaa.pillike._FilterBase
-DataFrameIterator:
-  transform: DualBATransform
-  keras:
-    function: keras.DataFrameIterator
-DirectoryIterator:
-  transform: DualBATransform
-  keras:
-    function: keras.DirectoryIterator
-ImageDataGenerator:
-  transform: DualBATransform
-  keras:
-    function: keras.ImageDataGenerator
-Iterator:
-  transform: DualBATransform
-  keras:
-    function: keras.Iterator
-NumpyArrayIterator:
-  transform: DualBATransform
-  keras:
-    function: keras.NumpyArrayIterator
-AutoAugment:
-  transform: DualBATransform
-  torchvision:
-    function: torch.AutoAugment
-AutoAugmentPolicy:
-  transform: DualBATransform
-  torchvision:
-    function: torch.AutoAugmentPolicy
+
+### iterators not operator
+# DataFrameIterator:
+#   transform: DualBATransform
+#   keras:
+#     function: keras.DataFrameIterator
+# DirectoryIterator:
+#   transform: DualBATransform
+#   keras:
+#     function: keras.DirectoryIterator
+# ImageDataGenerator:
+#   transform: DualBATransform
+#   keras:
+#     function: keras.ImageDataGenerator
+# Iterator:
+#   transform: DualBATransform
+#   keras:
+#     function: keras.Iterator
+# NumpyArrayIterator:
+#   transform: DualBATransform
+#   keras:
+#     function: keras.NumpyArrayIterator
+
+### check beacon_aug.autoaug
+# AutoAugment:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.AutoAugment
+# AutoAugmentPolicy:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.AutoAugmentPolicy
 
 
-ConvertImageDtype:
-  transform: DualBATransform
-  torchvision:
-    function: torch.ConvertImageDtype
-FiveCrop:
-  transform: DualBATransform
-  torchvision:
-    function: torch.FiveCrop
+# ConvertImageDtype:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.ConvertImageDtype
 
-LinearTransformation:
-  transform: DualBATransform
-  torchvision:
-    function: torch.LinearTransformation
+## output 5 crops
+# FiveCrop:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.FiveCrop
+#     default_lib_paras:
+#       size: 64
 
-PILToTensor:
-  transform: DualBATransform
-  torchvision:
-    function: torch.PILToTensor
+# LinearTransformation:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.LinearTransformation
+
+# PILToTensor:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.PILToTensor
 
 RandomAdjustSharpness:
   transform: DualBATransform
   torchvision:
     function: torch.RandomAdjustSharpness
-RandomApply:
-  transform: DualBATransform
-  torchvision:
-    function: torch.RandomApply
+    default_lib_paras:
+      sharpness_factor: 1.5
+
+# RandomApply:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.RandomApply
 RandomAutocontrast:
   transform: DualBATransform
   torchvision:
     function: torch.RandomAutocontrast
-RandomChoice:
-  transform: DualBATransform
-  torchvision:
-    function: torch.RandomChoice
+# RandomChoice:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.RandomChoice
 
-RandomOrder:
-  transform: DualBATransform
-  torchvision:
-    function: torch.RandomOrder
+# RandomOrder:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.RandomOrder
 RandomPerspective:
   transform: DualBATransform
   torchvision:  
     function: torch.RandomPerspective
 
-TenCrop:
-  transform: DualBATransform
-  torchvision:
-    function: torch.TenCrop
-ToPILImage:
-  transform: DualBATransform
-  torchvision:
-    function: torch.ToPILImage
+# TenCrop:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.TenCrop
+# ToPILImage:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch.ToPILImage
 ToTensor:
   transform: DualBATransform
   torchvision:
     function: torch.ToTensor
-Enum:
-  transform: DualBATransform
-  torchvision:
-    function: torch_f.Enum
+# Enum:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch_f.Enum
 
-Tensor:
-  transform: DualBATransform
-  torchvision:
-    function: torch_f.Tensor
+# Tensor:
+#   transform: DualBATransform
+#   torchvision:
+#     function: torch_f.Tensor
 
     
 ChangeAspectRatio:

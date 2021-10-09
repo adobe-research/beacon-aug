@@ -48,11 +48,11 @@ if "augly" in DEFAULT_LIBRARIES:
 if "kornia" in DEFAULT_LIBRARIES:
     import kornia as K
 if "mmcv" in DEFAULT_LIBRARIES:
-    from beacon_aug.external.mmcv.mmseg import transforms as mmcv
+    from ..external.mmcv.mmseg import transforms as mmcv
 if "kornia" in DEFAULT_LIBRARIES:
     import kornia as K
 if "imagenet_c" in DEFAULT_LIBRARIES:
-    from beacon_aug.external.imagenet_c.imagenet_c import imagenet_c  # .corruptions import transforms
+    from ..external.imagenet_c.imagenet_c import imagenet_c  # .corruptions import transforms
 
 
 # others

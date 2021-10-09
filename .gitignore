@@ -157,3 +157,4 @@ dmypy.json
 .trash
 _docs/all_figs/
 *.tmp
+*.csv
