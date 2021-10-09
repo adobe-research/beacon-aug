@@ -44,6 +44,9 @@ if __name__ == "__main__":
                      package_dir={'beacon_aug': 'beacon_aug'},
                      install_requires=required,
                      include_package_data=True,
+                     package_data={"beacon_aug.generator.standard":["*.yaml"],
+                                    "beacon_aug.external.imagenet_c.frost":['*'],
+                        }
                      )
     # for augly dependency
     subprocess.run(["conda", "install", "-c", "conda-forge", "python-magic"])
