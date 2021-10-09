@@ -11,7 +11,7 @@ from .advanced.autoaugment import AutoAugment
 from .advanced.randaugment import RandAugment
 from .advanced.collections import Collections
 from .advanced.benign_transforms import Benign
-
+from .generator import *
 from . import screenshot
 from . import properties
 
