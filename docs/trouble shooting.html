@@ -110,6 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#a-affine-not-working">A.Affine not working</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#libmagic-installation-failed">libmagic installation failed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#magickwand-library-not-found">MagickWand  library not found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#torchvision-version-to-old">torchvision version to old</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#problem-not-solved-prune">Problem not solved: prune</a></li>
 </ul>
 </li>
@@ -241,6 +242,10 @@ pip install -U git+https://github.com/albumentations-team/albumentations
 <ul>
 <li><p>Problem: <code class="docutils literal notranslate"><span class="pre">ImportError:</span> <span class="pre">MagickWand</span> <span class="pre">shared</span> <span class="pre">library</span> <span class="pre">not</span> <span class="pre">found.</span> <span class="pre">You</span> <span class="pre">probably</span> <span class="pre">had</span> <span class="pre">not</span> <span class="pre">installed</span> <span class="pre">ImageMagick</span> <span class="pre">library.</span></code></p></li>
 <li><p>Solution: Install ImageMagick</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge/label/cf202003 imagemagick
+</pre></div>
+</div>
+<p>Otherwise,</p>
 <p>Linux:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install libmagickwand-dev
 </pre></div>
@@ -254,13 +259,38 @@ brew reinstall imagemagick
 <li><p>Check detail: <a class="reference external" href="https://docs.wand-py.org/en/latest/guide/install.html#install-imagemagick-on-windows">https://docs.wand-py.org/en/latest/guide/install.html#install-imagemagick-on-windows</a></p></li>
 </ul>
 </div>
+<div class="section" id="torchvision-version-to-old">
+<h2>torchvision version to old<a class="headerlink" href="#torchvision-version-to-old" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Problem: <code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">module</span> <span class="pre">'torchvision.transforms.functional'</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'InterpolationMode'</span></code></p></li>
+<li><p>Solution: Upgrade torchvision</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --upgrade torchvision
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
 <div class="section" id="problem-not-solved-prune">
 <h2>Problem not solved: prune<a class="headerlink" href="#problem-not-solved-prune" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
+<ul>
 <li><p>Problem: other problem still not solved</p></li>
-<li><p>try the prune version by simply reinstall beacon-aug replacing <cite>requirements.txt</cite> with <cite>requirements_prune.txt</cite> in a new virtual environment</p></li>
-<li><p>The backend library will not be available unless the dependency is installed, so you can simply remove the library dependency that your don’t need</p></li>
-<li><p>Check detail: <a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/generator/__init__.py">https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/generator/__init__.py</a></p></li>
+<li><p><cite>beacon_aug</cite> support optional backend library. So the backend library will not be available unless the dependency is installed</p></li>
+<li><p>You can simply remove the library dependency that your don’t need, check source: <a class="reference external" href="https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/generator/__init__.py">https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/generator/__init__.py</a></p></li>
+<li><p>Solution1 :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip uninstall wand   <span class="c1"># if no need to use `imagenet_c` backend library</span>
+pip uninstall mmcv   <span class="c1"># if no need to use `mmcv` backend library</span>
+pip uninstall augly   <span class="c1"># if no need to use `augly` backend library</span>
+pip uninstall kornia   <span class="c1"># if no need to use `kornia` backend library</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>Solution2 :</dt><dd><ul class="simple">
+<li><p>e.g.  reinstall beacon-aug by replacing <cite>requirements.txt</cite> with <cite>requirements_prune.txt</cite> in a new virtual environment</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </div>
 </div>

@@ -39,6 +39,12 @@ MagickWand  library not found
 * Problem: ``ImportError: MagickWand shared library not found. You probably had not installed ImageMagick library.``
 * Solution: Install ImageMagick
 
+  .. code-block:: bash
+
+      conda install -c conda-forge/label/cf202003 imagemagick
+
+  Otherwise, 
+
   Linux:
 
   .. code-block:: bash
@@ -55,9 +61,31 @@ MagickWand  library not found
 * Check detail: https://docs.wand-py.org/en/latest/guide/install.html#install-imagemagick-on-windows
 
 
+
+
+torchvision version to old
+----------------------------
+* Problem: ``AttributeError: module 'torchvision.transforms.functional' has no attribute 'InterpolationMode'``
+* Solution: Upgrade torchvision
+
+  .. code-block:: bash
+
+      pip install --upgrade torchvision 
+
+
 Problem not solved: prune
 ----------------------------
 * Problem: other problem still not solved
-* try the prune version by simply reinstall beacon-aug replacing `requirements.txt` with `requirements_prune.txt` in a new virtual environment
-* The backend library will not be available unless the dependency is installed, so you can simply remove the library dependency that your don't need
-* Check detail: https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/generator/__init__.py
+* `beacon_aug` support optional backend library. So the backend library will not be available unless the dependency is installed
+* You can simply remove the library dependency that your don't need, check source: https://github.com/adobe-research/beacon-aug/blob/main/beacon_aug/generator/__init__.py
+* Solution1 :
+
+  .. code-block:: bash
+
+      pip uninstall wand   # if no need to use `imagenet_c` backend library
+      pip uninstall mmcv   # if no need to use `mmcv` backend library
+      pip uninstall augly   # if no need to use `augly` backend library
+      pip uninstall kornia   # if no need to use `kornia` backend library
+
+* Solution2 :
+   * e.g.  reinstall beacon-aug by replacing `requirements.txt` with `requirements_prune.txt` in a new virtual environment
