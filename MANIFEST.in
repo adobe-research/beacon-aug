@@ -2,4 +2,5 @@ recursive-include beacon_aug/generator/standard *
 recursive-include beacon_aug/external/imagenet_c/frost *
 include data/example.png
 include README.md
+include requirements.txt
 

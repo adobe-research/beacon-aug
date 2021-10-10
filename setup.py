@@ -42,9 +42,8 @@ if __name__ == "__main__":
                      url='https://github.com/adobe-research/beacon-aug',
                      packages=setuptools.find_packages(exclude=["workspace"]),
                      package_dir={'beacon_aug': 'beacon_aug'},
-                    #  package_data={"beacon_aug.generator.standard":["*.yaml"],
-                    #                 "beacon_aug.external.imagenet_c.frost":['*']}        
                     include_package_data=True,
+                    install_requires=required,
 
                      )
     # for augly dependency
