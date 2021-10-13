@@ -1,4 +1,5 @@
 # https://github.com/VoidChen/CG_final
+Author: Void Chen
 
 ## Introduction
 An implementation of [*Palette-based Photo Recoloring*](http://gfx.cs.princeton.edu/pubs/Chang_2015_PPR/index.php).
