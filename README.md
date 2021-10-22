@@ -60,7 +60,7 @@ How to develop
 --------------
 
 ``` {.sourceCode .bash}
-git clone https://github.com/adobe-research/beacon-aug.git@
+git clone https://github.com/adobe-research/beacon-aug.git
 
 conda create -y -n aug python=3.7
 conda activate aug
