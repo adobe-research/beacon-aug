@@ -4,6 +4,9 @@
 # NOTICE: Adobe permits you to use, modify, and distribute this file in
 # accordance with the terms of the Adobe license agreement accompanying
 # it.
+'''
+>> python benchmark.py
+'''
 import glob
 import os
 import matplotlib.pyplot as plt
@@ -158,4 +161,4 @@ if __name__ == "__main__":
         # runtime = pd.read_csv("runtime_batch128.csv")
         for v in runtime.columns.values[1:]:
             runtime[v] *=100
-        runtime.to_csv("benchmark_results/benchmark_resultsruntime_batch"+str(batch_size)+"(ms).csv",float_format='%.3f')
+        runtime.to_csv("benchmark_results/runtime_batch"+str(batch_size)+"(ms).csv",float_format='%.3f')

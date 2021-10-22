@@ -4,38 +4,46 @@
 # NOTICE: Adobe permits you to use, modify, and distribute this file in
 # accordance with the terms of the Adobe license agreement accompanying
 # it.
-import glob
-import os
-import matplotlib.pyplot as plt
+'''
+>> python -m unittest unit_test.TestSingle_operator
+
+'''
+
 from skimage import io
 import time
-from PIL import Image
-import yaml
 import beacon_aug as BA
-from beacon_aug.generator.operator_generator import DEFAULT_LIBRARIES
-import pandas as pd
+# from beacon_aug.generator.operator_generator import DEFAULT_LIBRARIES
 import numpy as np
 
-def simple_augmentation  ():
-    print ("\n" + "="*5 + " Unit test 1: simple augmentation operator " + "="*5  + "\n")
+import unittest
+from datetime import timedelta
+from hypothesis import given, settings, strategies as st
+from hypothesis.extra.numpy import arrays
 
-    image = io.imread("../data/example.png")
 
-    for library in ["imgaug", "albumentations","torchvision","keras","augly"]:
+class TestSingle_operator(unittest.TestCase):
+    # @given(image=arrays(np.float32, st.tuples(*[st.integers(1, 500), st.integers(1, 500), st.just(3)])),
+    #        limit=st.tuples(*[st.integers(-128, 0), st.integers(1, 128)]))
+    def testSingle_operator(self):
+        image = io.imread("../data/example.png")
+        limit = (-128, 128)
+        print("\n" + "="*5 + " Unit test 1: Single augmentation operator " + "="*5 + "\n")
 
-        print (library)
-        aug_pipeline =  BA.Rotate(p=1, limit = (-45,45), library = library)
+        for library in BA.Rotate().avail_libraries:
+            aug_pipeline = BA.Rotate(p=1, limit=limit, library=library)
 
-        augmented_image1 = aug_pipeline(image=image)['image'].copy()
-        augmented_image2 = aug_pipeline(image=image)['image'].copy()
+            augmented_image1 = aug_pipeline(image=image)['image'].copy()
+            augmented_image2 = aug_pipeline(image=image)['image'].copy()
 
-        assert (np.array_equal(image,augmented_image1) == False) 
-        print ("\t Passed! beacon_aug generate augmentation different to input")
-        
-        assert (np.array_equal(augmented_image1,augmented_image2) == False )
-        print ("\t Passed! beacon_aug generate different augmentation results when calling ")
+            # self.assertNotEqual(image, augmented_image1)
+            assert not np.array_equal(
+                image, augmented_image1), "Failed to generate augmentation different to input"
 
+            # self.assertNotEqual(augmented_image1, augmented_image2)
+
+            assert not np.array_equal(
+                augmented_image1, augmented_image2), "Failed to generate different augmentation results when calling "
 
 
 if __name__ == "__main__":
-    simple_augmentation()
+    unittest.main()

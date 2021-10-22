@@ -7,24 +7,25 @@ matplotlib
 pandas
 json5
 PyYAML
+gitpython
 
 # backend library:
 albumentations
 imgaug==0.4.0
 Keras-Preprocessing==1.1.2
 kornia
-torchvision>=0.10
+torchvision>=0.9
 ## Augly
 Pillow>=8.2.0
 python-magic
 augly
-## Mmmcv
+#### Mmmcv
 mmcv
 opencv-python
 
 Pandoc
-##imagenet-c
+#####imagenet-c
 wand
 imagenet-c 
-## customize
+#### customize
 freetype-py

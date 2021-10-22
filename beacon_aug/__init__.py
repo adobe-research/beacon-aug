@@ -18,5 +18,5 @@ from . import properties
 from albumentations.core.composition import *
 from albumentations.core.serialization import *
 
-__version__ = "Opensource-10092021"
+__version__ = "Opensource-10202021"
 __release__ = __version__

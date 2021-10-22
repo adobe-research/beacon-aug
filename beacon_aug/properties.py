@@ -13,7 +13,9 @@ from skimage import data
 import os
 import random
 import time
-import beacon_aug as BA
+# import beacon_aug as BA
+from . import operators as BA
+
 import torch
 import numpy as np
 from typing import Callable, Iterable
@@ -25,14 +27,23 @@ kw_size_list = ["size", "crop_size", "kernel_size"]
 kw_wh_list = ["weight", "heigh"]
 
 
-def set_seed(seed):
+def set_seed(seed=None, reset= False):
     '''
     Set Random seed to control the replication of transformations
+    
+    .. code-block::
+
+        import beacon_aug as BA
+        BA.properties.set_seed(reset=True)
+  
     '''
+    if reset:
+        seed =  random.randint(0, 1048) 
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
+    print (seed)
 
 
 def isOpDifferentiable(op=None,

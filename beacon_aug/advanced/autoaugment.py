@@ -21,7 +21,7 @@ Changes to above:
 
 '''
 
-import beacon_aug as BA
+from .. import __init__ as BA
 import albumentations as A
 import torch
 import math

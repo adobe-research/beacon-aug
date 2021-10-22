@@ -34,7 +34,9 @@ Create a RandAugment augmenter for COCO dataset
     
 '''
 from numpy import lib
-import beacon_aug as BA
+# import beacon_aug as BA
+from .. import __init__ as BA
+
 import albumentations as A
 
 import cv2

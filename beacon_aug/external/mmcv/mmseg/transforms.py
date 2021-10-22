@@ -1,16 +1,16 @@
-#https://github.com/open-mmlab/mmsegmentation/blob/master/mmseg/datasets/pipelines/transforms.py
+# https://github.com/open-mmlab/mmsegmentation/blob/master/mmseg/datasets/pipelines/transforms.py
 # prerequisite: https://github.com/open-mmlab/mmcv
 import mmcv
 import numpy as np
-from mmcv.utils import deprecated_api_warning, is_tuple_of
+# from mmcv.utils import deprecated_api_warning, is_tuple_of
 from numpy import random
 
 
 # from ..builder import PIPELINES
-from mmcv.utils import Registry
-PIPELINES = Registry('pipeline')
+# from mmcv.utils import Registry
+# PIPELINES = Registry('pipeline')
 
-@PIPELINES.register_module()
+# #@PIPELINES.register_module()
 class Resize(object):
     """Resize images & seg.
 
@@ -241,7 +241,7 @@ class Resize(object):
         return repr_str
 
 
-@PIPELINES.register_module()
+# #@PIPELINES.register_module()
 class RandomFlip(object):
     """Flip the image & seg.
 
@@ -255,7 +255,7 @@ class RandomFlip(object):
             'horizontal' and 'vertical'. Default: 'horizontal'.
     """
 
-    @deprecated_api_warning({'flip_ratio': 'prob'}, cls_name='RandomFlip')
+    # @deprecated_api_warning({'flip_ratio': 'prob'}, cls_name='RandomFlip')
     def __init__(self, prob=None, direction='horizontal'):
         self.prob = prob
         self.direction = direction
@@ -296,7 +296,7 @@ class RandomFlip(object):
         return self.__class__.__name__ + f'(prob={self.prob})'
 
 
-@PIPELINES.register_module()
+# @PIPELINES.register_module()
 class Pad(object):
     """Pad the image & mask.
 
@@ -367,7 +367,7 @@ class Pad(object):
         return repr_str
 
 
-@PIPELINES.register_module()
+# @PIPELINES.register_module()
 class Normalize(object):
     """Normalize the image.
 
@@ -409,7 +409,7 @@ class Normalize(object):
         return repr_str
 
 
-@PIPELINES.register_module()
+# @PIPELINES.register_module()
 class Rerange(object):
     """Rerange the image pixel value.
 
@@ -455,7 +455,7 @@ class Rerange(object):
         return repr_str
 
 
-@PIPELINES.register_module()
+# @PIPELINES.register_module()
 class CLAHE(object):
     """Use CLAHE method to process the image.
 
@@ -472,7 +472,7 @@ class CLAHE(object):
     def __init__(self, clip_limit=40.0, tile_grid_size=(8, 8)):
         assert isinstance(clip_limit, (float, int))
         self.clip_limit = clip_limit
-        assert is_tuple_of(tile_grid_size, int)
+        # assert is_tuple_of(tile_grid_size, int)
         assert len(tile_grid_size) == 2
         self.tile_grid_size = tile_grid_size
 
@@ -500,7 +500,7 @@ class CLAHE(object):
         return repr_str
 
 
-@PIPELINES.register_module()
+# @PIPELINES.register_module()
 class RandomCrop(object):
     """Random crop the image & seg.
 
@@ -573,7 +573,7 @@ class RandomCrop(object):
         return self.__class__.__name__ + f'(crop_size={self.crop_size})'
 
 
-@PIPELINES.register_module()
+# @PIPELINES.register_module()
 class RandomRotate(object):
     """Rotate the image & seg.
 
@@ -656,7 +656,7 @@ class RandomRotate(object):
         return repr_str
 
 
-@PIPELINES.register_module()
+# @PIPELINES.register_module()
 class RGB2Gray(object):
     """Convert RGB image to grayscale image.
 
@@ -711,7 +711,7 @@ class RGB2Gray(object):
         return repr_str
 
 
-@PIPELINES.register_module()
+# @PIPELINES.register_module()
 class AdjustGamma(object):
     """Using gamma correction to process the image.
 
@@ -747,7 +747,7 @@ class AdjustGamma(object):
         return self.__class__.__name__ + f'(gamma={self.gamma})'
 
 
-@PIPELINES.register_module()
+# @PIPELINES.register_module()
 class SegRescale(object):
     """Rescale semantic segmentation maps.
 
@@ -777,7 +777,7 @@ class SegRescale(object):
         return self.__class__.__name__ + f'(scale_factor={self.scale_factor})'
 
 
-@PIPELINES.register_module()
+# @PIPELINES.register_module()
 class PhotoMetricDistortion(object):
     """Apply photometric distortion to image sequentially, every transformation
     is applied with a probability of 0.5. The position of random contrast is in

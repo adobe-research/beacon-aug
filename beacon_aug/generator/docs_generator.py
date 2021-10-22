@@ -12,7 +12,7 @@ automatically extract the docs from original backend libraries
 # beacon_aug
 from . import DEFAULT_LIBRARIES, load_avail_libraries
 from . import custom, gan_based
-import beacon_aug as BA
+# import beacon_aug as BA
 
 # libraries
 from torch import from_numpy
@@ -303,9 +303,10 @@ def generate_doc(op_name, source_js_folders=os.path.join(os.path.dirname(os.path
 
                 example_doc += (
                     f'''        aug = BA.{op_name}(p=1, {default_statement[:-1]},library="{lib_name}")\n''')
-
+            else:
+                example_doc += (
+                    f'''        aug = BA.{op_name}(p=1,library="{lib_name}")\n''')
     Final_doc += (f'''
-    e.g.
     
     .. code-block::
 

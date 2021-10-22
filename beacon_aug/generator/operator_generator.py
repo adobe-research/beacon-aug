@@ -7,32 +7,34 @@
 
 
 """
-Inspriation source:
+Inspired from:
 [1] https://github.com/albumentations-team/albumentations/blob/master/albumentations/imgaug/transforms.py
 [2] https://github.com/albumentations-team/albumentations/blob/master/benchmark/benchmark.py
 
-#imgaug.augmenters.geometric.Rotate
 [imgaug]  https://imgaug.readthedocs.io/en/latest/source/api_augmenters_geometric.html?highlight=Rotate
 [Keras] https://github.com/keras-team/keras-preprocessing/blob/master/keras_preprocessing/image/affine_transformations.py
 [torchvision] https://pytorch.org/vision/stable/transforms.html
+
 """
 # beacon_aug
 from . import DEFAULT_LIBRARIES, load_avail_libraries, load_config, avail_libraries
 from . import custom, gan_based
 from .docs_generator import generate_doc
+from .. import properties
 
 # imgaug
 from re import L
 import imgaug as ia
 from numpy.core.fromnumeric import shape
 
-from beacon_aug import generator
+# from beacon_aug import generator
 try:
     from imgaug import augmenters as iaa
 except ImportError:
     import imgaug.imgaug.augmenters as iaa
 from imgaug.augmenters import geometric as iaa_geometic
-
+from copy import deepcopy
+from typing import Any, Callable, Dict, List, Sequence, Tuple
 # albumentations
 import albumentations as A
 from albumentations.augmentations.bbox_utils import convert_bboxes_from_albumentations, convert_bboxes_to_albumentations
@@ -45,6 +47,7 @@ import torchvision.transforms as torch
 import keras_preprocessing.image as keras
 from torch import Tensor
 from torch import from_numpy
+from warnings import warn
 
 if "augly" in DEFAULT_LIBRARIES:
     import augly.image as augly
@@ -70,7 +73,7 @@ import warnings
 import os
 import inspect
 import sys
-
+import random
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 __all__ = [
@@ -131,10 +134,13 @@ def get_library_fullname(library):
     return library
 
 
+##### Parse Parameters ######
+
 def random_uniform(x):
-    '''
+    '''for parsing equation
     Support both list/tuple or digit input for library variable parser
-    return number
+    return a random number
+
     '''
     if type(x) == list or type(x) == tuple:
         return np.random.uniform(*x)
@@ -143,11 +149,12 @@ def random_uniform(x):
 
 
 def format_check(x):
+    '''for parsing equation
+    change list tuple to numpy array, to support + / - result
+    '''
     if type(x) == list or type(x) == tuple:
         return np.array(x)
     return x
-
-##### Parse Parameters ######
 
 
 def parse_val(val):
@@ -170,131 +177,7 @@ def parse_default_paras(function, default_paras, kwargs):
     return kwargs
 
 
-def parameter_exchanger(function, alb2lib=None, class_kwargs=None,
-                        default_paras=None, default_lib_parnames=None, verbose=None):
-    """Parse the parameter from library1 to library2
-    # Arguments
-        alb2lib (dictionary): { <lib_parname>:  [<alb_parname> , exchange_equation(1to2)  ]   }
-            e.g.  (lib1=albumentation(value), lib2=imgaug(cval))
-            paras_albumentation2imgaug = { "cval": ["value", lambda x:x ]   }
-            paras_albumentation2imgaug = {
-                "cval": ["value", "x" ]   }              # equivalent to
-        function: the library2 transformation function that to be exam and put
-            all <lib_parname> belong to library.function(**kwargs)
-        class_kwargs: common class kwargs
-    # Returns
-        updated kwargs for this function.
-    """
-
-    def parse_equation(lambda_function):
-        # Parse the lambda equation function: lambda_function must has "x"
-        # return:  function
-
-        if type(lambda_function) == str:
-            # (*x) then means the variable support both list and int/float, need to return list
-            if "(*x)" in lambda_function:
-                lambda_function = lambda_function.replace("(*x)", "x")
-                # guarantee the input meet the list requirement : calling format_check
-                if ("-" in lambda_function or "+" in lambda_function) and "random_uniform" not in lambda_function:
-                    lambda_function = lambda_function.replace("x", "(format_check(x))")
-                return lambda x: list(eval(lambda_function))
-            else:
-                # guarantee the input meet the list requirement : calling format_check
-                if ("-" in lambda_function or "+" in lambda_function) and "random_uniform" not in lambda_function:
-                    lambda_function = lambda_function.replace("x", "format_check(x)")
-                return lambda x: eval(lambda_function)
-        else:
-            return lambda_function
-
-    if verbose:
-        print("\nIn ", str(function), ": \n\t original kwargs= ", class_kwargs, "\n")
-
-    # 1) parse default common arguments
-    if default_paras:
-        kwargs_add_default = class_kwargs.copy()
-        for default_para in default_paras:
-            if default_para not in class_kwargs:                                                # alb para not been parsed
-                for kw in class_kwargs:
-                    # if corresponding lib arg also been parsed
-                    if kw in alb2lib and alb2lib[kw][0] == default_para:
-                        # deprecate this parse
-                        default_paras[default_para] = None
-                if default_paras[default_para]:
-                    val = parse_val(default_paras[default_para])
-                    # add default_para with kwargs
-                    kwargs_add_default[default_para] = val
-        class_kwargs = kwargs_add_default
-    if verbose:
-        print(": \n\t 1) default added kwargs= ", class_kwargs, "\n")
-
-    # 2) Convert all alb paras to lib specifics
-    if alb2lib is not None:
-        for lib_parname in alb2lib.keys():
-            [alb_parname, exchange_equation] = alb2lib[lib_parname]
-            # parse single alb_parname to lib
-            if "," not in alb_parname:
-                if alb_parname not in inspect.getfullargspec(function)[0] and alb_parname in class_kwargs:
-                    # add the correspond lib2 parameter
-                    equation = parse_equation(exchange_equation)
-                    if verbose:
-                        print("  \n\t lambda quation(str) = ", exchange_equation, "\n")
-                        print("  \t input variable = ", class_kwargs[alb_parname], "\n")
-                        print("  \t parsed quation(function) = ",
-                              inspect.getsource(equation), "\n")
-                    class_kwargs[lib_parname] = equation(class_kwargs[alb_parname])
-                    # clean up the lib key
-                    class_kwargs.pop(alb_parname)
-            # parse multiple alb_parnames to lib
-            else:
-                alb_parname_ls = alb_parname.split(",")
-                check_all = np.prod([(i not in inspect.getfullargspec(function)[
-                                    0] and i in class_kwargs) for i in alb_parname_ls])
-                if check_all:
-                    equation = parse_equation(exchange_equation)
-                    class_kwargs[lib_parname] = equation(
-                        [class_kwargs[i] for i in alb_parname_ls])
-                    # clean up the lib key
-                    [class_kwargs.pop(i) for i in alb_parname_ls]
-        if verbose:
-            print(": \n\t 2) after alb to lb , class_kwargs= ", class_kwargs, "\n")
-
-    # 3) Remove the redundant kwargs
-    if class_kwargs is not None:
-        class_kwargs_temp = class_kwargs.copy()
-        for kwarg in class_kwargs_temp.keys():
-            val = parse_val(class_kwargs_temp[kwarg])
-            class_kwargs[kwarg] = val
-            if kwarg not in inspect.getfullargspec(function)[0]:
-                # clean up the lib1 key
-                class_kwargs.pop(kwarg)
-                warnings.warn("\n%ris not used in this library. It has been omitted.\n" %
-                              (kwarg), UserWarning)
-
-    lib_kwargs_updated = class_kwargs
-    # 4) Parse default lib arguments
-    if default_lib_parnames:
-        lib_kwargs_updated_add_default = lib_kwargs_updated.copy()
-        for default_lib_parname in default_lib_parnames:
-            if default_lib_parname not in lib_kwargs_updated.keys():
-                val = parse_val(default_lib_parnames[default_lib_parname])
-                lib_kwargs_updated_add_default[default_lib_parname] = val
-        lib_kwargs_updated = lib_kwargs_updated_add_default
-        if verbose:
-            print("\n4) lib_kwargs_updated_add_default= ", lib_kwargs_updated_add_default, "\n")
-
-    # 5) Parse probability
-    if "p" in inspect.getfullargspec(function)[0]:
-        # In torchvision.transform, default p = 0.5, but the operator possibility is
-        # controlled by beacon_aug (p). So we set the library backend p to 1
-        lib_kwargs_updated["p"] = 1
-
-    if verbose:
-        print(": \n\t Final: lib_kwargs_updated = ", lib_kwargs_updated, "\n")
-
-    return lib_kwargs_updated
-
-
-# Operator class definition
+#### Operator class definition ###
 class BasicBATransform(A.BasicTransform):
     def __init__(self, always_apply=False, p=0.5, library="imgaug", **kwargs):
         super(BasicBATransform, self).__init__(always_apply, p)
@@ -302,10 +185,57 @@ class BasicBATransform(A.BasicTransform):
         # will replace is later in operator class definition
         self.avail_libraries = []
         self.kwargs = kwargs
+        self.random_uniform_parse_equation = None
+
+    def __call__(self, *args, force_apply: bool = False, **kwargs) -> Dict[str, Any]:
+        # support range(tuple/ list) of input probability
+        self.p = self.p if (type(self.p) == float or type(self.p) ==
+                            int) else random.uniform(self.p[0], self.p[1])
+
+        if args:
+            raise KeyError(
+                "You have to pass data to augmentations as named arguments, for example: aug(image=image)")
+        if self.replay_mode:
+            if self.applied_in_replay:
+                return self.apply_with_params(self.params, **kwargs)
+
+            return kwargs
+
+        if (random.random() < self.p) or self.always_apply or force_apply:
+            params = self.get_params()
+
+            if self.targets_as_params:
+                assert all(key in kwargs for key in self.targets_as_params), "{} requires {}".format(
+                    self.__class__.__name__, self.targets_as_params
+                )
+                targets_as_params = {k: kwargs[k] for k in self.targets_as_params}
+                params_dependent_on_targets = self.get_params_dependent_on_targets(
+                    targets_as_params)
+                params.update(params_dependent_on_targets)
+            if self.deterministic:
+                if self.targets_as_params:
+                    warn(
+                        self.get_class_fullname() + " could work incorrectly in ReplayMode for other input data"
+                        " because its' params depend on targets."
+                    )
+                kwargs[self.save_key][id(self)] = deepcopy(params)
+            return self.apply_with_params(params, **kwargs)
+
+        return kwargs
 
     def is_supported_by(self, library):
         # if the library operator exists, claim it is supportable
         return hasattr(self, library+"_op") or hasattr(self, library+"_pipeline")
+
+    def random_uniform_parse(self, paras):
+        '''
+        In case the lambda_function contain "random_uniform", need to run in instance not obj init
+        '''
+        if self.random_uniform_parse_equation is not None:
+            for lib_parname in self.random_uniform_parse_equation:
+                (lambda_function,  val) = self.random_uniform_parse_equation[lib_parname]
+                paras[lib_parname] = (lambda x: eval(lambda_function))(val)
+        return paras
 
     @property
     def processor(self):
@@ -332,6 +262,7 @@ class BasicBATransform(A.BasicTransform):
         @img: numpy arrary/ PIL image
         @param: as_layer: if run as a tensor layer (only for torch vision)
         '''
+
         def apply_singleAug_exceptTorch(img):
             # load image, need to convert nparray to PIL
             if self.library in ("augmentor", "pillow", "augly", "imagenet_c") and type(img) == np.ndarray:
@@ -344,6 +275,7 @@ class BasicBATransform(A.BasicTransform):
                 img_auged = processor.augment_image(img)
 
             elif self.library == "keras":
+                self.keras_paras = self.random_uniform_parse(self.keras_paras)
                 img = processor(img, **self.keras_paras)
                 img_auged = np.ascontiguousarray(img).astype(np.uint8)
 
@@ -361,6 +293,7 @@ class BasicBATransform(A.BasicTransform):
 
             elif self.library == "custom":
                 if hasattr(self, "custom_paras"):
+                    self.custom_paras = self. random_uniform_parse(self.custom_paras)
                     img = processor(img, **self.custom_paras)
                 else:
                     img = processor(img)
@@ -368,6 +301,7 @@ class BasicBATransform(A.BasicTransform):
 
             elif self.library == "gan_based":
                 if hasattr(self, "gan_based_paras"):
+                    self.gan_based_paras = self. random_uniform_parse(self.gan_based_paras)
                     img = processor(img, **self.gan_based_paras)
                 else:
                     img = processor(img)
@@ -390,12 +324,13 @@ class BasicBATransform(A.BasicTransform):
         # torchvision can directly handle image batch
         if self.library in ["torchvision", "kornia"]:
             if self.library == "torchvision":
-                # input: can be PIL or {tensor}( batch x 3 x  Heightx Width)
+                # input: can be PIL or {tensor}( batch x 3 x  Height x Width)
                 if type(img) == np.ndarray:
                     img = Image.fromarray(img).convert("RGB")
                 # some torch function require input to be PIL
                 try:
                     if hasattr(self, self.library + "_paras"):
+                        self.torchvision_paras = self. random_uniform_parse(self.torchvision_paras)
                         img = processor(img, **self.torchvision_paras)
                     else:
                         img = processor(img)
@@ -403,6 +338,7 @@ class BasicBATransform(A.BasicTransform):
                 except AttributeError:
                     img_tensor = torch.Compose([torch.ToTensor()])(img)
                     if hasattr(self, self.library+"_paras"):
+                        self.torchvision_paras = self. random_uniform_parse(self.torchvision_paras)
                         img = processor(img_tensor, **self.torchvision_paras)
                     else:
                         img = processor(img_tensor)
@@ -411,6 +347,7 @@ class BasicBATransform(A.BasicTransform):
                 if type(img) == np.ndarray:
                     img = K.image_to_tensor(img)
                     img = K.color.bgr_to_rgb(img)
+                self.kornia_paras = self. random_uniform_parse(self.kornia_paras)
                 img = processor(img, **self.kornia_paras)
 
             # output
@@ -549,8 +486,8 @@ def Operator_generator(op_name, library=None, *args, **kwargs):
             default_paras = operator_paras["default_para"] if (
                 "default_para" in operator_paras) else None
 
-            lib_kwargs_updated = parameter_exchanger(op, paras_alb2lib, kwargs,
-                                                     default_paras, default_lib_paras, verbose=0)
+            lib_kwargs_updated = self.parameter_exchanger(op, paras_alb2lib, kwargs,
+                                                          default_paras, default_lib_paras, verbose=False)
 
             # construct operators for all libraries
             if self.library == "imgaug":
@@ -591,9 +528,149 @@ def Operator_generator(op_name, library=None, *args, **kwargs):
             elif self.library == "gan_based":
                 self.gan_based_op = op(**lib_kwargs_updated)
 
+        def parameter_exchanger(self, function, alb2lib=None, class_kwargs=None,
+                                default_paras=None, default_lib_parnames=None, verbose=False):
+            """Parse the parameter from library1 to library2
+            # Arguments
+                alb2lib (dictionary): { <lib_parname>:  [<alb_parname> , exchange_equation(1to2)  ]   }
+                    e.g.  (lib1=albumentation(value), lib2=imgaug(cval))
+                    paras_albumentation2imgaug = { "cval": ["value", lambda x:x ]   }
+                    paras_albumentation2imgaug = {
+                        "cval": ["value", "x" ]   }              # equivalent to
+                function: the library2 transformation function that to be exam and put
+                    all <lib_parname> belong to library.function(**kwargs)
+                class_kwargs: common class kwargs
+            # Returns
+                updated kwargs for this function.
+            """
+
+            def parse_equation(lambda_function):
+                # Parse the lambda equation function: lambda_function must has "x"
+                # return:  function
+
+                if type(lambda_function) == str:
+                    # (*x) then means the variable support both list and int/float, need to return list
+                    if "(*x)" in lambda_function:
+                        lambda_function = lambda_function.replace("(*x)", "x")
+                        # guarantee the input meet the list requirement : calling format_check
+                        if ("-" in lambda_function or "+" in lambda_function) and "random_uniform" not in lambda_function:
+                            lambda_function = lambda_function.replace("x", "(format_check(x))")
+                        return lambda x: list(eval(lambda_function))
+                    else:
+                        # guarantee the input meet the list requirement : calling format_check
+                        if "random_uniform" in lambda_function:
+                            # keep the str type of `random_uniform` function in class init and generate random number during  instance calling
+                            return lambda_function
+
+                        elif ("-" in lambda_function or "+" in lambda_function) and "random_uniform" not in lambda_function:
+                            lambda_function = lambda_function.replace("x", "format_check(x)")
+
+                        return lambda x: eval(lambda_function)
+                else:
+                    return lambda_function
+
+            if verbose:
+                print("\nIn ", str(function), ": \n\t original kwargs= ", class_kwargs, "\n")
+
+            # 1) parse default common arguments
+            if default_paras:
+                kwargs_add_default = class_kwargs.copy()
+                for default_para in default_paras:
+                    if default_para not in class_kwargs:                                                # alb para not been parsed
+                        for kw in class_kwargs:
+                            # if corresponding lib arg also been parsed
+                            if kw in alb2lib and alb2lib[kw][0] == default_para:
+                                # deprecate this parse
+                                default_paras[default_para] = None
+                        if default_paras[default_para]:
+                            val = parse_val(default_paras[default_para])
+                            # add default_para with kwargs
+                            kwargs_add_default[default_para] = val
+                class_kwargs = kwargs_add_default
+            if verbose:
+                print(": \n\t 1) default added kwargs= ", class_kwargs, "\n")
+
+            # 2) Convert all alb paras to lib specifics
+            if alb2lib is not None:
+                for lib_parname in alb2lib.keys():
+                    [alb_parname, exchange_equation] = alb2lib[lib_parname]
+                    # parse single alb_parname to lib
+                    if "," not in alb_parname:
+                        if alb_parname not in inspect.getfullargspec(function)[0] and alb_parname in class_kwargs:
+                            # add the correspond lib2 parameter
+                            equation = parse_equation(exchange_equation)
+                            if verbose:
+                                print("  \n\t lambda quation(str) = ", exchange_equation, "\n")
+                                print("  \t input variable = ", class_kwargs[alb_parname], "\n")
+                                print("  \t parsed quation(function) = ", equation)
+                                #   inspect.getsource(equation), "\n")
+                            if type(equation) == str:
+                                if  "random_uniform"  in equation:
+                                    #  donnot parse it yet, need generate the random number in run time not class init
+                                    class_kwargs[lib_parname] = {equation: class_kwargs[alb_parname]}
+                                    self.random_uniform_parse_equation = {
+                                                    lib_parname: (equation,  class_kwargs[alb_parname])}
+                                else:  # otherwise
+                                    class_kwargs[lib_parname] = equation(class_kwargs[alb_parname])                            
+                            else:  # otherwise
+                                class_kwargs[lib_parname] = equation(class_kwargs[alb_parname])
+
+                            # clean up the lib key
+                            class_kwargs.pop(alb_parname)
+                    # parse multiple alb_parnames to lib
+                    else:
+                        alb_parname_ls = alb_parname.split(",")
+                        check_all = np.prod([(i not in inspect.getfullargspec(function)[
+                                            0] and i in class_kwargs) for i in alb_parname_ls])
+                        if check_all:
+                            equation = parse_equation(exchange_equation)
+                            class_kwargs[lib_parname] = equation(
+                                [class_kwargs[i] for i in alb_parname_ls])
+                            # clean up the lib key
+                            [class_kwargs.pop(i) for i in alb_parname_ls]
+                if verbose:
+                    print(": \n\t 2) after alb to lb , class_kwargs= ", class_kwargs, "\n")
+
+            # 3) Remove the redundant kwargs
+            if class_kwargs is not None:
+                class_kwargs_temp = class_kwargs.copy()
+                for kwarg in class_kwargs_temp.keys():
+                    val = parse_val(class_kwargs_temp[kwarg])
+                    class_kwargs[kwarg] = val
+                    if kwarg not in inspect.getfullargspec(function)[0]:
+                        # clean up the lib1 key
+                        class_kwargs.pop(kwarg)
+                        warnings.warn("\n%ris not used in this library. It has been omitted.\n" %
+                                      (kwarg), UserWarning)
+
+            lib_kwargs_updated = class_kwargs
+            # 4) Parse default lib arguments
+            if default_lib_parnames:
+                lib_kwargs_updated_add_default = lib_kwargs_updated.copy()
+                for default_lib_parname in default_lib_parnames:
+                    if default_lib_parname not in lib_kwargs_updated.keys():
+                        val = parse_val(default_lib_parnames[default_lib_parname])
+                        lib_kwargs_updated_add_default[default_lib_parname] = val
+                lib_kwargs_updated = lib_kwargs_updated_add_default
+                if verbose:
+                    print("\n4) lib_kwargs_updated_add_default= ",
+                          lib_kwargs_updated_add_default, "\n")
+
+            # 5) Parse probability
+            if "p" in inspect.getfullargspec(function)[0]:
+                # In torchvision.transform, default p = 0.5, but the operator possibility is
+                # controlled by beacon_aug (p). So we set the library backend p to 1
+                lib_kwargs_updated["p"] = 1
+
+            if verbose:
+                print(": \n\t Final: lib_kwargs_updated = ", lib_kwargs_updated, "\n")
+
+            return lib_kwargs_updated
+
         BA_operator = type("BA_" + op_name,                                             # dynamic class definition
                            (eval(operator_paras["transform"]), ),
                            {"__init__": BA__init__,
+                            "parameter_exchanger": parameter_exchanger,
                             "__doc__": generate_doc,
                             }
                            )

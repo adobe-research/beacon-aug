@@ -19,7 +19,9 @@ import random
 import time
 from PIL import Image
 from skimage.color import label2rgb
-import beacon_aug as BA
+# import beacon_aug as BA
+from . import properties
+
 
 ''' flatten the pipeline tree'''
 def extract_single_operation(augPipeline):
@@ -128,7 +130,7 @@ def screenshot_library(BA_operator, image_data, save_fig_path=None, individual_f
 
         attributes_result["runtime"][library] = runtime
 
-        attributes_result["differentiable"][library] = BA.properties.isOpDifferentiable(op)
+        attributes_result["differentiable"][library] = properties.isOpDifferentiable(op)
 
         axs[0][1+i].set_title(library + ":" + '{0:.1f}'.format(runtime*1000) + " (ms)")
         axs[0][1+i].imshow(image_auged)

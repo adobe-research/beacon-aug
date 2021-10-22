@@ -160,3 +160,4 @@ dmypy.json
 _docs/all_figs/
 *.tmp
 *.csv
+beacon_aug/external/style-augmentation/

@@ -6,7 +6,8 @@
 # it.
 
 
-import beacon_aug as BA
+# import beacon_aug as BA
+from .. import __init__ as BA
 import cv2
 import numpy as np
 

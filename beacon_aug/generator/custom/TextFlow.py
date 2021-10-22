@@ -69,7 +69,7 @@ class TextFlow:
             self.x = [0, min(img.shape[0] - size, 0)]
         if self.y is None:
             self.y = [0, min(img.shape[1] - size, 0)]
-        print(self.x)
+        # print(self.x)
         # random x, y location
         x = random.randint(self.x[0], self.x[1]) if type(self.x) != int and float else self.x
         y = random.randint(self.y[0], self.y[1]) if type(self.x) != int and float else self.x

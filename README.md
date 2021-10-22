@@ -137,7 +137,14 @@ Citation
 ```bibtex
 
 @misc{beacon-aug2021,
-  author = {Xiaoyang Rebecca Li, Yannick Hold-Geoffroy, Geoffrey Oxholm, Krishna kumar Singh, Zhifei Zhang, Richard Zhang, Maksym Andriushchenko, and others},
+  author = {Li, Xiaoyang Rebecca
+            and Hold-Geoffroy, Yannick
+            and Oxholm Geoffrey
+            and Singh, Krishna Kumar
+            and Zhang, Zhifei Zhang
+            and Zhang, Richard
+            and Andriushchenko, Maksym
+            and others},
   title = {Beacon-aug: A cross-library image augmentation toolbox.},
   howpublished = {\url{https://github.com/adobe-research/beacon-aug}},
   year = {2021},
