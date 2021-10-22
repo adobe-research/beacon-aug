@@ -6,6 +6,8 @@ doc_writers
 docs
 benchmark/properties.yaml
 
+scripts/
+
 # https://github.com/github/gitignore/blob/master/Python.gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__
