@@ -148,6 +148,6 @@ Citation
   title = {Beacon-aug: A cross-library image augmentation toolbox.},
   howpublished = {\url{https://github.com/adobe-research/beacon-aug}},
   year = {2021},
-  note = {Online; accessed Sep-22-2021}
+  note = {Online; accessed Jan-11-2022}
 }
 ```
